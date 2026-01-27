@@ -25,9 +25,10 @@ export default function OurApproach() {
       <section className="relative min-h-[85vh] flex flex-col items-center justify-center pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden bg-sky-mist">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1920"
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1440"
             alt="Mountain Mist"
             className="w-full h-full object-cover scale-110 opacity-60"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-linear-to-b from-forest/40 via-forest/80 to-forest" />
         </div>
@@ -86,7 +87,7 @@ export default function OurApproach() {
           ].map((principle, idx) => (
             <div
               key={idx}
-              className="group relative bg-white/40 backdrop-blur-md p-10 rounded-3xl border border-white/60 shadow- premium transition-all duration-700 hover:-translate-y-2 overflow-hidden flex flex-col items-start min-h-[220px] hover:bg-white/60"
+              className="group relative glass-card p-10 rounded-3xl border-white/60 shadow-premium transition-all duration-700 hover:-translate-y-2 overflow-hidden flex flex-col items-start min-h-[220px] hover:bg-white/60"
             >
               <div className="absolute top-8 right-8 text-6xl font-heading font-black text-forest/5 select-none transition-all leading-none duration-500">
                 {principle.label}
@@ -129,7 +130,7 @@ export default function OurApproach() {
               icon: <Search className="w-10 h-10" />,
               desc: "Before even stepping into nature, we audit the existing culture or personal blockages.",
               image:
-                "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
+                "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000",
             },
             {
               step: "02",
@@ -137,7 +138,7 @@ export default function OurApproach() {
               icon: <Compass className="w-10 h-10" />,
               desc: "Disconnecting from the systemic noise of the digital world. This phase is about stripping away the corporate mask.",
               image:
-                "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200",
+                "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000",
             },
             {
               step: "03",
@@ -145,7 +146,7 @@ export default function OurApproach() {
               icon: <Mountain className="w-10 h-10" />,
               desc: "The core experience. We introduce curated stress to activate dormant leadership archetypes.",
               image:
-                "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=1200",
+                "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=1000",
             },
             {
               step: "04",
@@ -153,7 +154,7 @@ export default function OurApproach() {
               icon: <PenTool className="w-10 h-10" />,
               desc: "Moving from the 'what' to the 'why'. We translate mountain successes into business breakthroughs.",
               image:
-                "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200",
+                "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1000",
             },
             {
               step: "05",
@@ -161,7 +162,7 @@ export default function OurApproach() {
               icon: <Zap className="w-10 h-10" />,
               desc: "Ensuring the change sticks. We design a post-journey roadmap into your daily ecosystem.",
               image:
-                "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200",
+                "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1000",
             },
           ].map((item, idx) => (
             <div
@@ -194,6 +195,7 @@ export default function OurApproach() {
                       src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-forest/80 via-transparent to-transparent" />
                   </div>
@@ -244,7 +246,7 @@ export default function OurApproach() {
             ].map((standard, idx) => (
               <div
                 key={idx}
-                className="bg-white/30 backdrop-blur-md p-8 lg:p-10 rounded-[2.5rem] border border-white/60 shadow-2xl hover:bg-white/50 transition-all duration-700 hover:-translate-y-1 group"
+                className="glass-card p-8 lg:p-10 rounded-[2.5rem] border-white/60 shadow-2xl hover:bg-white/50 transition-all duration-700 hover:-translate-y-1 group"
               >
                 <div className="w-12 h-12 rounded-full bg-forest flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500">
                   {standard.icon}
@@ -264,7 +266,7 @@ export default function OurApproach() {
       {/* 5. FINAL CTA */}
       <FinalCTA
         variant="sky-mist"
-        bgImage="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1920"
+        bgImage="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1440"
         icon={Zap}
         title={
           <>

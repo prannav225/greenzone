@@ -7,9 +7,10 @@ export default function Hero() {
       {/* Background with Modern Overlay */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1920"
+          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1440"
           alt="Alpine Peaks"
           className="w-full h-full object-cover opacity-60 scale-105 animate-slow-zoom"
+          fetchpriority="high"
         />
         <div className="absolute inset-0 bg-linear-to-b from-forest/40 via-forest/80 to-forest" />
       </div>
@@ -66,9 +67,10 @@ export default function Hero() {
               {/* Main Visual Container */}
               <div className="relative aspect-4/5 rounded-[2.5rem] overflow-hidden shadow-4xl group-hover:shadow-emerald-pop/10 transition-all duration-700 ring-1 ring-white/10">
                 <img
-                  src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=1200"
+                  src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=1000"
                   alt="High Performance Team"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                  loading="lazy"
                 />
                 <div className="absolute inset-x-0 bottom-0 p-8 pt-20 bg-linear-to-t from-forest/80 via-forest/40 to-transparent" />
 

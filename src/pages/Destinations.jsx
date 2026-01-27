@@ -38,7 +38,7 @@ const destinationData = [
       "Climatic Diversity",
     ],
     image:
-      "https://images.unsplash.com/photo-1621360841013-c7683c313df3?auto=format&fit=crop&q=80&w=1200",
+      "https://plus.unsplash.com/premium_photo-1697730310113-e44fced8e86c?q=80&w=1000&auto=format&fit=crop",
   },
   {
     id: "chikmagalur",
@@ -61,7 +61,7 @@ const destinationData = [
       "Strategic Silence",
     ],
     image:
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1739038034791-a60471396db0?q=80&w=1000&auto=format&fit=crop",
   },
   {
     id: "coorg",
@@ -80,7 +80,7 @@ const destinationData = [
     ],
     highlights: ["Dense Canopy", "River Dynamics", "Atmospheric Clarity"],
     image:
-      "https://images.unsplash.com/photo-1582202359419-797745778a48?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1664168121469-69fc94be286a?q=80&w=1000&auto=format&fit=crop",
   },
   {
     id: "hampi",
@@ -103,7 +103,7 @@ const destinationData = [
       "Bouldering Logic",
     ],
     image:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200",
+      "https://plus.unsplash.com/premium_photo-1697730337612-8bd916249e30?q=80&w=1000&auto=format&fit=crop",
   },
   {
     id: "gokarna",
@@ -122,7 +122,7 @@ const destinationData = [
     ],
     highlights: ["Coastal Rhythm", "Cliff Navigation", "Aperture Scaling"],
     image:
-      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1659898145429-33a8bcdf22bf?q=80&w=1000&auto=format&fit=crop",
   },
   {
     id: "lepakshi",
@@ -145,7 +145,7 @@ const destinationData = [
       "Historical Rigour",
     ],
     image:
-      "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&q=80&w=1200",
+      "https://images.pexels.com/photos/35820093/pexels-photo-35820093/free-photo-of-ancient-stone-temple-in-lepakshi-india.jpeg?auto=compress&cs=tinysrgb&w=1000&h=750&dpr=1",
   },
 ];
 
@@ -163,9 +163,10 @@ export default function Destinations() {
       <section className="relative min-h-[85vh] flex flex-col items-center justify-center pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden bg-forest">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1920"
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1440"
             alt="Outbound Training Locations India"
             className="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-linear-to-b from-forest/80 via-forest/40 to-forest" />
         </div>
@@ -247,9 +248,10 @@ export default function Destinations() {
             <div className="absolute -inset-10 border border-forest/5 rounded-3xl -z-10 animate-float" />
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-4xl group-hover:shadow-[0_50px_100px_rgba(10,30,20,0.15)] transition-all duration-1000">
               <img
-                src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&q=80&w=1200"
+                src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&q=80&w=1000"
                 alt="Environmental Facilitation"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                loading="lazy"
               />
             </div>
           </div>
@@ -322,6 +324,7 @@ export default function Destinations() {
                     src={dest.image}
                     alt={dest.name}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                   <div className="absolute inset-x-0 bottom-0 p-10 bg-linear-to-t from-forest/80 to-transparent flex items-end justify-between">
                     <div>
@@ -404,7 +407,7 @@ export default function Destinations() {
       {/* 4. FINAL CTA - SEO FOCUS */}
       <FinalCTA
         variant="charcoal"
-        bgImage="https://images.unsplash.com/photo-1464817739973-0128fe77aaa1?auto=format&fit=crop&q=80&w=1920"
+        bgImage="https://images.unsplash.com/photo-1464817739973-0128fe77aaa1?auto=format&fit=crop&q=80&w=1440"
         icon={Compass}
         title={
           <>

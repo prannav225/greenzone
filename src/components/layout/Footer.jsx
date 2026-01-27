@@ -33,8 +33,8 @@ export default function Footer() {
           {/* Brand & Vision Column */}
           <div className="lg:col-span-4 max-w-sm">
             <Link to="/" className="flex items-center gap-4 mb-8 group">
-              <div className="w-12 h-12 bg-linear-to-br from-forest to-forest-dark rounded-2xl flex items-center justify-center shadow-premium group-hover:scale-110 transition-transform duration-500">
-                <span className="text-emerald-pop font-heading font-black text-2xl">
+              <div className="w-12 h-12 bg-linear-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center ring-1 ring-white/10 transition-all duration-700 group-hover:scale-110 group-hover:rotate-6">
+                <span className="text-forest font-heading font-black text-2xl select-none">
                   G
                 </span>
               </div>

@@ -148,22 +148,27 @@ h6 {
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-slow-zoom {
   animation: slow-zoom 20s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
+  will-change: transform, opacity;
 }
 
 .animate-fade-in-up {
   animation: fade-in-up 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  will-change: transform, opacity;
 }
 
 .animate-shimmer {
   animation: shimmer 2s infinite;
+  will-change: transform;
 }
 
 .animate-delay-100 {
@@ -204,7 +209,25 @@ h6 {
 }
 
 .glass-card {
-  @apply bg-white/80 backdrop-blur-lg border border-white/40 shadow-xl;
+  @apply bg-white/20 border border-white/40 shadow-xl;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-card-dark {
+  @apply bg-forest/40 border border-white/10 shadow-2xl;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Optimize for lower-end mobile devices or browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(12px)) {
+  .glass-card {
+    @apply bg-white/95;
+  }
+  .glass-card-dark {
+    @apply bg-forest/90;
+  }
 }
 
 .text-gradient-forest {

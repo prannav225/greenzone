@@ -33,7 +33,7 @@ const programCategories = [
     ],
     duration: "2-3 Days / Multi-module",
     image:
-      "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=1000",
     variant: "mist",
   },
   {
@@ -52,7 +52,7 @@ const programCategories = [
     ],
     duration: "1 Day / Ongoing Series",
     image:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000",
     variant: "sand",
   },
   {
@@ -77,7 +77,7 @@ const programCategories = [
       },
     ],
     image:
-      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=1000",
     variant: "mist",
   },
   {
@@ -96,7 +96,7 @@ const programCategories = [
     ],
     duration: "1-4 Days",
     image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1000",
     variant: "sand",
   },
   {
@@ -110,7 +110,7 @@ const programCategories = [
     outcomes: ["Perspective Shifts", "Executive Sabbatical Clarity"],
     duration: "Custom based on terrain",
     image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000",
     variant: "forest",
   },
 ];
@@ -127,9 +127,10 @@ export default function Programs() {
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden bg-forest">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&q=80&w=1920"
+            src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&q=80&w=1440"
             alt="Outbound Learning Programs"
             className="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-linear-to-b from-forest/80 via-forest/40 to-forest" />
         </div>
@@ -186,15 +187,29 @@ export default function Programs() {
                     {cat.subsections.map((sub, sidx) => (
                       <div
                         key={sidx}
-                        className={`p-8 rounded-3xl border backdrop-blur-md shadow-premium transition-all duration-500 hover:-translate-y-1 ${cat.variant === "forest" ? "bg-white/10 border-emerald-pop/20 hover:bg-white/15" : "bg-white/40 border-emerald-pop/60 hover:bg-white/60"}`}
+                        className={`p-10 rounded-2xl shadow-premium transition-all duration-500 hover:-translate-y-1 ${
+                          cat.variant === "sand"
+                            ? "bg-white"
+                            : cat.variant === "forest"
+                              ? "bg-white/5 backdrop-blur-md border border-white/5"
+                              : "bg-forest text-white"
+                        }`}
                       >
                         <h3
-                          className={`text-2xl font-heading font-black mb-3 tracking-tighter ${cat.variant === "forest" ? "text-white" : "text-forest"}`}
+                          className={`text-2xl font-heading font-black mb-3 tracking-tighter ${
+                            cat.variant === "sand"
+                              ? "text-forest"
+                              : "text-white"
+                          }`}
                         >
                           {sub.title}
                         </h3>
                         <p
-                          className={`text-sm mb-6 ${cat.variant === "forest" ? "text-white/50" : "text-forest/50"}`}
+                          className={`text-sm mb-6 ${
+                            cat.variant === "sand"
+                              ? "text-forest/50"
+                              : "text-white/50"
+                          }`}
                         >
                           {sub.desc}
                         </p>
@@ -215,20 +230,40 @@ export default function Programs() {
                 ) : (
                   <div className="space-y-8">
                     {/* Who Section */}
-                    <div className="flex gap-6 bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-emerald-pop/60 shadow-premium">
+                    <div
+                      className={`flex gap-6 p-6 rounded-2xl shadow-premium transition-all duration-500 ${
+                        cat.variant === "sand"
+                          ? "bg-white"
+                          : cat.variant === "forest"
+                            ? "bg-white/5 backdrop-blur-md border border-white/5"
+                            : "bg-forest text-white"
+                      }`}
+                    >
                       <div
-                        className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-xl ${cat.variant === "forest" ? "bg-white/10 text-emerald-pop" : "bg-forest text-emerald-pop"}`}
+                        className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-xl ${
+                          cat.variant === "sand"
+                            ? "bg-forest text-emerald-pop"
+                            : "bg-white/10 text-emerald-pop"
+                        }`}
                       >
                         <Users className="w-5 h-5" />
                       </div>
                       <div>
                         <h4
-                          className={`text-xs font-black uppercase tracking-[0.2em] mb-2 ${cat.variant === "forest" ? "text-white/40" : "text-forest/40"}`}
+                          className={`text-xs font-black uppercase tracking-[0.2em] mb-2 ${
+                            cat.variant === "sand"
+                              ? "text-forest/40"
+                              : "text-white/40"
+                          }`}
                         >
                           Target Audience
                         </h4>
                         <p
-                          className={`text-lg font-medium leading-tight ${cat.variant === "forest" ? "text-white/80" : "text-forest/80"}`}
+                          className={`text-lg font-medium leading-tight ${
+                            cat.variant === "sand"
+                              ? "text-forest/80"
+                              : "text-white/80"
+                          }`}
                         >
                           {cat.who}
                         </p>
@@ -236,15 +271,31 @@ export default function Programs() {
                     </div>
 
                     {/* Outcomes Section */}
-                    <div className="flex gap-6 bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-emerald-pop/60 shadow-premium">
+                    <div
+                      className={`flex gap-6 p-6 rounded-2xl shadow-premium transition-all duration-500 ${
+                        cat.variant === "sand"
+                          ? "bg-white"
+                          : cat.variant === "forest"
+                            ? "bg-white/5 backdrop-blur-md border border-white/5"
+                            : "bg-forest text-white"
+                      }`}
+                    >
                       <div
-                        className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-xl ${cat.variant === "forest" ? "bg-white/10 text-emerald-pop" : "bg-forest text-emerald-pop"}`}
+                        className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-xl ${
+                          cat.variant === "sand"
+                            ? "bg-forest text-emerald-pop"
+                            : "bg-white/10 text-emerald-pop"
+                        }`}
                       >
                         <Target className="w-5 h-5" />
                       </div>
                       <div>
                         <h4
-                          className={`text-xs font-black uppercase tracking-[0.2em] mb-4 ${cat.variant === "forest" ? "text-white/40" : "text-forest/40"}`}
+                          className={`text-xs font-black uppercase tracking-[0.2em] mb-4 ${
+                            cat.variant === "sand"
+                              ? "text-forest/40"
+                              : "text-white/40"
+                          }`}
                         >
                           Key Outcomes
                         </h4>
@@ -253,7 +304,11 @@ export default function Programs() {
                             <div key={oidx} className="flex items-center gap-3">
                               <div className="w-1.5 h-1.5 rounded-full bg-emerald-pop" />
                               <span
-                                className={`text-sm font-bold ${cat.variant === "forest" ? "text-white/60" : "text-forest/60"}`}
+                                className={`text-sm font-bold ${
+                                  cat.variant === "sand"
+                                    ? "text-forest/60"
+                                    : "text-white/60"
+                                }`}
                               >
                                 {outcome}
                               </span>
@@ -265,7 +320,13 @@ export default function Programs() {
 
                     {cat.duration && (
                       <div
-                        className={`inline-flex items-center gap-3 px-6 py-3 rounded-2xl backdrop-blur-md ${cat.variant === "forest" ? "bg-white/5 border border-white/10 text-white" : "bg-forest/5 border border-emerald-pop/60 text-forest"}`}
+                        className={`inline-flex items-center gap-3 px-6 py-3 rounded-2xl shadow-premium transition-all duration-500 ${
+                          cat.variant === "sand"
+                            ? "bg-white text-forest"
+                            : cat.variant === "forest"
+                              ? "bg-white/5 backdrop-blur-md border border-white/5 text-white"
+                              : "bg-forest text-white"
+                        }`}
                       >
                         <ShieldCheck className="w-4 h-4 text-emerald-pop" />
                         <span className="text-xs font-black uppercase tracking-widest">
@@ -290,6 +351,7 @@ export default function Programs() {
                     src={cat.image}
                     alt={cat.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    loading="lazy"
                   />
                   <div
                     className={`absolute inset-0 bg-linear-to-t via-transparent to-transparent ${cat.variant === "forest" ? "from-forest/60" : "from-forest/40"}`}
@@ -304,7 +366,7 @@ export default function Programs() {
       {/* FINAL CTA */}
       <FinalCTA
         variant="charcoal"
-        bgImage="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1920"
+        bgImage="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1440"
         icon={Compass}
         title={
           <>

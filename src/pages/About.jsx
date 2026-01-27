@@ -58,9 +58,10 @@ export default function About() {
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden bg-forest">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1920"
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1440"
             alt="Human Growth in Nature"
             className="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-linear-to-b from-forest/80 via-forest/40 to-forest" />
 
@@ -186,9 +187,10 @@ export default function About() {
               >
                 <div className="relative w-full aspect-4/5 rounded-3xl overflow-hidden shadow-2xl mb-8 ring-1 ring-forest/10 group-hover:shadow-forest/20 transition-all duration-700">
                   <img
-                    src={member.image}
+                    src={`${member.image.split("?")[0]}?auto=format&fit=crop&q=80&w=600`}
                     alt={member.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    loading="lazy"
                   />
 
                   <div className="absolute inset-x-4 bottom-4 lg:inset-x-6 lg:bottom-6">
@@ -231,9 +233,10 @@ export default function About() {
                 >
                   <div className="relative w-full aspect-4/5 rounded-3xl overflow-hidden shadow-2xl mb-8 ring-1 ring-forest/10 group-hover:shadow-forest/20 transition-all duration-700">
                     <img
-                      src={member.image}
+                      src={`${member.image.split("?")[0]}?auto=format&fit=crop&q=80&w=600`}
                       alt={member.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                      loading="lazy"
                     />
 
                     <div className="absolute inset-x-4 bottom-4 lg:inset-x-6 lg:bottom-6">
@@ -338,9 +341,10 @@ export default function About() {
 
               <div className="relative aspect-3/4 rounded-3xl overflow-hidden shadow-premium group-hover:shadow-[0_50px_100px_rgba(10,30,20,0.15)] transition-all duration-1000">
                 <img
-                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200"
+                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000"
                   alt="Growth through Reflection"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                  loading="lazy"
                 />
 
                 {/* Floating Insight Panel */}
@@ -362,7 +366,7 @@ export default function About() {
       {/* 5. FINAL CTA */}
       <FinalCTA
         variant="charcoal"
-        bgImage="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=1920"
+        bgImage="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=1440"
         icon={Compass}
         title={
           <>

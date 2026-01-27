@@ -29,9 +29,10 @@ export default function Contact() {
       <section className="relative min-h-[80vh] flex flex-col items-center justify-center pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden bg-forest">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1444491741275-3747c53c99b4?auto=format&fit=crop&q=80&w=1920"
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1440&auto=format&fit=crop"
             alt="Outbound Training Bangalore"
             className="w-full h-full object-cover opacity-30 scale-105 animate-slow-zoom"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-linear-to-b from-forest/40 via-forest/80 to-forest" />
         </div>
@@ -346,7 +347,7 @@ export default function Contact() {
       <FinalCTA
         variant="forest"
         icon={Zap}
-        bgImage="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1920"
+        bgImage="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1440"
         title={
           <>
             The Systems are <br />

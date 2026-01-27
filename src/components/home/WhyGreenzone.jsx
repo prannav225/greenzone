@@ -91,7 +91,7 @@ export default function WhyGreenzone() {
               {reasons.map((reason, index) => (
                 <div
                   key={reason.title}
-                  className="group/card flex flex-col gap-8 p-8 rounded-[2rem] bg-white/60 backdrop-blur-sm border border-white shadow-premium hover:shadow-2xl hover:bg-forest transition-all duration-700 hover:-translate-y-2"
+                  className="group/card flex flex-col gap-8 p-8 rounded-[2rem] bg-white/60 backdrop-blur-sm border border-emerald-pop/60 shadow-premium hover:shadow-2xl hover:bg-forest transition-all duration-700 hover:-translate-y-2"
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   <div className="w-16 h-16 rounded-[1.25rem] bg-forest text-emerald-pop shadow-xl flex items-center justify-center transition-all duration-500 group-hover/card:bg-emerald-pop group-hover/card:text-forest group-hover/card:scale-110">

@@ -38,18 +38,18 @@ export default function Navbar() {
         <header
           className={`w-full max-w-7xl h-14 sm:h-18 transition-all duration-500 rounded-2xl sm:rounded-full pointer-events-auto flex items-center justify-between px-5 sm:px-10 shadow-2xl border relative z-50 ${
             isScrolled
-              ? "bg-forest/40 backdrop-blur-2xl border-white/10"
+              ? "glass-card-dark border-white/10"
               : "bg-forest/20 backdrop-blur-xl border-white/10 group-hover:bg-forest/30"
           }`}
         >
           {/* Logo Section */}
           <Link to="/" className="flex items-center gap-3 group shrink-0">
-            <div className="w-8 h-8 sm:w-11 sm:h-11 bg-emerald-pop rounded-full flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:scale-110">
-              <span className="text-forest font-heading font-black text-base sm:text-xl leading-none">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center ring-1 ring-white/10 transition-all duration-700 group-hover:scale-110 group-hover:rotate-6">
+              <span className="text-forest font-heading font-black text-xl sm:text-2xl leading-none select-none">
                 G
               </span>
             </div>
-            <span className="font-heading font-black text-white text-base sm:text-xl tracking-tighter hidden sm:block">
+            <span className="font-heading font-black text-white text-[18px] sm:text-2xl tracking-tighter block">
               Greenzone{" "}
               <span className="text-emerald-pop italic">Adventures.</span>
             </span>
@@ -95,7 +95,7 @@ export default function Navbar() {
               : "-translate-y-4 opacity-0 scale-[0.98] pointer-events-none"
           }`}
         >
-          <div className="bg-forest/35 backdrop-blur-2xl rounded-[2rem] border border-white/10 shadow-3xl p-6 sm:p-8">
+          <div className="glass-card-dark rounded-[2rem] border-white/10 p-6 sm:p-8">
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link

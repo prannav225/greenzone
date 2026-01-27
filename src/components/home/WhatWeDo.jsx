@@ -78,6 +78,7 @@ export default function WhatWeDo() {
                 src={pillar.image}
                 alt={pillar.title}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-linear-to-b from-charcoal/10 via-charcoal/40 to-forest/90" />
             </div>
