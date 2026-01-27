@@ -7,6 +7,7 @@ import {
   ArrowRight,
   Brain,
   Zap,
+  Mountain,
 } from "lucide-react";
 
 const pillars = [
@@ -16,7 +17,7 @@ const pillars = [
     tagline: "The GZ Master Framework",
     description:
       "Field-based journeys designed to trigger deep organizational transformation through structured adventure.",
-    link: "/programs",
+    link: "/programs#obl",
     image:
       "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=800",
   },
@@ -26,7 +27,7 @@ const pillars = [
     tagline: "High Performance Labs",
     description:
       "Strategic alignment and decision-making programs under pressure for modern leadership teams.",
-    link: "/programs",
+    link: "/programs#corporate",
     image:
       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
   },
@@ -36,7 +37,7 @@ const pillars = [
     tagline: "Cognitive Excellence",
     description:
       "Integrating Emotional Intelligence and NLP to enhance personal effectiveness and communication.",
-    link: "/programs",
+    link: "/programs#specialized",
     image:
       "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=800",
   },
@@ -46,9 +47,19 @@ const pillars = [
     tagline: "Career Preparedness",
     description:
       "Equipping the next generation with resilience, agency, and real-world leadership skills.",
-    link: "/programs",
+    link: "/programs#student",
     image:
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    icon: <Mountain className="w-6 h-6" />,
+    title: "Adventure & Travel",
+    tagline: "Conscious Exploration",
+    description:
+      "Purposefully designed expeditions that combine physical challenge with cognitive rest for groups.",
+    link: "/programs#expeditions",
+    image:
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800",
   },
 ];
 
@@ -61,16 +72,16 @@ export default function WhatWeDo() {
       subtitleIcon={<Compass className="w-3.5 h-3.5 text-emerald-pop" />}
       title={
         <>
-          Outbound Learning <br />
-          <span className="text-forest italic">& Services.</span>
+          Experiential Programs <br />
+          <span className="text-forest italic">Designed to Transform.</span>
         </>
       }
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative z-10 px-4 sm:px-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 relative z-10 px-4 sm:px-0">
         {pillars.map((pillar) => (
           <div
             key={pillar.title}
-            className="group relative h-[400px] sm:h-[500px] rounded-card overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-2 ring-1 ring-forest/5"
+            className="group relative h-[450px] sm:h-[500px] rounded-card overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-2 ring-1 ring-forest/5"
           >
             {/* Background Image */}
             <div className="absolute inset-0">
@@ -110,7 +121,7 @@ export default function WhatWeDo() {
                   size="xs"
                   className="sm:opacity-0 sm:translate-y-4 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 transition-all duration-500"
                 >
-                  Explore Program
+                  View Details
                   <ArrowRight className="w-3.5 h-3.5 ml-2" />
                 </PrimaryButton>
               </div>
@@ -121,7 +132,7 @@ export default function WhatWeDo() {
 
       <div className="mt-20 text-center">
         <PrimaryButton to="/programs" variant="primary" size="lg">
-          View All Programs
+          Explore All Training Modules
         </PrimaryButton>
       </div>
     </Section>
