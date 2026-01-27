@@ -26,31 +26,31 @@ export default function Contact() {
   return (
     <div className="bg-white">
       {/* 1. HERO - SEO INTRODUCTION */}
-      <section className="relative min-h-[80vh] flex flex-col items-center justify-center pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden bg-forest">
-        <div className="absolute inset-0 z-0">
+      <section className="relative min-h-[70vh] lg:min-h-[80vh] flex flex-col items-center justify-center pt-28 pb-16 lg:pt-40 lg:pb-32 overflow-hidden bg-forest">
+        <div className="absolute inset-0 z-0 text-center">
           <img
             src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1440&auto=format&fit=crop"
             alt="Outbound Training Bangalore"
             className="w-full h-full object-cover opacity-30 scale-105 animate-slow-zoom"
             fetchpriority="high"
           />
-          <div className="absolute inset-0 bg-linear-to-b from-forest/40 via-forest/80 to-forest" />
+          <div className="absolute inset-0 bg-linear-to-b from-forest/60 via-forest/80 to-forest" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 mb-10 animate-fade-in text-emerald-pop shadow-2xl">
-            <MessageSquare className="w-4 h-4" />
-            <span className="text-[11px] font-black uppercase tracking-[0.4em]">
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 mb-8 sm:mb-10 animate-fade-in text-emerald-pop shadow-2xl">
+            <MessageSquare className="w-3.5 h-3.5" />
+            <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.3em] sm:tracking-[0.4em]">
               Start Your Journey
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black text-white leading-[0.85] tracking-tighter mb-10">
-            Let's Architect <br />
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black text-white leading-[0.9] sm:leading-[0.85] tracking-tighter mb-8 sm:mb-10">
+            Let's Architect <br className="hidden sm:block" />
             <span className="text-emerald-pop italic">Your Evolution.</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto font-medium leading-tight">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/60 max-w-2xl mx-auto font-medium leading-tight px-4 sm:px-0">
             Specializing in high-impact outbound training in Bangalore and
             multi-scale corporate team building across India.
           </p>
@@ -69,10 +69,10 @@ export default function Contact() {
           </>
         }
       >
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-32">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-32">
           {/* Audience Grid */}
-          <div className="space-y-12">
-            <div className="grid sm:grid-cols-2 gap-6">
+          <div className="space-y-8 sm:space-y-12">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
               {[
                 {
                   title: "HR & L&D Leaders",
@@ -97,15 +97,15 @@ export default function Contact() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="p-8 rounded-[2.5rem] bg-white/40 backdrop-blur-xl border border-emerald-pop/60 shadow-premium hover:shadow-2xl transition-all duration-700 hover:-translate-y-1 hover:bg-white/60"
+                  className="p-6 sm:p-8 rounded-card bg-white/40 backdrop-blur-xl border border-emerald-pop/60 shadow-premium hover:shadow-2xl transition-all duration-700 hover:-translate-y-1 hover:bg-white/60"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-forest flex items-center justify-center text-emerald-pop mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-forest flex items-center justify-center text-emerald-pop mb-5 sm:mb-6">
                     {item.icon}
                   </div>
-                  <h4 className="text-xl font-heading font-black text-forest mb-3 tracking-tight">
+                  <h4 className="text-lg sm:text-xl font-heading font-black text-forest mb-2 sm:mb-3 tracking-tight">
                     {item.title}
                   </h4>
-                  <p className="text-sm text-forest/50 leading-relaxed font-medium">
+                  <p className="text-xs sm:text-sm text-forest/50 leading-relaxed font-medium">
                     {item.desc}
                   </p>
                 </div>
@@ -114,13 +114,13 @@ export default function Contact() {
           </div>
 
           {/* Process Timeline */}
-          <div className="bg-forest p-10 lg:p-16 rounded-3xl text-white relative overflow-hidden shadow-4xl self-start">
+          <div className="bg-forest p-8 sm:p-10 lg:p-16 rounded-card text-white relative overflow-hidden shadow-4xl self-start">
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-pop/10 rounded-full blur-[100px] animate-float" />
             <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-forest-light/10 rounded-full blur-[120px]" />
-            <h3 className="text-3xl font-heading font-black mb-10 tracking-tighter">
+            <h3 className="text-2xl sm:text-3xl font-heading font-black mb-8 sm:mb-10 tracking-tighter">
               What happens next?
             </h3>
-            <div className="space-y-10 relative z-10">
+            <div className="space-y-6 sm:space-y-10 relative z-10">
               {[
                 {
                   step: "01",
@@ -143,21 +143,21 @@ export default function Contact() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex gap-8 group bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/5 hover:bg-white/10 transition-all duration-500"
+                  className="flex gap-4 sm:gap-8 group bg-white/5 backdrop-blur-md p-5 sm:p-6 rounded-2xl border border-white/5 hover:bg-white/10 transition-all duration-500"
                 >
                   <div className="flex flex-col items-center">
-                    <div className="w-10 h-10 rounded-full border-2 border-emerald-pop/30 flex items-center justify-center text-emerald-pop text-[10px] font-black group-hover:bg-emerald-pop group-hover:text-forest transition-all">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-emerald-pop/30 flex items-center justify-center text-emerald-pop text-[9px] sm:text-[10px] font-black group-hover:bg-emerald-pop group-hover:text-forest transition-all shrink-0">
                       {item.step}
                     </div>
                     {idx !== 2 && (
                       <div className="w-px h-full bg-linear-to-b from-emerald-pop/30 to-transparent my-2" />
                     )}
                   </div>
-                  <div className="pb-0">
-                    <h5 className="text-xl font-heading font-black mb-2 tracking-tight group-hover:text-emerald-pop transition-colors">
+                  <div>
+                    <h5 className="text-lg sm:text-xl font-heading font-black mb-1 sm:mb-2 tracking-tight group-hover:text-emerald-pop transition-colors">
                       {item.title}
                     </h5>
-                    <p className="text-white/50 text-xs leading-relaxed font-medium">
+                    <p className="text-white/50 text-[11px] sm:text-xs leading-relaxed font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -184,28 +184,28 @@ export default function Contact() {
       >
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
           {/* Contact Details Column */}
-          <div className="lg:col-span-4 space-y-12">
-            <p className="text-xl text-forest/60 font-medium leading-relaxed">
+          <div className="lg:col-span-4 space-y-8 sm:space-y-12">
+            <p className="text-lg sm:text-xl text-forest/60 font-medium leading-relaxed">
               Prefer a direct channel? Reach out to our Bangalore hub for
               immediate corporate team building inquiries.
             </p>
 
-            <div className="space-y-6">
+            <div className="grid sm:grid-cols-1 gap-4 sm:gap-6">
               {[
                 {
-                  icon: <Mail />,
+                  icon: <Mail className="w-5 h-5 sm:w-6 sm:h-6" />,
                   label: "Email Us",
                   info: "hello@greenzone.in",
                   href: "mailto:hello@greenzone.in",
                 },
                 {
-                  icon: <Phone />,
+                  icon: <Phone className="w-5 h-5 sm:w-6 sm:h-6" />,
                   label: "Call Us",
                   info: "+91 98765 43210",
                   href: "tel:+919876543210",
                 },
                 {
-                  icon: <MapPin />,
+                  icon: <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />,
                   label: "Visit Hub",
                   info: "Bengaluru, KA, India",
                   href: "#",
@@ -214,16 +214,16 @@ export default function Contact() {
                 <a
                   key={idx}
                   href={item.href}
-                  className="flex items-center gap-6 p-6 rounded-2xl bg-white/30 backdrop-blur-md border border-white/60 hover:bg-white hover:shadow-xl transition-all duration-500 group"
+                  className="flex items-center gap-4 sm:gap-6 p-5 sm:p-6 rounded-card bg-white/30 backdrop-blur-md border border-white/60 hover:bg-white hover:shadow-xl transition-all duration-500 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-forest text-emerald-pop flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-forest text-emerald-pop flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
                     {item.icon}
                   </div>
-                  <div>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-forest/30 block mb-1">
+                  <div className="min-w-0">
+                    <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-forest/30 block mb-0.5 sm:mb-1">
                       {item.label}
                     </span>
-                    <span className="text-lg font-heading font-black text-forest">
+                    <span className="text-base sm:text-lg font-heading font-black text-forest block truncate">
                       {item.info}
                     </span>
                   </div>
@@ -231,14 +231,14 @@ export default function Contact() {
               ))}
             </div>
 
-            <div className="p-8 rounded-[2rem] bg-emerald-pop/5 backdrop-blur-sm border border-emerald-pop/10 shadow-premium">
-              <div className="flex items-center gap-4 mb-4">
-                <ShieldCheck className="w-6 h-6 text-emerald-pop" />
-                <h5 className="text-sm font-black uppercase tracking-widest text-forest">
+            <div className="p-6 sm:p-8 rounded-card bg-emerald-pop/5 backdrop-blur-sm border border-emerald-pop/10 shadow-premium">
+              <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-pop" />
+                <h5 className="text-[11px] sm:text-sm font-black uppercase tracking-widest text-forest">
                   Privacy Assured
                 </h5>
               </div>
-              <p className="text-xs text-forest/50 font-medium leading-relaxed">
+              <p className="text-[10px] sm:text-xs text-forest/50 font-medium leading-relaxed">
                 Your data is used strictly for configuring your program. No
                 spam, just professional discovery.
               </p>
@@ -247,89 +247,99 @@ export default function Contact() {
 
           {/* Form Column */}
           <div className="lg:col-span-8">
-            <div className="bg-white p-8 lg:p-16 rounded-3xl shadow-premium border border-forest/5 relative overflow-hidden">
+            <div className="bg-white p-6 sm:p-10 lg:p-16 rounded-card shadow-premium border border-forest/5 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-pop/5 rounded-full blur-3xl" />
 
               <form
-                className="space-y-10 relative z-10"
+                className="space-y-6 sm:space-y-10 relative z-10"
                 onSubmit={(e) => e.preventDefault()}
               >
-                <div className="grid md:grid-cols-2 gap-10">
-                  <div className="space-y-3">
-                    <label className="text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
+                <div className="grid md:grid-cols-2 gap-6 sm:gap-10">
+                  <div className="space-y-2 sm:space-y-3">
+                    <label className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
                       Full Name
                     </label>
                     <input
                       type="text"
                       placeholder="NAME"
-                      className="w-full bg-[#fcfdfc] border border-forest/40 px-8 py-5 rounded-2xl focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest placeholder-forest/20 transition-all shadow-sm"
+                      className="w-full bg-[#fcfdfc] border border-forest/40 px-6 sm:px-8 py-4 sm:py-5 rounded-input focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest placeholder-forest/20 transition-all shadow-sm text-sm sm:text-base"
                     />
                   </div>
-                  <div className="space-y-3">
-                    <label className="text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
+                  <div className="space-y-2 sm:space-y-3">
+                    <label className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
                       Organization / Individual
                     </label>
                     <input
                       type="text"
                       placeholder="ENTITY NAME"
-                      className="w-full bg-[#fcfdfc] border border-forest/40 px-8 py-5 rounded-2xl focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest placeholder-forest/20 transition-all shadow-sm"
+                      className="w-full bg-[#fcfdfc] border border-forest/40 px-6 sm:px-8 py-4 sm:py-5 rounded-input focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest placeholder-forest/20 transition-all shadow-sm text-sm sm:text-base"
                     />
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-10">
-                  <div className="space-y-3">
-                    <label className="text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
+                <div className="grid md:grid-cols-2 gap-6 sm:gap-10">
+                  <div className="space-y-2 sm:space-y-3">
+                    <label className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
                       Program Interest
                     </label>
-                    <select className="w-full bg-[#fcfdfc] border border-forest/40 px-8 py-5 rounded-2xl focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest appearance-none cursor-pointer transition-all shadow-sm">
-                      <option>Outbound Learning (OBL)</option>
-                      <option>Corporate Team Building</option>
-                      <option>Student Development</option>
-                      <option>Personal Retreat / Trek</option>
-                    </select>
+                    <div className="relative">
+                      <select className="w-full bg-[#fcfdfc] border border-forest/40 px-6 sm:px-8 py-4 sm:py-5 rounded-input focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest appearance-none cursor-pointer transition-all shadow-sm text-sm sm:text-base">
+                        <option>Outbound Learning (OBL)</option>
+                        <option>Corporate Team Building</option>
+                        <option>Student Development</option>
+                        <option>Personal Retreat / Trek</option>
+                      </select>
+                      <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-forest/40">
+                        <ArrowRight className="w-4 h-4 rotate-90" />
+                      </div>
+                    </div>
                   </div>
-                  <div className="space-y-3">
-                    <label className="text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
+                  <div className="space-y-2 sm:space-y-3">
+                    <label className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
                       Group Size
                     </label>
                     <input
                       type="text"
                       placeholder="E.G. 15-20"
-                      className="w-full bg-[#fcfdfc] border border-forest/40 px-8 py-5 rounded-2xl focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest placeholder-forest/20 transition-all shadow-sm"
+                      className="w-full bg-[#fcfdfc] border border-forest/40 px-6 sm:px-8 py-4 sm:py-5 rounded-input focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest placeholder-forest/20 transition-all shadow-sm text-sm sm:text-base"
                     />
                   </div>
                 </div>
 
-                <div className="space-y-3">
-                  <label className="text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
+                <div className="space-y-2 sm:space-y-3">
+                  <label className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
                     Preferred Location
                   </label>
-                  <select className="w-full bg-[#fcfdfc] border border-forest/40 px-8 py-5 rounded-2xl focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest appearance-none cursor-pointer transition-all shadow-sm">
-                    <option>Western Ghats / Chikmagalur</option>
-                    <option>Hampi / Lepakshi (Historical)</option>
-                    <option>Coorg / Wayanad</option>
-                    <option>Gokarna (Coastal)</option>
-                    <option>Himalayas</option>
-                    <option>Bengaluru Local</option>
-                  </select>
+                  <div className="relative">
+                    <select className="w-full bg-[#fcfdfc] border border-forest/40 px-6 sm:px-8 py-4 sm:py-5 rounded-input focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest appearance-none cursor-pointer transition-all shadow-sm text-sm sm:text-base">
+                      <option>Western Ghats / Chikmagalur</option>
+                      <option>Hampi / Lepakshi (Historical)</option>
+                      <option>Coorg / Wayanad</option>
+                      <option>Gokarna (Coastal)</option>
+                      <option>Himalayas</option>
+                      <option>Bengaluru Local</option>
+                    </select>
+                    <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-forest/40">
+                      <ArrowRight className="w-4 h-4 rotate-90" />
+                    </div>
+                  </div>
                 </div>
 
-                <div className="space-y-3">
-                  <label className="text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
+                <div className="space-y-2 sm:space-y-3">
+                  <label className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
                     Objectives & Message
                   </label>
                   <textarea
-                    rows={5}
+                    rows={4}
                     placeholder="DESCRIBE YOUR GOALS..."
-                    className="w-full bg-[#fcfdfc] border border-forest/40 px-8 py-5 rounded-3xl focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest placeholder-forest/20 transition-all resize-none shadow-sm"
+                    className="w-full bg-[#fcfdfc] border border-forest/40 px-6 sm:px-8 py-4 sm:py-5 rounded-input focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest placeholder-forest/20 transition-all resize-none shadow-sm text-sm sm:text-base"
                   />
                 </div>
 
                 <PrimaryButton
                   variant="primary"
                   size="lg"
-                  className="w-full group"
+                  className="w-full group py-4 sm:py-5"
                 >
                   Transmit Inquiry
                   <div className="relative ml-4">

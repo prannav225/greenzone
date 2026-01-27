@@ -124,7 +124,7 @@ export default function Programs() {
   return (
     <div className="bg-white">
       {/* 1. HERO - SEO INTRODUCTION */}
-      <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden bg-forest">
+      <section className="relative min-h-[80vh] lg:min-h-[90vh] flex flex-col items-center justify-center pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-forest">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&q=80&w=1440"
@@ -142,11 +142,11 @@ export default function Programs() {
               Primary Solutions
             </span>
           </div>
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-heading font-black text-white leading-[0.85] tracking-tighter mb-10 animate-fade-in-up">
-            Built for <br />
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black text-white leading-[0.9] sm:leading-[0.85] tracking-tighter mb-8 sm:mb-10 animate-fade-in-up">
+            Built for <br className="hidden sm:block" />
             <span className="text-emerald-pop italic">Performance.</span>
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-white/50 max-w-3xl mx-auto font-medium leading-tight animate-fade-in-up animate-delay-200">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/50 max-w-3xl mx-auto font-medium leading-tight animate-fade-in-up animate-delay-200 px-4 sm:px-0">
             Specialized experiential modules designed to build leadership,
             resilience, and emotional intelligence through structured nature-led
             journeys.
@@ -171,13 +171,13 @@ export default function Programs() {
             </span>
           }
         >
-          <div className="grid lg:grid-cols-12 gap-16 lg:gap-32 items-center">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-32 items-center">
             <div
               className={`lg:col-span-7 ${idx % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}
             >
               <div className="max-w-2xl">
                 <p
-                  className={`text-xl sm:text-2xl mb-12 font-medium leading-tight ${cat.variant === "forest" ? "text-white/70" : "text-forest/70"}`}
+                  className={`text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 font-medium leading-tight ${cat.variant === "forest" ? "text-white/70" : "text-forest/70"}`}
                 >
                   {cat.description}
                 </p>
@@ -187,7 +187,7 @@ export default function Programs() {
                     {cat.subsections.map((sub, sidx) => (
                       <div
                         key={sidx}
-                        className={`p-10 rounded-2xl shadow-premium transition-all duration-500 hover:-translate-y-1 ${
+                        className={`p-6 sm:p-10 rounded-card shadow-premium transition-all duration-500 hover:-translate-y-1 ${
                           cat.variant === "sand"
                             ? "bg-white"
                             : cat.variant === "forest"
@@ -231,7 +231,7 @@ export default function Programs() {
                   <div className="space-y-8">
                     {/* Who Section */}
                     <div
-                      className={`flex gap-6 p-6 rounded-2xl shadow-premium transition-all duration-500 ${
+                      className={`flex gap-4 sm:gap-6 p-5 sm:p-6 rounded-card shadow-premium transition-all duration-500 ${
                         cat.variant === "sand"
                           ? "bg-white"
                           : cat.variant === "forest"
@@ -240,17 +240,17 @@ export default function Programs() {
                       }`}
                     >
                       <div
-                        className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-xl ${
+                        className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0 shadow-xl ${
                           cat.variant === "sand"
                             ? "bg-forest text-emerald-pop"
                             : "bg-white/10 text-emerald-pop"
                         }`}
                       >
-                        <Users className="w-5 h-5" />
+                        <Users className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
                       </div>
                       <div>
                         <h4
-                          className={`text-xs font-black uppercase tracking-[0.2em] mb-2 ${
+                          className={`text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] mb-1 sm:mb-2 ${
                             cat.variant === "sand"
                               ? "text-forest/40"
                               : "text-white/40"
@@ -259,7 +259,7 @@ export default function Programs() {
                           Target Audience
                         </h4>
                         <p
-                          className={`text-lg font-medium leading-tight ${
+                          className={`text-base sm:text-lg font-medium leading-tight ${
                             cat.variant === "sand"
                               ? "text-forest/80"
                               : "text-white/80"
@@ -272,7 +272,7 @@ export default function Programs() {
 
                     {/* Outcomes Section */}
                     <div
-                      className={`flex gap-6 p-6 rounded-2xl shadow-premium transition-all duration-500 ${
+                      className={`flex gap-6 p-6 rounded-card shadow-premium transition-all duration-500 ${
                         cat.variant === "sand"
                           ? "bg-white"
                           : cat.variant === "forest"
@@ -320,7 +320,7 @@ export default function Programs() {
 
                     {cat.duration && (
                       <div
-                        className={`inline-flex items-center gap-3 px-6 py-3 rounded-2xl shadow-premium transition-all duration-500 ${
+                        className={`inline-flex items-center gap-3 px-6 py-3 rounded-card shadow-premium transition-all duration-500 ${
                           cat.variant === "sand"
                             ? "bg-white text-forest"
                             : cat.variant === "forest"
@@ -344,9 +344,9 @@ export default function Programs() {
             >
               <div className="relative group">
                 <div
-                  className={`absolute -inset-10 border rounded-3xl -z-10 animate-float ${cat.variant === "forest" ? "border-white/5" : "border-forest/5"}`}
+                  className={`absolute -inset-10 border rounded-card -z-10 animate-float ${cat.variant === "forest" ? "border-white/5" : "border-forest/5"}`}
                 />
-                <div className="relative aspect-3/4 rounded-3xl overflow-hidden shadow-premium group-hover:shadow-[0_50px_100px_rgba(10,30,20,0.15)] transition-all duration-1000">
+                <div className="relative aspect-3/4 rounded-image overflow-hidden shadow-premium group-hover:shadow-[0_50px_100px_rgba(10,30,20,0.15)] transition-all duration-1000">
                   <img
                     src={cat.image}
                     alt={cat.title}

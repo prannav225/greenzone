@@ -49,7 +49,7 @@ export default function Navbar() {
                 G
               </span>
             </div>
-            <span className="font-heading font-black text-white text-[18px] sm:text-2xl tracking-tighter block">
+            <span className="font-heading font-black text-white text-[18px] sm:text-xl tracking-tighter block">
               Greenzone{" "}
               <span className="text-emerald-pop italic">Adventures.</span>
             </span>
@@ -95,13 +95,13 @@ export default function Navbar() {
               : "-translate-y-4 opacity-0 scale-[0.98] pointer-events-none"
           }`}
         >
-          <div className="glass-card-dark rounded-[2rem] border-white/10 p-6 sm:p-8">
+          <div className="glass-card-dark rounded-card border-white/10 p-6 sm:p-8">
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="flex items-center justify-between p-4 rounded-2xl transition-colors duration-200 hover:bg-white/5 group text-white hover:text-emerald-pop"
+                  className="flex items-center justify-between p-4 rounded-card transition-colors duration-200 hover:bg-white/5 group text-white hover:text-emerald-pop"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <span className="font-heading font-black text-lg tracking-tight">
@@ -115,7 +115,7 @@ export default function Navbar() {
             <div className="mt-4 pt-6 border-t border-white/5">
               <Link
                 to="/contact"
-                className="flex items-center justify-center gap-4 w-full bg-emerald-pop text-forest py-5 rounded-2xl font-black text-sm uppercase tracking-widest shadow-xl shadow-emerald-pop/10"
+                className="flex items-center justify-center gap-4 w-full bg-emerald-pop text-forest py-5 rounded-card font-black text-sm uppercase tracking-widest shadow-xl shadow-emerald-pop/10"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Start Your Journey <ArrowRight size={18} />

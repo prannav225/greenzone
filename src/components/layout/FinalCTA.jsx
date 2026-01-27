@@ -16,7 +16,7 @@ export default function FinalCTA({
 
   return (
     <section
-      className={`relative min-h-[85vh] flex items-center justify-center text-center py-24 lg:py-32 overflow-hidden ${
+      className={`relative min-h-[70vh] lg:min-h-[85vh] flex items-center justify-center text-center py-16 sm:py-24 lg:py-32 overflow-hidden ${
         variant === "forest"
           ? "bg-forest"
           : variant === "charcoal"
@@ -62,7 +62,7 @@ export default function FinalCTA({
         {/* Animated Icon */}
         {Icon && (
           <div
-            className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl mb-12 shadow-premium animate-float ${
+            className={`inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-card mb-10 sm:mb-12 shadow-premium animate-float ${
               isDark ? "bg-white text-forest" : "bg-forest text-white"
             }`}
           >
@@ -74,7 +74,7 @@ export default function FinalCTA({
 
         {/* Heading */}
         <h2
-          className={`text-5xl md:text-7xl lg:text-8xl font-heading font-black leading-[0.85] tracking-tighter mb-8 ${
+          className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black leading-[0.95] sm:leading-[0.85] tracking-tighter mb-6 sm:mb-8 px-4 sm:px-0 ${
             isDark ? "text-white" : "text-forest"
           }`}
         >
@@ -83,7 +83,7 @@ export default function FinalCTA({
 
         {/* Description */}
         <p
-          className={`text-xl md:text-2xl font-medium mb-16 max-w-2xl mx-auto leading-tight ${
+          className={`text-lg sm:text-xl md:text-2xl font-medium mb-12 sm:mb-16 max-w-2xl mx-auto leading-tight px-6 sm:px-0 ${
             isDark ? "text-white/60" : "text-forest/60"
           }`}
         >

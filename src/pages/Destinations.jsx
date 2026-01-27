@@ -160,7 +160,7 @@ export default function Destinations() {
   return (
     <div className="bg-white">
       {/* 1. HERO - SEO INTRO */}
-      <section className="relative min-h-[85vh] flex flex-col items-center justify-center pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden bg-forest">
+      <section className="relative min-h-[80vh] lg:min-h-[85vh] flex flex-col items-center justify-center pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-forest">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1440"
@@ -178,11 +178,11 @@ export default function Destinations() {
               The Logic of Space
             </span>
           </div>
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-heading font-black text-white leading-[0.85] tracking-tighter mb-10 animate-fade-in-up">
-            Selected <br />
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black text-white leading-[0.9] sm:leading-[0.85] tracking-tighter mb-8 sm:mb-10 animate-fade-in-up">
+            Selected <br className="hidden sm:block" />
             <span className="text-emerald-pop italic">Geographies.</span>
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-white/50 max-w-3xl mx-auto font-medium leading-tight animate-fade-in-up animate-delay-200">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/50 max-w-3xl mx-auto font-medium leading-tight animate-fade-in-up animate-delay-200 px-4 sm:px-0">
             We don't choose locations for their beauty alone. We choose them for
             their functional architecture—the way a landscape forces a specific
             psychological shift.
@@ -203,18 +203,18 @@ export default function Destinations() {
         }
       >
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 items-center">
-          <div className="space-y-8">
-            <p className="text-2xl text-forest/80 leading-tight font-medium italic border-l-4 border-emerald-pop pl-8">
+          <div className="space-y-6 sm:space-y-8">
+            <p className="text-xl sm:text-2xl text-forest/80 leading-tight font-medium italic border-l-4 border-emerald-pop pl-6 sm:pl-8">
               In experiential learning, the environment is the most powerful
               facilitator.
             </p>
-            <p className="text-forest/60 text-lg">
+            <p className="text-forest/60 text-base sm:text-lg">
               A desert landscape demands minimalism and internal focus, while a
               dense forest necessitates complex collaboration and sensory
               awareness. We match the physical terrain to your organizational
               goals to ensure the shift in behavior is deep and permanent.
             </p>
-            <div className="grid sm:grid-cols-2 gap-6 pt-8">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 pt-4 sm:pt-8">
               {[
                 {
                   label: "Complexity",
@@ -229,15 +229,15 @@ export default function Destinations() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="p-8 rounded-3xl bg-white/40 backdrop-blur-md border border-emerald-pop/60 shadow-premium hover:shadow-2xl hover:bg-white/60 transition-all duration-700 hover:-translate-y-2 group"
+                  className="p-6 sm:p-8 rounded-card bg-white/40 backdrop-blur-md border border-emerald-pop/60 shadow-premium hover:shadow-2xl hover:bg-white/60 transition-all duration-700 hover:-translate-y-2 group"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-emerald-pop text-white flex items-center justify-center mb-6 shadow-xl transition-all duration-500 group-hover:bg-emerald-pop group-hover:text-forest group-hover:scale-110">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-emerald-pop text-white flex items-center justify-center mb-5 sm:mb-6 shadow-xl transition-all duration-500 group-hover:bg-emerald-pop group-hover:text-forest group-hover:scale-110">
                     {item.icon}
                   </div>
-                  <h4 className="text-xl font-heading font-black text-forest mb-2 tracking-tighter">
+                  <h4 className="text-lg sm:text-xl font-heading font-black text-forest mb-1 sm:mb-2 tracking-tighter text-center sm:text-left">
                     {item.label}
                   </h4>
-                  <p className="text-sm text-forest/50 font-medium">
+                  <p className="text-xs sm:text-sm text-forest/50 font-medium text-center sm:text-left">
                     {item.desc}
                   </p>
                 </div>
@@ -245,8 +245,8 @@ export default function Destinations() {
             </div>
           </div>
           <div className="relative group">
-            <div className="absolute -inset-10 border border-forest/5 rounded-3xl -z-10 animate-float" />
-            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-4xl group-hover:shadow-[0_50px_100px_rgba(10,30,20,0.15)] transition-all duration-1000">
+            <div className="absolute -inset-10 border border-forest/5 rounded-card -z-10 animate-float" />
+            <div className="relative aspect-square rounded-image overflow-hidden shadow-4xl group-hover:shadow-[0_50px_100px_rgba(10,30,20,0.15)] transition-all duration-1000">
               <img
                 src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&q=80&w=1000"
                 alt="Environmental Facilitation"
@@ -277,9 +277,9 @@ export default function Destinations() {
               <button
                 key={dest.id}
                 onClick={() => setActiveTab(dest.id)}
-                className={`w-full text-left p-6 rounded-[2rem] transition-all duration-500 flex items-center justify-between group backdrop-blur-md border ${
+                className={`w-full text-left p-4 sm:p-6 rounded-card transition-all duration-500 flex items-center justify-between group backdrop-blur-md border ${
                   activeTab === dest.id
-                    ? "bg-forest/90 text-white shadow-2xl -translate-x-2 border-white/10"
+                    ? "bg-forest/90 text-white shadow-2xl sm:-translate-x-2 border-white/10"
                     : "bg-white/40 text-forest border-white/60 hover:bg-white/60 hover:shadow-xl"
                 }`}
               >
@@ -319,19 +319,19 @@ export default function Destinations() {
                     : "absolute opacity-0 translate-y-10 pointer-events-none"
                 }`}
               >
-                <div className="relative aspect-video sm:aspect-4/3 lg:aspect-video rounded-3xl overflow-hidden shadow-premium">
+                <div className="relative aspect-video sm:aspect-4/3 lg:aspect-video rounded-image overflow-hidden shadow-premium">
                   <img
                     src={dest.image}
                     alt={dest.name}
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute inset-x-0 bottom-0 p-10 bg-linear-to-t from-forest/80 to-transparent flex items-end justify-between">
+                  <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 bg-linear-to-t from-forest/80 to-transparent flex items-end justify-between">
                     <div>
-                      <p className="text-emerald-pop font-black text-[10px] uppercase tracking-[0.4em] mb-2">
+                      <p className="text-emerald-pop font-black text-[8px] sm:text-[10px] uppercase tracking-[0.4em] mb-1 sm:mb-2">
                         Selected Sector
                       </p>
-                      <h4 className="text-4xl text-white font-heading font-black tracking-tighter">
+                      <h4 className="text-2xl sm:text-4xl text-white font-heading font-black tracking-tighter text-center sm:text-left">
                         {dest.name}
                       </h4>
                     </div>
@@ -366,7 +366,7 @@ export default function Destinations() {
                       {dest.useCases.map((use, i) => (
                         <div
                           key={i}
-                          className="p-6 rounded-2xl bg-white/40 backdrop-blur-md border border-white/60 shadow-sm relative group/use transition-all hover:shadow-md hover:bg-white/60"
+                          className="p-6 rounded-card bg-white/40 backdrop-blur-md border border-white/60 shadow-sm relative group/use transition-all hover:shadow-md hover:bg-white/60"
                         >
                           <div className="flex items-center gap-3 mb-2">
                             {use.type.includes("OBL") ||

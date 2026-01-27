@@ -41,9 +41,9 @@ export default function WhoWeWorkWith() {
         {segments.map((segment, idx) => (
           <div
             key={idx}
-            className="group p-8 rounded-[2.5rem] bg-white/50 backdrop-blur-sm border border-emerald-pop/60 focus-within:bg-white shadow-premium hover:shadow-2xl hover:bg-forest transition-all duration-700 hover:-translate-y-2 flex flex-col items-start"
+            className="group p-8 rounded-card bg-white/50 backdrop-blur-sm border border-emerald-pop/60 focus-within:bg-white shadow-premium hover:shadow-2xl hover:bg-forest transition-all duration-700 hover:-translate-y-2 flex flex-col items-start"
           >
-            <div className="w-14 h-14 rounded-2xl bg-forest text-emerald-pop flex items-center justify-center mb-8 shadow-xl transition-all duration-500 group-hover:bg-emerald-pop group-hover:text-forest group-hover:scale-110">
+            <div className="w-14 h-14 rounded-card bg-forest text-emerald-pop flex items-center justify-center mb-8 shadow-xl transition-all duration-500 group-hover:bg-emerald-pop group-hover:text-forest group-hover:scale-110">
               {segment.icon}
             </div>
             <h3 className="text-2xl font-heading font-black text-forest mb-4 tracking-tighter leading-tight group-hover:text-white transition-colors duration-500">

@@ -15,10 +15,10 @@ const variants = {
 };
 
 const sizes = {
-  xs: "px-3 py-1.5 text-xs font-bold uppercase tracking-widest",
-  sm: "px-4 py-2 text-sm font-bold uppercase tracking-widest",
-  md: "px-6 py-3 text-base font-bold uppercase tracking-widest",
-  lg: "px-8 py-4 text-lg font-bold uppercase tracking-widest",
+  xs: "px-3 py-1.5 text-[9px] sm:text-xs font-bold uppercase tracking-widest",
+  sm: "px-4 py-2 text-[10px] sm:text-sm font-bold uppercase tracking-widest",
+  md: "px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-base font-bold uppercase tracking-widest",
+  lg: "px-6 sm:px-10 py-3.5 sm:py-5 text-sm sm:text-lg font-bold uppercase tracking-widest",
 };
 
 export default function PrimaryButton({

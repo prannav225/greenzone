@@ -55,7 +55,7 @@ export default function About() {
   return (
     <div className="bg-white">
       {/* 1. HERO - Introduction */}
-      <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden bg-forest">
+      <section className="relative min-h-[80vh] lg:min-h-[90vh] flex flex-col items-center justify-center pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-forest">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1440"
@@ -76,12 +76,12 @@ export default function About() {
               Established Foundations
             </span>
           </div>
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-heading font-black text-white leading-[0.85] tracking-tighter mb-10 animate-fade-in-up">
-            Human <br />
-            Development <br />
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black text-white leading-[0.9] sm:leading-[0.85] tracking-tighter mb-8 sm:mb-10 animate-fade-in-up">
+            Human <br className="hidden sm:block" />
+            Development <br className="hidden sm:block" />
             <span className="text-emerald-pop italic">Redefined.</span>
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-white/50 max-w-3xl mx-auto font-medium leading-tight animate-fade-in-up animate-delay-200">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/50 max-w-3xl mx-auto font-medium leading-tight animate-fade-in-up animate-delay-200 px-4 sm:px-0">
             Greenzone Adventures is a specialized experiential learning
             organization based in Bangalore, bridging theory and behavior
             through structured nature-led journeys.
@@ -135,7 +135,7 @@ export default function About() {
           ].map((service, idx) => (
             <div
               key={idx}
-              className="relative group p-10 rounded-3xl bg-white/40 backdrop-blur-md border border-emerald-pop/60 shadow-premium overflow-hidden transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl hover:bg-white/60"
+              className="relative group p-8 sm:p-10 rounded-card bg-white/40 backdrop-blur-md border border-emerald-pop/60 shadow-premium overflow-hidden transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl hover:bg-white/60"
             >
               {/* Subtle background icon */}
               <div className="absolute -top-6 -right-6 text-forest/5 group-hover:text-forest/10 transition-colors duration-500 scale-[2.5] opacity-20">
@@ -185,7 +185,7 @@ export default function About() {
                 key={idx}
                 className="group flex flex-col items-center sm:items-start"
               >
-                <div className="relative w-full aspect-4/5 rounded-3xl overflow-hidden shadow-2xl mb-8 ring-1 ring-forest/10 group-hover:shadow-forest/20 transition-all duration-700">
+                <div className="relative w-full aspect-4/5 rounded-image overflow-hidden shadow-2xl mb-8 ring-1 ring-forest/10 group-hover:shadow-forest/20 transition-all duration-700">
                   <img
                     src={`${member.image.split("?")[0]}?auto=format&fit=crop&q=80&w=600`}
                     alt={member.name}
@@ -193,20 +193,20 @@ export default function About() {
                     loading="lazy"
                   />
 
-                  <div className="absolute inset-x-4 bottom-4 lg:inset-x-6 lg:bottom-6">
-                    <div className="bg-forest/60 backdrop-blur-2xl p-6 rounded-2xl border border-white/10 shadow-4xl relative z-10 overflow-hidden transform transition-all duration-500 group-hover:bg-forest/80">
+                  <div className="absolute inset-x-2 bottom-2 sm:inset-x-4 sm:bottom-4 lg:inset-x-6 lg:bottom-6">
+                    <div className="bg-forest/70 backdrop-blur-2xl p-4 sm:p-6 rounded-card border border-white/10 shadow-4xl relative z-10 overflow-hidden transform transition-all duration-500 group-hover:bg-forest/80">
                       <div className="relative z-20">
-                        <p className="text-emerald-pop font-black text-[10px] uppercase tracking-[0.25em] mb-2">
+                        <p className="text-emerald-pop font-black text-[8px] sm:text-[10px] uppercase tracking-[0.25em] mb-1 sm:mb-2 text-center sm:text-left">
                           {member.shortRole}
                         </p>
-                        <p className="text-white font-heading font-black text-2xl tracking-tighter leading-none mb-4">
+                        <p className="text-white font-heading font-black text-lg sm:text-2xl tracking-tighter leading-none mb-2 sm:mb-4 text-center sm:text-left">
                           {member.name}
                         </p>
-                        <div className="flex flex-wrap items-center gap-4 uppercase tracking-[0.2em] font-black text-[9px]">
+                        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-4 uppercase tracking-[0.2em] font-black text-[8px] sm:text-[9px]">
                           <span className="text-emerald-pop/80">
                             {member.role}
                           </span>
-                          <span className="w-1 h-1 rounded-full bg-white/20" />
+                          <span className="w-1 h-1 rounded-full bg-white/20 hidden sm:block" />
                           <span className="text-white/40">{member.stats}</span>
                         </div>
                       </div>
@@ -231,7 +231,7 @@ export default function About() {
                   key={idx}
                   className="group flex flex-col items-center sm:items-start"
                 >
-                  <div className="relative w-full aspect-4/5 rounded-3xl overflow-hidden shadow-2xl mb-8 ring-1 ring-forest/10 group-hover:shadow-forest/20 transition-all duration-700">
+                  <div className="relative w-full aspect-4/5 rounded-image overflow-hidden shadow-2xl mb-8 ring-1 ring-forest/10 group-hover:shadow-forest/20 transition-all duration-700">
                     <img
                       src={`${member.image.split("?")[0]}?auto=format&fit=crop&q=80&w=600`}
                       alt={member.name}
@@ -239,20 +239,20 @@ export default function About() {
                       loading="lazy"
                     />
 
-                    <div className="absolute inset-x-4 bottom-4 lg:inset-x-6 lg:bottom-6">
-                      <div className="bg-forest/60 backdrop-blur-2xl p-6 rounded-2xl border border-white/10 shadow-4xl relative z-10 overflow-hidden transform transition-all duration-500 group-hover:bg-forest/80">
+                    <div className="absolute inset-x-2 bottom-2 sm:inset-x-4 sm:bottom-4 lg:inset-x-6 lg:bottom-6">
+                      <div className="bg-forest/70 backdrop-blur-2xl p-4 sm:p-6 rounded-card border border-white/10 shadow-4xl relative z-10 overflow-hidden transform transition-all duration-500 group-hover:bg-forest/80">
                         <div className="relative z-20">
-                          <p className="text-emerald-pop font-black text-[10px] uppercase tracking-[0.25em] mb-2">
+                          <p className="text-emerald-pop font-black text-[8px] sm:text-[10px] uppercase tracking-[0.25em] mb-1 sm:mb-2 text-center sm:text-left">
                             {member.shortRole}
                           </p>
-                          <p className="text-white font-heading font-black text-2xl tracking-tighter leading-none mb-4">
+                          <p className="text-white font-heading font-black text-lg sm:text-2xl tracking-tighter leading-none mb-2 sm:mb-4 text-center sm:text-left">
                             {member.name}
                           </p>
-                          <div className="flex flex-wrap items-center gap-4 uppercase tracking-[0.2em] font-black text-[9px]">
+                          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-4 uppercase tracking-[0.2em] font-black text-[8px] sm:text-[9px]">
                             <span className="text-emerald-pop/80">
                               {member.role}
                             </span>
-                            <span className="w-1 h-1 rounded-full bg-white/20" />
+                            <span className="w-1 h-1 rounded-full bg-white/20 hidden sm:block" />
                             <span className="text-white/40">
                               {member.stats}
                             </span>
@@ -289,7 +289,7 @@ export default function About() {
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-32 items-center">
           <div className="lg:col-span-7">
             <div className="max-w-2xl mx-auto lg:mx-0">
-              <p className="text-2xl sm:text-3xl text-forest/80 leading-tight mb-20 font-medium italic border-l-[6px] border-emerald-pop pl-10 pr-4">
+              <p className="text-xl sm:text-2xl md:text-3xl text-forest/80 leading-tight mb-12 sm:mb-20 font-medium italic border-l-[6px] border-emerald-pop pl-6 sm:pl-10 pr-4">
                 We bridge the gap between academic theory and real-world
                 behavior through high-impact, nature-led training.
               </p>
@@ -314,9 +314,9 @@ export default function About() {
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="group flex flex-col sm:flex-row gap-8 p-10 rounded-3xl bg-white/40 backdrop-blur-md border border-emerald-pop/60 shadow-premium hover:shadow-2xl transition-all duration-700 hover:-translate-x-2 hover:bg-white/60"
+                    className="group flex flex-col sm:flex-row gap-6 sm:gap-8 p-6 sm:p-10 rounded-card bg-white/40 backdrop-blur-md border border-emerald-pop/60 shadow-premium hover:shadow-2xl transition-all duration-700 hover:-translate-x-2 hover:bg-white/60"
                   >
-                    <div className="w-16 h-16 rounded-xl bg-forest flex items-center justify-center shrink-0 shadow-2xl group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-forest flex items-center justify-center shrink-0 shadow-2xl group-hover:scale-110 transition-transform">
                       {item.icon}
                     </div>
                     <div>
@@ -336,10 +336,10 @@ export default function About() {
           <div className="lg:col-span-5">
             <div className="relative group">
               {/* Decorative Frame */}
-              <div className="absolute -inset-10 border border-forest/5 rounded-3xl -z-10 animate-float" />
-              <div className="absolute inset-0 bg-forest rounded-3xl translate-x-12 translate-y-12 -z-20 opacity-[0.03]" />
+              <div className="absolute -inset-10 border border-forest/5 rounded-card -z-10 animate-float" />
+              <div className="absolute inset-0 bg-forest rounded-card translate-x-12 translate-y-12 -z-20 opacity-[0.03]" />
 
-              <div className="relative aspect-3/4 rounded-3xl overflow-hidden shadow-premium group-hover:shadow-[0_50px_100px_rgba(10,30,20,0.15)] transition-all duration-1000">
+              <div className="relative aspect-3/4 rounded-image overflow-hidden shadow-premium group-hover:shadow-[0_50px_100px_rgba(10,30,20,0.15)] transition-all duration-1000">
                 <img
                   src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000"
                   alt="Growth through Reflection"
@@ -348,7 +348,7 @@ export default function About() {
                 />
 
                 {/* Floating Insight Panel */}
-                <div className="absolute inset-x-6 bottom-6 lg:bottom-10 p-8 lg:p-10 bg-forest/95 backdrop-blur-3xl rounded-3xl border border-white/10 shadow-4xl group-hover:bg-forest transition-all duration-500 flex flex-col items-center justify-center text-center">
+                <div className="absolute inset-x-6 bottom-6 lg:bottom-10 p-8 lg:p-10 bg-forest/95 backdrop-blur-3xl rounded-card border border-white/10 shadow-4xl group-hover:bg-forest transition-all duration-500 flex flex-col items-center justify-center text-center">
                   <p className="text-emerald-pop font-black text-[10px] uppercase tracking-[0.4em] mb-4">
                     The Formula
                   </p>

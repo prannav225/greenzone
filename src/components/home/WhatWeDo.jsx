@@ -66,11 +66,11 @@ export default function WhatWeDo() {
         </>
       }
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative z-10 px-4 sm:px-0">
         {pillars.map((pillar) => (
           <div
             key={pillar.title}
-            className="group relative h-[450px] sm:h-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-2 ring-1 ring-forest/5"
+            className="group relative h-[400px] sm:h-[500px] rounded-card overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-2 ring-1 ring-forest/5"
           >
             {/* Background Image */}
             <div className="absolute inset-0">
@@ -85,22 +85,22 @@ export default function WhatWeDo() {
 
             {/* Top Info Bar */}
             <div className="absolute top-6 left-6 right-6">
-              <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white shadow-2xl group-hover:bg-emerald-pop group-hover:text-forest transition-all duration-500">
+              <div className="w-12 h-12 rounded-card bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white shadow-2xl group-hover:bg-emerald-pop group-hover:text-forest transition-all duration-500">
                 {pillar.icon}
               </div>
             </div>
 
             {/* Content Overlay */}
-            <div className="absolute inset-x-0 bottom-0 p-8 pt-24 bg-linear-to-t from-forest via-forest/80 to-transparent">
-              <span className="text-emerald-pop font-heading font-black text-[9px] uppercase tracking-[0.3em] mb-3 block">
+            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 pt-20 sm:pt-24 bg-linear-to-t from-forest via-forest/80 to-transparent">
+              <span className="text-emerald-pop font-heading font-black text-[8px] sm:text-[9px] uppercase tracking-[0.3em] mb-2 sm:mb-3 block">
                 {pillar.tagline}
               </span>
-              <h3 className="text-2xl font-heading font-black text-white mb-4 tracking-tighter leading-none">
+              <h3 className="text-xl sm:text-2xl font-heading font-black text-white mb-3 sm:mb-4 tracking-tighter leading-none">
                 {pillar.title}
               </h3>
 
-              <div className="space-y-6">
-                <p className="text-white/60 text-xs leading-relaxed font-medium line-clamp-2 group-hover:line-clamp-none transition-all duration-500">
+              <div className="space-y-4 sm:space-y-6">
+                <p className="text-white/60 text-[11px] sm:text-xs leading-relaxed font-medium line-clamp-2 group-hover:line-clamp-none transition-all duration-500">
                   {pillar.description}
                 </p>
 
@@ -108,7 +108,7 @@ export default function WhatWeDo() {
                   to={pillar.link}
                   variant="white"
                   size="xs"
-                  className="opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
+                  className="sm:opacity-0 sm:translate-y-4 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 transition-all duration-500"
                 >
                   Explore Program
                   <ArrowRight className="w-3.5 h-3.5 ml-2" />

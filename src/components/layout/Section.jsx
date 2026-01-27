@@ -7,10 +7,10 @@ const variants = {
 };
 
 const paddings = {
-  xs: "py-12 md:py-16 lg:py-20",
-  sm: "py-16 md:py-24 lg:py-32",
-  md: "py-24 md:py-32 lg:py-40",
-  lg: "py-32 md:py-40 lg:py-48",
+  xs: "py-10 sm:py-16 md:py-20",
+  sm: "py-12 sm:py-24 md:py-32",
+  md: "py-16 sm:py-32 md:py-40",
+  lg: "py-24 sm:py-40 md:py-48",
   none: "py-0",
 };
 
@@ -56,7 +56,7 @@ export default function Section({
               </div>
             )}
             {title && (
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black tracking-tighter leading-[0.85] mb-8">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-heading font-black tracking-tighter leading-[0.95] sm:leading-[0.85] mb-6 sm:mb-8">
                 {title}
               </h2>
             )}

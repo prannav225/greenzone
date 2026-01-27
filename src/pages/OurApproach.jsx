@@ -22,7 +22,7 @@ import FinalCTA from "../components/layout/FinalCTA";
 export default function OurApproach() {
   return (
     <div>
-      <section className="relative min-h-[85vh] flex flex-col items-center justify-center pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden bg-sky-mist">
+      <section className="relative min-h-[80vh] lg:min-h-[85vh] flex flex-col items-center justify-center pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-sky-mist">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1440"
@@ -39,12 +39,12 @@ export default function OurApproach() {
             The Master Framework
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white leading-[0.85] tracking-tighter mb-8">
-            Engineered for <br />
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white leading-[0.9] sm:leading-[0.85] tracking-tighter mb-8 sm:mb-10 animate-fade-in-up">
+            Engineered for <br className="hidden sm:block" />
             <span className="text-emerald-pop italic">Transcendence.</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto font-medium leading-tight">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/60 max-w-2xl mx-auto font-medium leading-tight px-4 sm:px-0">
             We architect environments where human growth isn't just
             possible—it's inevitable.
           </p>
@@ -87,7 +87,7 @@ export default function OurApproach() {
           ].map((principle, idx) => (
             <div
               key={idx}
-              className="group relative glass-card p-10 rounded-3xl border-white/60 shadow-premium transition-all duration-700 hover:-translate-y-2 overflow-hidden flex flex-col items-start min-h-[220px] hover:bg-white/60"
+              className="group relative glass-card p-8 sm:p-10 rounded-3xl border-white/60 shadow-premium transition-all duration-700 hover:-translate-y-2 overflow-hidden flex flex-col items-start min-h-[220px] hover:bg-white/60"
             >
               <div className="absolute top-8 right-8 text-6xl font-heading font-black text-forest/5 select-none transition-all leading-none duration-500">
                 {principle.label}
@@ -98,10 +98,10 @@ export default function OurApproach() {
               </div>
 
               <div className="relative z-10 grow">
-                <h3 className="text-2xl font-heading font-black text-forest mb-4 tracking-tight leading-none group-hover:text-emerald-pop transition-colors">
+                <h3 className="text-xl sm:text-2xl font-heading font-black text-forest mb-3 sm:mb-4 tracking-tight leading-none group-hover:text-emerald-pop transition-colors">
                   {principle.title}
                 </h3>
-                <p className="text-forest/50 font-medium text-lg leading-tight">
+                <p className="text-forest/50 font-medium text-base sm:text-lg leading-tight">
                   {principle.desc}
                 </p>
               </div>
@@ -170,18 +170,20 @@ export default function OurApproach() {
               className={`grid lg:grid-cols-12 gap-12 lg:gap-24 items-center ${idx % 2 === 0 ? "" : "lg:flex-row-reverse"}`}
             >
               <div
-                className={`lg:col-span-6 space-y-6 ${idx % 2 === 0 ? "order-2 lg:order-1" : "order-2"}`}
+                className={`lg:col-span-6 space-y-4 sm:space-y-6 ${idx % 2 === 0 ? "order-2 lg:order-1" : "order-2"}`}
               >
-                <div className="text-[6rem] md:text-[8rem] font-heading font-black text-white/5 leading-none h-20 mb-6">
+                <div className="text-[4rem] sm:text-[6rem] md:text-[8rem] font-heading font-black text-white/5 leading-none h-12 sm:h-20 mb-4 sm:mb-6">
                   {item.step}
                 </div>
-                <div className="flex items-center gap-6 mb-6 text-emerald-pop">
-                  {item.icon}
-                  <h3 className="text-3xl md:text-5xl font-heading font-black text-white tracking-tighter leading-tight">
+                <div className="flex items-center gap-4 sm:gap-6 mb-4 sm:mb-6 text-emerald-pop">
+                  <div className="shrink-0 scale-75 sm:scale-100">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl md:text-5xl font-heading font-black text-white tracking-tighter leading-tight">
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-white/50 text-xl font-medium leading-tight max-w-xl">
+                <p className="text-white/50 text-base sm:text-lg md:text-xl font-medium leading-snug sm:leading-tight max-w-xl">
                   {item.desc}
                 </p>
               </div>
@@ -211,16 +213,16 @@ export default function OurApproach() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start relative z-10">
           <div className="lg:col-span-5 pt-8">
             <div className="lg:sticky lg:top-40 space-y-10">
-              <div className="space-y-4">
-                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-forest/40 block">
+              <div className="space-y-3 sm:space-y-4">
+                <span className="text-[8px] sm:text-[10px] font-black uppercase tracking-[0.4em] text-forest/40 block">
                   Safety & Standards
                 </span>
-                <h2 className="text-6xl lg:text-7xl font-heading font-black text-forest tracking-tighter leading-none">
+                <h2 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-black text-forest tracking-tighter leading-none">
                   The Ethics of <br />
                   <span className="text-emerald-pop italic">Adversity.</span>
                 </h2>
               </div>
-              <p className="text-forest/60 text-lg md:text-xl font-medium leading-relaxed max-w-sm">
+              <p className="text-forest/60 text-base sm:text-lg md:text-xl font-medium leading-relaxed max-w-sm">
                 We manage high-consequence environments with surgical precision.
               </p>
             </div>
@@ -246,15 +248,15 @@ export default function OurApproach() {
             ].map((standard, idx) => (
               <div
                 key={idx}
-                className="glass-card p-8 lg:p-10 rounded-[2.5rem] border-white/60 shadow-2xl hover:bg-white/50 transition-all duration-700 hover:-translate-y-1 group"
+                className="glass-card p-6 sm:p-8 lg:p-10 rounded-3xl sm:rounded-[2.5rem] border-white/60 shadow-2xl hover:bg-white/50 transition-all duration-700 hover:-translate-y-1 group"
               >
-                <div className="w-12 h-12 rounded-full bg-forest flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                  {standard.icon}
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-forest flex items-center justify-center mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                  <div className="scale-75 sm:scale-100">{standard.icon}</div>
                 </div>
-                <h4 className="text-2xl lg:text-3xl font-heading font-black text-forest mb-3 tracking-tight">
+                <h4 className="text-xl sm:text-2xl lg:text-3xl font-heading font-black text-forest mb-2 sm:mb-3 tracking-tight">
                   {standard.title}
                 </h4>
-                <p className="text-forest/50 font-medium text-lg lg:text-xl leading-relaxed">
+                <p className="text-forest/50 font-medium text-base sm:text-lg lg:text-xl leading-relaxed">
                   {standard.desc}
                 </p>
               </div>

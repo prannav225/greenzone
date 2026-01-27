@@ -53,7 +53,7 @@ export default function Footer() {
                 <a
                   key={social.name}
                   href={social.url}
-                  className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-emerald-pop hover:text-forest hover:border-emerald-pop transition-all duration-500 group"
+                  className="w-12 h-12 rounded-card bg-white/5 border border-white/10 flex items-center justify-center hover:bg-emerald-pop hover:text-forest hover:border-emerald-pop transition-all duration-500 group"
                   aria-label={social.name}
                 >
                   <social.icon className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity" />
@@ -104,7 +104,7 @@ export default function Footer() {
 
           {/* Contact Column - Visual treatment */}
           <div className="lg:col-span-3">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-md">
+            <div className="bg-white/5 border border-white/10 rounded-card p-8 backdrop-blur-md">
               <h4 className="font-heading font-black text-xs uppercase tracking-[0.3em] text-emerald-pop mb-6">
                 Get in Touch
               </h4>

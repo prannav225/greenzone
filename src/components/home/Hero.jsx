@@ -3,7 +3,7 @@ import { ArrowRight, Zap } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-forest pt-24">
+    <section className="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-forest pt-20 sm:pt-24 lg:pt-32">
       {/* Background with Modern Overlay */}
       <div className="absolute inset-0">
         <img
@@ -27,31 +27,36 @@ export default function Hero() {
               </span>
             </div>
             {/* Headline */}
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-black text-white leading-[0.9] tracking-tighter mb-8 animate-fade-in-up">
-              Leadership <br />
-              Development through <br />
-              <span className="text-emerald-pop italic text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white leading-[0.95] sm:leading-[0.9] tracking-tighter mb-6 sm:mb-8 animate-fade-in-up">
+              Leadership <br className="hidden sm:block" />
+              Development <br className="sm:hidden" /> through{" "}
+              <br className="hidden sm:block" />
+              <span className="text-emerald-pop italic text-3xl sm:text-5xl md:text-6xl lg:text-7xl block sm:inline mt-2 sm:mt-0">
                 Structured Adventure.
               </span>
             </h1>
             {/* Subheadline */}
-            <p className="text-lg md:text-xl lg:text-2xl text-white/60 max-w-xl mb-12 leading-tight animate-fade-in-up animate-delay-200 mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/60 max-w-xl mb-10 sm:mb-12 leading-tight animate-fade-in-up animate-delay-200 mx-auto lg:mx-0 px-4 sm:px-0">
               Professional outbound learning programs designed to build
               resilience, emotional intelligence, and team synergy in the heart
               of nature.
             </p>
-            {/* CTAs */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 animate-fade-in-up animate-delay-300">
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 animate-fade-in-up animate-delay-300 w-full sm:w-auto px-6 sm:px-0">
               <PrimaryButton
                 to="/contact"
                 variant="emerald"
                 size="lg"
-                className="group"
+                className="group w-full sm:w-auto"
               >
                 Start Journey{" "}
                 <ArrowRight className="w-5 h-5 ml-4 group-hover:translate-x-2 transition-transform" />
               </PrimaryButton>
-              <PrimaryButton to="/programs" variant="outline" size="lg">
+              <PrimaryButton
+                to="/programs"
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto"
+              >
                 Our Programs
               </PrimaryButton>
             </div>
@@ -61,11 +66,11 @@ export default function Hero() {
           <div className="hidden xl:block xl:col-span-5 relative animate-fade-in animate-delay-200">
             <div className="relative group">
               {/* Outer Decorative Border */}
-              <div className="absolute -inset-8 border border-white/5 rounded-[2rem] -z-10 animate-float" />
-              <div className="absolute inset-0 bg-emerald-pop/5 rounded-[2rem] blur-3xl -z-20" />
+              <div className="absolute -inset-8 border border-white/5 rounded-card -z-10 animate-float" />
+              <div className="absolute inset-0 bg-emerald-pop/5 rounded-card blur-3xl -z-20" />
 
               {/* Main Visual Container */}
-              <div className="relative aspect-4/5 rounded-[2.5rem] overflow-hidden shadow-4xl group-hover:shadow-emerald-pop/10 transition-all duration-700 ring-1 ring-white/10">
+              <div className="relative aspect-4/5 rounded-image overflow-hidden shadow-4xl group-hover:shadow-emerald-pop/10 transition-all duration-700 ring-1 ring-white/10">
                 <img
                   src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=1000"
                   alt="High Performance Team"
@@ -81,7 +86,7 @@ export default function Hero() {
               </div>
 
               {/* The Floating Insight Card */}
-              <div className="absolute -bottom-12 -left-12 z-20 bg-white/10 backdrop-blur-2xl p-10 rounded-[2.5rem] shadow-4xl animate-float border border-white/20 max-w-[340px]">
+              <div className="absolute -bottom-12 -left-12 z-20 bg-white/10 backdrop-blur-2xl p-10 rounded-card shadow-4xl animate-float border border-white/20 max-w-[340px]">
                 <div className="flex items-center gap-5 mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-forest flex items-center justify-center text-emerald-pop shadow-xl ring-1 ring-white/20 group-hover:scale-110 transition-transform duration-500">
                     <Zap className="w-7 h-7" />

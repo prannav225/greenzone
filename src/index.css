@@ -30,26 +30,38 @@
     "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: "Outfit", "Inter Tight", sans-serif;
 
-  /* Refined font sizes (fluid scale) */
-  --font-size-xs: 0.8125rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.625rem;
-  --font-size-3xl: 2.125rem;
-  --font-size-4xl: 2.75rem;
-  --font-size-5xl: 3.5rem;
-  --font-size-6xl: 4.25rem;
-  --font-size-7xl: 5.5rem;
+  /* Refined fluid font sizes (Fluid Typography) */
+  --font-size-xs: clamp(0.6875rem, 0.65rem + 0.2vw, 0.8125rem);
+  --font-size-sm: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-base: clamp(0.875rem, 0.85rem + 0.3vw, 1rem);
+  --font-size-lg: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+  --font-size-xl: clamp(1.125rem, 1.05rem + 0.5vw, 1.25rem);
+  --font-size-2xl: clamp(1.25rem, 1.15rem + 0.8vw, 1.625rem);
+  --font-size-3xl: clamp(1.5rem, 1.4rem + 1.5vw, 2.125rem);
+  --font-size-4xl: clamp(1.875rem, 1.75rem + 2vw, 2.75rem);
+  --font-size-5xl: clamp(2.25rem, 2rem + 3vw, 3.5rem);
+  --font-size-6xl: clamp(2.75rem, 2.5rem + 4vw, 4.25rem);
+  --font-size-7xl: clamp(3.5rem, 3rem + 6vw, 5.5rem);
 
-  /* ===== ORGANIC RADIUS ===== */
-  --radius-sm: 0.75rem;
-  --radius-md: 1rem;
-  --radius-lg: 1.5rem;
-  --radius-xl: 2rem;
-  --radius-2xl: 3rem;
-  --radius-3xl: 4rem;
+  /* ===== STANDARDIZED RADIUS TOKENS ===== */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 2.5rem;
+
+  /* Semantic Tokens for Unity */
+  --radius-card-mobile: 1.5rem;
+  --radius-card-desktop: 2.5rem;
+  --radius-card: clamp(1.5rem, 1.2rem + 2vw, 2.5rem);
+
+  --radius-image-mobile: 1.25rem;
+  --radius-image-desktop: 2rem;
+  --radius-image: clamp(1.25rem, 1rem + 1.5vw, 2rem);
+
+  --radius-button: 9999px;
+  --radius-input: 0.875rem;
 
   /* ===== SHADOWS (modern, deep) ===== */
   --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05);
@@ -79,6 +91,33 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== HIDE SCROLLBAR (Immersive Experience) ===== */
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== CUSTOM SELECTION ===== */
+::-moz-selection {
+  background: var(--color-emerald-pop);
+  color: var(--color-forest-dark);
+}
+
+::selection {
+  background: var(--color-emerald-pop);
+  color: var(--color-forest-dark);
 }
 
 h1,

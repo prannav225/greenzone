@@ -46,7 +46,7 @@ export default function WhyGreenzone() {
         <div className="lg:col-span-12 xl:col-span-5 relative group order-2 xl:order-1">
           <div className="relative">
             {/* Main Visual */}
-            <div className="aspect-16/10 xl:aspect-4/5 rounded-[2.5rem] overflow-hidden shadow-4xl relative z-10 transition-all duration-1000 group-hover:shadow-forest/20 ring-1 ring-forest/5">
+            <div className="aspect-16/10 xl:aspect-4/5 rounded-image overflow-hidden shadow-4xl relative z-10 transition-all duration-1000 group-hover:shadow-forest/20 ring-1 ring-forest/5">
               <img
                 src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1200"
                 alt="Leadership training in nature"
@@ -56,7 +56,7 @@ export default function WhyGreenzone() {
             </div>
 
             {/* Glass Badge Overlay */}
-            <div className="absolute -bottom-12 -right-6 xl:-right-12 z-20 bg-white/40 backdrop-blur-2xl p-10 rounded-[2.5rem] shadow-4xl animate-float border border-white/40 max-w-[340px] hidden sm:block">
+            <div className="absolute -bottom-12 -right-6 xl:-right-12 z-20 bg-white/40 backdrop-blur-2xl p-10 rounded-card shadow-4xl animate-float border border-white/40 max-w-[340px] hidden sm:block">
               <div className="flex items-center gap-5 mb-6">
                 <div className="w-14 h-14 rounded-2xl bg-forest flex items-center justify-center text-emerald-pop shadow-2xl ring-1 ring-white/20 group-hover:scale-110 transition-transform duration-500">
                   <Zap className="w-7 h-7" />
@@ -91,10 +91,10 @@ export default function WhyGreenzone() {
               {reasons.map((reason, index) => (
                 <div
                   key={reason.title}
-                  className="group/card flex flex-col gap-8 p-8 rounded-[2rem] bg-white/60 backdrop-blur-sm border border-emerald-pop/60 shadow-premium hover:shadow-2xl hover:bg-forest transition-all duration-700 hover:-translate-y-2"
+                  className="group/card flex flex-col gap-8 p-8 rounded-card bg-white/60 backdrop-blur-sm border border-emerald-pop/60 shadow-premium hover:shadow-2xl hover:bg-forest transition-all duration-700 hover:-translate-y-2"
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
-                  <div className="w-16 h-16 rounded-[1.25rem] bg-forest text-emerald-pop shadow-xl flex items-center justify-center transition-all duration-500 group-hover/card:bg-emerald-pop group-hover/card:text-forest group-hover/card:scale-110">
+                  <div className="w-16 h-16 rounded-image-mobile bg-forest text-emerald-pop shadow-xl flex items-center justify-center transition-all duration-500 group-hover/card:bg-emerald-pop group-hover/card:text-forest group-hover/card:scale-110">
                     {reason.icon}
                   </div>
                   <div>
