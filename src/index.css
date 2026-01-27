@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+@theme {
+  /* ===== VIBRANT & FRESH PALETTE ===== */
+  --color-forest: #163020;
+  --color-forest-light: #2d936c; /* More vibrant emerald */
+  --color-forest-dark: #0b1a11;
+
+  --color-emerald-pop: #3cdca0; /* Fresh "Spring" green */
+  --color-sunset-glow: #ff9f1c; /* Vibrat Amber */
+
+  --color-charcoal: #1a1a1a;
+  --color-charcoal-light: #333333;
+
+  --color-earth-sand: #efe6d5;
+  --color-earth-sand-light: #f7f2e8;
+  --color-earth-sand-dark: #e5d9c0;
+
+  --color-moss: #527853;
+  --color-moss-light: #b9ed91; /* Lime/Moss pop */
+
+  --color-sky-mist: #f0f7f4;
+  --color-sky-mist-dark: #e2ede8;
+
+  --color-amber: #f9b17a; /* Warmer, fresher amber */
+  --color-amber-light: #fcc9a1;
+
+  /* ===== MODERN TYPOGRAPHY ===== */
+  --font-sans:
+    "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Outfit", "Inter Tight", sans-serif;
+
+  /* Refined font sizes (fluid scale) */
+  --font-size-xs: 0.8125rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.625rem;
+  --font-size-3xl: 2.125rem;
+  --font-size-4xl: 2.75rem;
+  --font-size-5xl: 3.5rem;
+  --font-size-6xl: 4.25rem;
+  --font-size-7xl: 5.5rem;
+
+  /* ===== ORGANIC RADIUS ===== */
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-2xl: 3rem;
+  --radius-3xl: 4rem;
+
+  /* ===== SHADOWS (modern, deep) ===== */
+  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  --shadow-md:
+    0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-lg:
+    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-premium: 0 25px 50px -12px rgba(22, 48, 32, 0.15);
+
+  --transition-smooth: 500ms cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* ===== EXTENDED SPACING ===== */
+  --spacing-120: 30rem;
+  --spacing-140: 35rem;
+  --spacing-160: 40rem;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-charcoal);
+  background-color: #f8faf9; /* Subtle tint for contrast with white cards */
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+/* Utility Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slow-zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s ease-in-out infinite alternate;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Premium Utilities */
+.shadow-premium {
+  box-shadow: var(--shadow-lg);
+}
+
+.shadow-premium-hover {
+  transition: all var(--transition-base);
+}
+
+.shadow-premium-hover:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+
+.card-premium {
+  @apply bg-white border border-forest/10 shadow-md transition-all duration-300;
+  &:hover {
+    @apply border-forest/20 shadow-2xl -translate-y-1.5;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-lg border border-white/40 shadow-xl;
+}
+
+.text-gradient-forest {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-forest via-forest-light to-moss;
+}
+
+.bg-gradient-soft {
+  @apply bg-linear-to-br from-white via-sky-mist/30 to-sky-mist/60;
+}
+
+.transition-premium {
+  transition: all var(--transition-base);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-sky-mist;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-forest/20 rounded-full hover:bg-forest/30 transition-colors;
+}
