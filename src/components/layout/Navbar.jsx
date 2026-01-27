@@ -36,20 +36,20 @@ export default function Navbar() {
       <div className="fixed top-0 left-0 right-0 z-100 flex justify-center p-4 sm:p-6 pb-0 pointer-events-none pt-[calc(1rem+env(safe-area-inset-top,0px))] md:pt-6">
         {/* Main Navbar Pill */}
         <header
-          className={`w-full max-w-7xl h-14 sm:h-18 transition-all duration-500 rounded-2xl sm:rounded-full pointer-events-auto flex items-center justify-between px-5 sm:px-10 shadow-2xl border relative z-50 ${
+          className={`w-full max-w-7xl h-14 sm:h-18 transition-all duration-500 rounded-card sm:rounded-full pointer-events-auto flex items-center justify-between px-5 sm:px-10 shadow-2xl border relative z-50 ${
             isScrolled
-              ? "glass-card-dark border-white/10"
-              : "bg-forest/20 backdrop-blur-xl border-white/10 group-hover:bg-forest/30"
+              ? "bg-forest/80 backdrop-blur-2xl border-white/10"
+              : "bg-forest/40 backdrop-blur-xl border-white/10 group-hover:bg-forest/50"
           }`}
         >
           {/* Logo Section */}
           <Link to="/" className="flex items-center gap-3 group shrink-0">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center ring-1 ring-white/10 transition-all duration-700 group-hover:scale-110 group-hover:rotate-6">
+            <div className="w-9 h-9 sm:w-12 sm:h-12 bg-linear-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center ring-1 ring-white/10 transition-all duration-700 group-hover:scale-110 group-hover:rotate-6">
               <span className="text-forest font-heading font-black text-xl sm:text-2xl leading-none select-none">
                 G
               </span>
             </div>
-            <span className="font-heading font-black text-white text-[18px] sm:text-xl tracking-tighter block">
+            <span className="font-heading font-black text-white text-base sm:text-xl tracking-tighter block">
               Greenzone{" "}
               <span className="text-emerald-pop italic">Adventures.</span>
             </span>
@@ -101,10 +101,10 @@ export default function Navbar() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="flex items-center justify-between p-4 rounded-card transition-colors duration-200 hover:bg-white/5 group text-white hover:text-emerald-pop"
+                  className="flex items-center justify-between p-3.5 rounded-card transition-colors duration-200 hover:bg-white/5 group text-white hover:text-emerald-pop"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <span className="font-heading font-black text-lg tracking-tight">
+                  <span className="font-heading font-black text-base tracking-tight">
                     {link.name}
                   </span>
                   <ArrowRight className="w-4 h-4 opacity-20 group-hover:opacity-100 transition-opacity" />
@@ -115,7 +115,7 @@ export default function Navbar() {
             <div className="mt-4 pt-6 border-t border-white/5">
               <Link
                 to="/contact"
-                className="flex items-center justify-center gap-4 w-full bg-emerald-pop text-forest py-5 rounded-card font-black text-sm uppercase tracking-widest shadow-xl shadow-emerald-pop/10"
+                className="flex items-center justify-center gap-4 w-full bg-emerald-pop text-forest py-4 rounded-card font-black text-sm uppercase tracking-widest shadow-xl shadow-emerald-pop/10"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Start Your Journey <ArrowRight size={18} />
