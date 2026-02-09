@@ -33,10 +33,8 @@ export default function Footer() {
           {/* Brand & Vision Column */}
           <div className="lg:col-span-4 max-w-sm">
             <Link to="/" className="flex items-center gap-4 mb-8 group">
-              <div className="w-12 h-12 bg-linear-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center ring-1 ring-white/10 transition-all duration-700 group-hover:scale-110 group-hover:rotate-6">
-                <span className="text-forest font-heading font-black text-2xl select-none">
-                  G
-                </span>
+              <div className="w-12 h-12 p-2 bg-white rounded-full flex items-center justify-center">
+                <img src="./logo.png" alt="greenzone logo" />
               </div>
               <span className="font-heading font-black text-2xl tracking-tight">
                 Greenzone <span className="text-emerald-pop">Adventures.</span>

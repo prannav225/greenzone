@@ -44,10 +44,8 @@ export default function Navbar() {
         >
           {/* Logo Section */}
           <Link to="/" className="flex items-center gap-3 group shrink-0">
-            <div className="w-9 h-9 sm:w-12 sm:h-12 bg-linear-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center ring-1 ring-white/10 transition-all duration-700 group-hover:scale-110 group-hover:rotate-6">
-              <span className="text-forest font-heading font-black text-xl sm:text-2xl leading-none select-none">
-                G
-              </span>
+            <div className="w-9 h-9 sm:w-12 sm:h-12 bg-white flex items-center justify-center transition-all duration-700 p-2 rounded-full">
+              <img src="./logo.png" alt="greenzone logo" />
             </div>
             <span className="font-heading font-black text-white text-base sm:text-xl tracking-tighter block">
               Greenzone{" "}
