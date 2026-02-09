@@ -6,8 +6,6 @@ import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Programs from "./pages/Programs";
-import OurApproach from "./pages/OurApproach";
-import Team from "./pages/Team";
 import Destinations from "./pages/Destinations";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./components/utils/ScrollToTop";

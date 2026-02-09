@@ -122,60 +122,59 @@ export default function Programs() {
   }, []);
 
   return (
-    <div className="bg-white">
-      {/* 1. HERO - SEO INTRODUCTION */}
-      <section className="relative min-h-[80vh] lg:min-h-[90vh] flex flex-col items-center justify-center pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-forest">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&q=80&w=1440"
-            alt="Outbound Learning Programs"
-            className="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
-            fetchpriority="high"
-          />
-          <div className="absolute inset-0 bg-linear-to-b from-forest/80 via-forest/40 to-forest" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 mb-10 animate-fade-in text-emerald-pop shadow-2xl">
-            <Target className="w-4 h-4" />
-            <span className="text-[11px] font-black uppercase tracking-[0.4em]">
-              Primary Solutions
-            </span>
+    <main className="scroll-snap-container">
+      <div className="scroll-snap-section bg-white">
+        {/* 1. HERO - SEO INTRODUCTION */}
+        <section className="relative min-h-[80vh] lg:min-h-[90vh] flex flex-col items-center justify-center pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-forest">
+          <div className="absolute inset-0">
+            <img
+              src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&q=80&w=1440"
+              alt="Outbound Learning Programs"
+              className="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
+              fetchpriority="high"
+            />
+            <div className="absolute inset-0 bg-linear-to-b from-forest/80 via-forest/40 to-forest" />
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black text-white leading-[0.9] sm:leading-[0.85] tracking-tighter mb-8 sm:mb-10 animate-fade-in-up">
-            Built for <br className="hidden sm:block" />
-            <span className="text-emerald-pop italic">Performance.</span>
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/50 max-w-3xl mx-auto font-medium leading-tight animate-fade-in-up animate-delay-200 px-4 sm:px-0">
-            Specialized experiential modules designed to build leadership,
-            resilience, and emotional intelligence through structured nature-led
-            journeys.
-          </p>
-        </div>
-      </section>
+
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+            <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 mb-10 animate-fade-in text-emerald-pop shadow-2xl">
+              <Target className="w-4 h-4" />
+              <span className="text-[11px] font-black uppercase tracking-[0.4em]">
+                Primary Solutions
+              </span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black text-white leading-[0.9] sm:leading-[0.85] tracking-tighter mb-8 sm:mb-10 animate-fade-in-up">
+              Built for <br className="hidden sm:block" />
+              <span className="text-emerald-pop italic">Performance.</span>
+            </h1>
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/50 max-w-3xl mx-auto font-medium leading-tight animate-fade-in-up animate-delay-200 px-4 sm:px-0">
+              Specialized experiential modules designed to build leadership,
+              resilience, and emotional intelligence through structured
+              nature-led journeys.
+            </p>
+          </div>
+        </section>
+      </div>
 
       {programCategories.map((cat, idx) => (
-        <Section
-          key={cat.id}
-          id={cat.id}
-          variant={cat.variant}
-          subtitle={cat.subtitle}
-          subtitleIcon={cat.subtitleIcon}
-          title={
-            <span
-              className={
-                cat.variant === "forest" ? "text-white" : "text-forest"
-              }
-            >
-              {cat.title}
-            </span>
-          }
-        >
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-32 items-center">
-            <div
-              className={`lg:col-span-7 ${idx % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}
-            >
-              <div className="max-w-2xl">
+        <div key={cat.id} className="scroll-snap-section">
+          <Section
+            id={cat.id}
+            variant={cat.variant}
+            subtitle={cat.subtitle}
+            subtitleIcon={cat.subtitleIcon}
+            title={
+              <span
+                className={
+                  cat.variant === "forest" ? "text-white" : "text-forest"
+                }
+              >
+                {cat.title}
+              </span>
+            }
+          >
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className={`${idx % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}>
                 <p
                   className={`text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 font-medium leading-tight ${cat.variant === "forest" ? "text-white/70" : "text-forest/70"}`}
                 >
@@ -337,30 +336,28 @@ export default function Programs() {
                   </div>
                 )}
               </div>
-            </div>
 
-            <div
-              className={`lg:col-span-5 ${idx % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}
-            >
-              <div className="relative group">
-                <div
-                  className={`absolute -inset-10 border rounded-card -z-10 animate-float ${cat.variant === "forest" ? "border-white/5" : "border-forest/5"}`}
-                />
-                <div className="relative aspect-3/4 rounded-image overflow-hidden shadow-premium group-hover:shadow-[0_50px_100px_rgba(10,30,20,0.15)] transition-all duration-1000">
-                  <img
-                    src={cat.image}
-                    alt={cat.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                    loading="lazy"
-                  />
+              <div className={`${idx % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}>
+                <div className="relative group">
                   <div
-                    className={`absolute inset-0 bg-linear-to-t via-transparent to-transparent ${cat.variant === "forest" ? "from-forest/60" : "from-forest/40"}`}
+                    className={`absolute -inset-10 border rounded-card -z-10 animate-float ${cat.variant === "forest" ? "border-white/5" : "border-forest/5"}`}
                   />
+                  <div className="relative aspect-3/4 rounded-image overflow-hidden shadow-premium group-hover:shadow-[0_50px_100px_rgba(10,30,20,0.15)] transition-all duration-1000">
+                    <img
+                      src={cat.image}
+                      alt={cat.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                      loading="lazy"
+                    />
+                    <div
+                      className={`absolute inset-0 bg-linear-to-t via-transparent to-transparent ${cat.variant === "forest" ? "from-forest/60" : "from-forest/40"}`}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </Section>
+          </Section>
+        </div>
       ))}
 
       {/* FINAL CTA */}
@@ -384,6 +381,6 @@ export default function Programs() {
           { label: "View Our Team", to: "/about", variant: "outline" },
         ]}
       />
-    </div>
+    </main>
   );
 }

@@ -7,10 +7,10 @@ const variants = {
 };
 
 const paddings = {
-  xs: "py-10 sm:py-16 md:py-20",
-  sm: "py-12 sm:py-24 md:py-32",
-  md: "py-16 sm:py-32 md:py-40",
-  lg: "py-24 sm:py-40 md:py-48",
+  xs: "py-8 sm:py-12 md:py-16 lg:py-20",
+  sm: "py-10 sm:py-16 md:py-24 lg:py-32",
+  md: "py-12 sm:py-20 md:py-32 lg:py-40",
+  lg: "py-16 sm:py-28 md:py-40 lg:py-48",
   none: "py-0",
 };
 
@@ -38,14 +38,16 @@ export default function Section({
       id={id}
       className={`${paddings[padding]} ${variants[variant]} ${className} relative overflow-hidden`}
     >
-      <div className={`${widths[width]} mx-auto px-6 lg:px-8 relative z-10`}>
+      <div
+        className={`${widths[width]} mx-auto px-4 sm:px-6 lg:px-8 relative z-10`}
+      >
         {(title || subtitle) && (
           <div
-            className={`${center ? "text-center mx-auto" : ""} max-w-4xl mb-16 lg:mb-24`}
+            className={`${center ? "text-center mx-auto" : ""} max-w-4xl mb-12 sm:mb-16 lg:mb-24`}
           >
             {subtitle && (
               <div
-                className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-8 shadow-sm ${
+                className={`inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] sm:tracking-widest mb-6 sm:mb-8 shadow-sm ${
                   variant === "forest" || variant === "charcoal"
                     ? "bg-white/10 text-emerald-pop"
                     : "bg-forest text-emerald-pop"
@@ -56,7 +58,7 @@ export default function Section({
               </div>
             )}
             {title && (
-              <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-heading font-black tracking-tighter leading-[0.95] sm:leading-[0.85] mb-6 sm:mb-8">
+              <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-black tracking-tighter leading-[0.95] sm:leading-[0.9] md:leading-[0.85] mb-5 sm:mb-6 md:mb-8 px-2 sm:px-0">
                 {title}
               </h2>
             )}

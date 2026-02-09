@@ -37,19 +37,19 @@ export default function WhoWeWorkWith() {
         </>
       }
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 px-4 sm:px-0">
         {segments.map((segment, idx) => (
           <div
             key={idx}
-            className="group p-8 rounded-card bg-white/50 backdrop-blur-sm border border-emerald-pop/60 focus-within:bg-white shadow-premium hover:shadow-2xl hover:bg-forest transition-all duration-700 hover:-translate-y-2 flex flex-col items-start"
+            className="group p-6 sm:p-7 lg:p-8 rounded-card bg-white/50 backdrop-blur-sm border border-emerald-pop/60 focus-within:bg-white shadow-premium hover:shadow-2xl hover:bg-forest transition-all duration-700 hover:-translate-y-2 flex flex-col items-start"
           >
-            <div className="w-14 h-14 rounded-card bg-forest text-emerald-pop flex items-center justify-center mb-8 shadow-xl transition-all duration-500 group-hover:bg-emerald-pop group-hover:text-forest group-hover:scale-110">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-card bg-forest text-emerald-pop flex items-center justify-center mb-6 sm:mb-8 shadow-xl transition-all duration-500 group-hover:bg-emerald-pop group-hover:text-forest group-hover:scale-110">
               {segment.icon}
             </div>
-            <h3 className="text-2xl font-heading font-black text-forest mb-4 tracking-tighter leading-tight group-hover:text-white transition-colors duration-500">
+            <h3 className="text-xl sm:text-2xl font-heading font-black text-forest mb-3 sm:mb-4 tracking-tighter leading-tight group-hover:text-white transition-colors duration-500">
               {segment.title}
             </h3>
-            <p className="text-forest/60 font-medium text-sm leading-relaxed group-hover:text-white/60 transition-colors duration-500">
+            <p className="text-forest/60 font-medium text-xs sm:text-sm leading-relaxed group-hover:text-white/60 transition-colors duration-500">
               {segment.desc}
             </p>
           </div>

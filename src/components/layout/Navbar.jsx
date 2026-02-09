@@ -4,9 +4,9 @@ import { Menu, X, ArrowRight } from "lucide-react";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "About Greenzone", path: "/about" },
+  { name: "About", path: "/about" },
   { name: "Programs", path: "/programs" },
-  { name: "Destinations & Experiences", path: "/destinations" },
+  { name: "Destinations", path: "/destinations" },
 ];
 
 export default function Navbar() {

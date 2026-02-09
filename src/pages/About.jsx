@@ -53,180 +53,135 @@ const team = [
 
 export default function About() {
   return (
-    <div className="bg-white">
-      {/* 1. HERO - Introduction */}
-      <section className="relative min-h-[80vh] lg:min-h-[90vh] flex flex-col items-center justify-center pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-forest">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1440"
-            alt="Human Growth in Nature"
-            className="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
-            fetchpriority="high"
-          />
-          <div className="absolute inset-0 bg-linear-to-b from-forest/80 via-forest/40 to-forest" />
+    <main className="scroll-snap-container">
+      <div className="scroll-snap-section bg-white">
+        {/* 1. HERO - Introduction */}
+        <section className="relative min-h-[75vh] sm:min-h-[80vh] lg:min-h-[90vh] flex flex-col items-center justify-center pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20 overflow-hidden bg-forest">
+          <div className="absolute inset-0">
+            <img
+              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1440"
+              alt="Human Growth in Nature"
+              className="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
+              fetchpriority="high"
+            />
+            <div className="absolute inset-0 bg-linear-to-b from-forest/80 via-forest/40 to-forest" />
 
-          {/* Subtle Grid Overlay */}
-          <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 mb-10 animate-fade-in text-emerald-pop shadow-2xl">
-            <Compass className="w-4 h-4" />
-            <span className="text-[11px] font-black uppercase tracking-[0.4em]">
-              Established Foundations
-            </span>
+            {/* Subtle Grid Overlay */}
+            <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black text-white leading-[0.9] sm:leading-[0.85] tracking-tighter mb-8 sm:mb-10 animate-fade-in-up">
-            Human <br className="hidden sm:block" />
-            Development <br className="hidden sm:block" />
-            <span className="text-emerald-pop italic">Redefined.</span>
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/50 max-w-3xl mx-auto font-medium leading-tight animate-fade-in-up animate-delay-200 px-4 sm:px-0">
-            Greenzone Adventures is a specialized experiential learning
-            organization based in Bangalore, bridging theory and behavior
-            through structured nature-led journeys.
-          </p>
-        </div>
 
-        {/* Animated Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-20">
-          <div className="w-0.5 h-12 bg-white rounded-full mx-auto" />
-        </div>
-      </section>
-
-      {/* 2. CORE EXPERTISE - Fixed "Lazy" Boxes */}
-      <Section
-        variant="mist"
-        subtitle="Operational Excellence"
-        subtitleIcon={<Zap className="w-3.5 h-3.5" />}
-        title={
-          <>
-            Specialized <br />
-            <span className="text-forest italic">Training Segments.</span>
-          </>
-        }
-      >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 relative z-10">
-          {[
-            {
-              title: "OBL Programs",
-              tag: "Transformation",
-              desc: "Intensive field-based learning designed to trigger deep organizational shifts.",
-              icon: <Zap className="w-5 h-5" />,
-            },
-            {
-              title: "Corporate Teams",
-              tag: "Leadership Labs",
-              desc: "Strategic workshops focusing on synergy, alignment, and high-performance synergy.",
-              icon: <Target className="w-5 h-5" />,
-            },
-            {
-              title: "EQ & NLP",
-              tag: "Cognitive Skillset",
-              desc: "Integrating psychological frameworks to enhance personal and professional effectiveness.",
-              icon: <Brain className="w-5 h-5" />,
-            },
-            {
-              title: "Student Readiness",
-              tag: "Agency & Grit",
-              desc: "Equipping young professionals with the resilience and soft skills needed for the future.",
-              icon: <ShieldCheck className="w-5 h-5" />,
-            },
-          ].map((service, idx) => (
-            <div
-              key={idx}
-              className="relative group p-8 sm:p-10 rounded-card bg-white/40 backdrop-blur-md border border-emerald-pop/60 shadow-premium overflow-hidden transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl hover:bg-white/60"
-            >
-              {/* Subtle background icon */}
-              <div className="absolute -top-6 -right-6 text-forest/5 group-hover:text-forest/10 transition-colors duration-500 scale-[2.5] opacity-20">
-                {service.icon}
-              </div>
-
-              <div className="relative z-10">
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-pop mb-4 block transition-colors">
-                  {service.tag}
-                </span>
-                <h3 className="text-3xl font-heading font-black text-forest mb-4 tracking-tighter leading-none transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-forest/60 text-sm leading-relaxed font-medium transition-colors">
-                  {service.desc}
-                </p>
-
-                <div className="mt-10 flex items-center gap-2 text-forest/40 font-black text-[9px] uppercase tracking-widest group-hover:text-emerald-pop transition-colors">
-                  Learn More{" "}
-                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 mb-8 sm:mb-10 animate-fade-in text-emerald-pop shadow-2xl">
+              <Compass className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.3em] sm:tracking-[0.4em]">
+                Established Foundations
+              </span>
             </div>
-          ))}
-        </div>
-      </Section>
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-heading font-black text-white leading-[0.95] sm:leading-[0.9] md:leading-[0.85] tracking-tighter mb-6 sm:mb-8 md:mb-10 animate-fade-in-up px-4 sm:px-0">
+              Human <br className="hidden sm:block" />
+              Development <br className="hidden sm:block" />
+              <span className="text-emerald-pop italic">Redefined.</span>
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/50 max-w-3xl mx-auto font-medium leading-relaxed sm:leading-tight animate-fade-in-up animate-delay-200 px-4 sm:px-0">
+              Greenzone Adventures is a specialized experiential learning
+              organization based in Bangalore, bridging theory and behavior
+              through structured nature-led journeys.
+            </p>
+          </div>
 
-      {/* 3. THE TEAM - Fixed Mobile Visibility */}
-      <Section
-        variant="sand"
-        subtitle="The Core Team"
-        subtitleIcon={<Users className="w-3.5 h-3.5" />}
-        title={
-          <>
-            Leadership & <br />
-            <span className="text-emerald-pop italic">
-              Strategic Intelligence.
-            </span>
-          </>
-        }
-      >
-        <div className="space-y-16 lg:space-y-24">
-          {/* Founders Group */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
-            {team.slice(0, 3).map((member, idx) => (
+          {/* Animated Scroll Indicator */}
+          <div className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-20 hidden sm:block">
+            <div className="w-0.5 h-10 sm:h-12 bg-white rounded-full mx-auto" />
+          </div>
+        </section>
+
+        {/* 2. CORE EXPERTISE - Fixed "Lazy" Boxes */}
+        <Section
+          variant="mist"
+          subtitle="Operational Excellence"
+          subtitleIcon={<Zap className="w-3.5 h-3.5" />}
+          title={
+            <>
+              Specialized <br />
+              <span className="text-forest italic">Training Segments.</span>
+            </>
+          }
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 relative z-10 px-4 sm:px-0">
+            {[
+              {
+                title: "OBL Programs",
+                tag: "Transformation",
+                desc: "Intensive field-based learning designed to trigger deep organizational shifts.",
+                icon: <Zap className="w-4 h-4 sm:w-5 sm:h-5" />,
+              },
+              {
+                title: "Corporate Teams",
+                tag: "Leadership Labs",
+                desc: "Strategic workshops focusing on synergy, alignment, and high-performance synergy.",
+                icon: <Target className="w-4 h-4 sm:w-5 sm:h-5" />,
+              },
+              {
+                title: "EQ & NLP",
+                tag: "Cognitive Skillset",
+                desc: "Integrating psychological frameworks to enhance personal and professional effectiveness.",
+                icon: <Brain className="w-4 h-4 sm:w-5 sm:h-5" />,
+              },
+              {
+                title: "Student Readiness",
+                tag: "Agency & Grit",
+                desc: "Equipping young professionals with the resilience and soft skills needed for the future.",
+                icon: <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />,
+              },
+            ].map((service, idx) => (
               <div
                 key={idx}
-                className="group flex flex-col items-center sm:items-start"
+                className="relative group p-6 sm:p-8 lg:p-10 rounded-card bg-white/40 backdrop-blur-md border border-emerald-pop/60 shadow-premium overflow-hidden transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl hover:bg-white/60"
               >
-                <div className="relative w-full aspect-4/5 rounded-image overflow-hidden shadow-2xl mb-8 ring-1 ring-forest/10 group-hover:shadow-forest/20 transition-all duration-700">
-                  <img
-                    src={`${member.image.split("?")[0]}?auto=format&fit=crop&q=80&w=600`}
-                    alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                    loading="lazy"
-                  />
-
-                  <div className="absolute inset-x-2 bottom-2 sm:inset-x-4 sm:bottom-4 lg:inset-x-6 lg:bottom-6">
-                    <div className="bg-forest/70 backdrop-blur-2xl p-4 sm:p-6 rounded-card border border-white/10 shadow-4xl relative z-10 overflow-hidden transform transition-all duration-500 group-hover:bg-forest/80">
-                      <div className="relative z-20">
-                        <p className="text-emerald-pop font-black text-[8px] sm:text-[10px] uppercase tracking-[0.25em] mb-1 sm:mb-2 text-center sm:text-left">
-                          {member.shortRole}
-                        </p>
-                        <p className="text-white font-heading font-black text-lg sm:text-2xl tracking-tighter leading-none mb-2 sm:mb-4 text-center sm:text-left">
-                          {member.name}
-                        </p>
-                        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-4 uppercase tracking-[0.2em] font-black text-[8px] sm:text-[9px]">
-                          <span className="text-emerald-pop/80">
-                            {member.role}
-                          </span>
-                          <span className="w-1 h-1 rounded-full bg-white/20 hidden sm:block" />
-                          <span className="text-white/40">{member.stats}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                {/* Subtle background icon */}
+                <div className="absolute -top-6 -right-6 text-forest/5 group-hover:text-forest/10 transition-colors duration-500 scale-[2.5] opacity-20">
+                  {service.icon}
                 </div>
 
-                <div className="px-2 mt-4">
-                  <p className="text-forest/60 text-sm leading-relaxed font-medium italic border-l-2 border-emerald-pop/30 pl-4 max-w-sm">
-                    "{member.bio}"
+                <div className="relative z-10">
+                  <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] text-emerald-pop mb-3 sm:mb-4 block transition-colors">
+                    {service.tag}
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-heading font-black text-forest mb-3 sm:mb-4 tracking-tighter leading-none transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-forest/60 text-xs sm:text-sm leading-relaxed font-medium transition-colors">
+                    {service.desc}
                   </p>
+
+                  <div className="mt-8 sm:mt-10 flex items-center gap-2 text-forest/40 font-black text-[8px] sm:text-[9px] uppercase tracking-widest group-hover:text-emerald-pop transition-colors">
+                    Learn More{" "}
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </div>
             ))}
           </div>
+        </Section>
 
-          {/* Expert/Psychology Group */}
-          <div className="flex justify-center">
-            <div className="w-full md:w-1/3">
-              {team.slice(3).map((member, idx) => (
+        {/* 3. THE TEAM - Fixed Mobile Visibility */}
+        <Section
+          variant="sand"
+          subtitle="The Core Team"
+          subtitleIcon={<Users className="w-3.5 h-3.5" />}
+          title={
+            <>
+              Leadership & <br />
+              <span className="text-emerald-pop italic">
+                Strategic Intelligence.
+              </span>
+            </>
+          }
+        >
+          <div className="space-y-16 lg:space-y-24">
+            {/* Founders Group */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+              {team.slice(0, 3).map((member, idx) => (
                 <div
                   key={idx}
                   className="group flex flex-col items-center sm:items-start"
@@ -270,25 +225,72 @@ export default function About() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </Section>
 
-      {/* 4. PHILOSOPHY - Integrated Growth Framework */}
-      <Section
-        variant="mist"
-        subtitle="The Science of Growth"
-        subtitleIcon={<Target className="w-3.5 h-3.5 text-emerald-pop" />}
-        title={
-          <>
-            Where Methodology <br />
-            <span className="text-forest italic">Meets the Wild.</span>
-          </>
-        }
-      >
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-32 items-center">
-          <div className="lg:col-span-7">
-            <div className="max-w-2xl mx-auto lg:mx-0">
+            {/* Expert/Psychology Group */}
+            <div className="flex justify-center">
+              <div className="w-full md:w-1/3">
+                {team.slice(3).map((member, idx) => (
+                  <div
+                    key={idx}
+                    className="group flex flex-col items-center sm:items-start"
+                  >
+                    <div className="relative w-full aspect-4/5 rounded-image overflow-hidden shadow-2xl mb-8 ring-1 ring-forest/10 group-hover:shadow-forest/20 transition-all duration-700">
+                      <img
+                        src={`${member.image.split("?")[0]}?auto=format&fit=crop&q=80&w=600`}
+                        alt={member.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                        loading="lazy"
+                      />
+
+                      <div className="absolute inset-x-2 bottom-2 sm:inset-x-4 sm:bottom-4 lg:inset-x-6 lg:bottom-6">
+                        <div className="bg-forest/70 backdrop-blur-2xl p-4 sm:p-6 rounded-card border border-white/10 shadow-4xl relative z-10 overflow-hidden transform transition-all duration-500 group-hover:bg-forest/80">
+                          <div className="relative z-20">
+                            <p className="text-emerald-pop font-black text-[8px] sm:text-[10px] uppercase tracking-[0.25em] mb-1 sm:mb-2 text-center sm:text-left">
+                              {member.shortRole}
+                            </p>
+                            <p className="text-white font-heading font-black text-lg sm:text-2xl tracking-tighter leading-none mb-2 sm:mb-4 text-center sm:text-left">
+                              {member.name}
+                            </p>
+                            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-4 uppercase tracking-[0.2em] font-black text-[8px] sm:text-[9px]">
+                              <span className="text-emerald-pop/80">
+                                {member.role}
+                              </span>
+                              <span className="w-1 h-1 rounded-full bg-white/20 hidden sm:block" />
+                              <span className="text-white/40">
+                                {member.stats}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="px-2 mt-4">
+                      <p className="text-forest/60 text-sm leading-relaxed font-medium italic border-l-2 border-emerald-pop/30 pl-4 max-w-sm">
+                        "{member.bio}"
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* 4. PHILOSOPHY - Integrated Growth Framework */}
+        <Section
+          variant="mist"
+          subtitle="The Science of Growth"
+          subtitleIcon={<Target className="w-3.5 h-3.5 text-emerald-pop" />}
+          title={
+            <>
+              Where Methodology <br />
+              <span className="text-forest italic">Meets the Wild.</span>
+            </>
+          }
+        >
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
               <p className="text-xl sm:text-2xl md:text-3xl text-forest/80 leading-tight mb-12 sm:mb-20 font-medium italic border-l-[6px] border-emerald-pop pl-6 sm:pl-10 pr-4">
                 We bridge the gap between academic theory and real-world
                 behavior through high-impact, nature-led training.
@@ -331,55 +333,57 @@ export default function About() {
                 ))}
               </div>
             </div>
-          </div>
 
-          <div className="lg:col-span-5">
-            <div className="relative group">
-              {/* Decorative Frame */}
-              <div className="absolute -inset-10 border border-forest/5 rounded-card -z-10 animate-float" />
-              <div className="absolute inset-0 bg-forest rounded-card translate-x-12 translate-y-12 -z-20 opacity-[0.03]" />
+            <div>
+              <div className="relative group">
+                {/* Decorative Frame */}
+                <div className="absolute -inset-10 border border-forest/5 rounded-card -z-10 animate-float" />
+                <div className="absolute inset-0 bg-forest rounded-card translate-x-12 translate-y-12 -z-20 opacity-[0.03]" />
 
-              <div className="relative aspect-3/4 rounded-image overflow-hidden shadow-premium group-hover:shadow-[0_50px_100px_rgba(10,30,20,0.15)] transition-all duration-1000">
-                <img
-                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000"
-                  alt="Growth through Reflection"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                  loading="lazy"
-                />
+                <div className="relative aspect-3/4 rounded-image overflow-hidden shadow-premium group-hover:shadow-[0_50px_100px_rgba(10,30,20,0.15)] transition-all duration-1000">
+                  <img
+                    src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000"
+                    alt="Growth through Reflection"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                    loading="lazy"
+                  />
 
-                {/* Floating Insight Panel */}
-                <div className="absolute inset-x-6 bottom-6 lg:bottom-10 p-8 lg:p-10 bg-forest/95 backdrop-blur-3xl rounded-card border border-white/10 shadow-4xl group-hover:bg-forest transition-all duration-500 flex flex-col items-center justify-center text-center">
-                  <p className="text-emerald-pop font-black text-[10px] uppercase tracking-[0.4em] mb-4">
-                    The Formula
-                  </p>
-                  <p className="text-white font-heading font-black text-xs sm:text-xl lg:text-3xl leading-none tracking-tighter">
-                    Action + Reflection ={" "}
-                    <span className="text-emerald-pop italic">Evolution.</span>
-                  </p>
+                  {/* Floating Insight Panel */}
+                  <div className="absolute inset-x-6 bottom-6 lg:bottom-10 p-8 lg:p-10 bg-forest/95 backdrop-blur-3xl rounded-card border border-white/10 shadow-4xl group-hover:bg-forest transition-all duration-500 flex flex-col items-center justify-center text-center">
+                    <p className="text-emerald-pop font-black text-[10px] uppercase tracking-[0.4em] mb-4">
+                      The Formula
+                    </p>
+                    <p className="text-white font-heading font-black text-xs sm:text-xl lg:text-3xl leading-none tracking-tighter">
+                      Action + Reflection ={" "}
+                      <span className="text-emerald-pop italic">
+                        Evolution.
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </Section>
+        </Section>
 
-      {/* 5. FINAL CTA */}
-      <FinalCTA
-        variant="charcoal"
-        bgImage="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=1440"
-        icon={Compass}
-        title={
-          <>
-            Ready to Forge <br />
-            <span className="text-emerald-pop italic">New Ground?</span>
-          </>
-        }
-        description="Connect with our experts to design a specialized outbound configuration for your organization."
-        buttons={[
-          { label: "Our Programs", to: "/programs", variant: "emerald" },
-          { label: "Start Journey", to: "/contact", variant: "outline" },
-        ]}
-      />
-    </div>
+        {/* 5. FINAL CTA */}
+        <FinalCTA
+          variant="charcoal"
+          bgImage="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=1440"
+          icon={Compass}
+          title={
+            <>
+              Ready to Forge <br />
+              <span className="text-emerald-pop italic">New Ground?</span>
+            </>
+          }
+          description="Connect with our experts to design a specialized outbound configuration for your organization."
+          buttons={[
+            { label: "Our Programs", to: "/programs", variant: "emerald" },
+            { label: "Start Journey", to: "/contact", variant: "outline" },
+          ]}
+        />
+      </div>
+    </main>
   );
 }

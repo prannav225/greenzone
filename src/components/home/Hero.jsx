@@ -3,7 +3,7 @@ import { ArrowRight, Zap } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-forest pt-20 sm:pt-24 lg:pt-32">
+    <section className="relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-forest pt-16 sm:pt-20 md:pt-24 lg:pt-28 pb-8 sm:pb-12">
       {/* Background with Modern Overlay */}
       <div className="absolute inset-0">
         <img
@@ -16,32 +16,32 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-20 xl:gap-24 items-center">
           <div className="lg:col-span-7 text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 mb-8 animate-fade-in text-emerald-pop shadow-2xl">
-              <span className="w-2 h-2 rounded-full bg-emerald-pop animate-pulse" />
-              <span className="text-[10px] font-black uppercase tracking-[0.3em]">
+            <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 mb-6 sm:mb-8 animate-fade-in text-emerald-pop shadow-2xl">
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-pop animate-pulse" />
+              <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.25em] sm:tracking-[0.3em]">
                 Experiential Learning Leader
               </span>
             </div>
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white leading-[0.95] sm:leading-[0.9] tracking-tighter mb-6 sm:mb-8 animate-fade-in-up">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-black text-white leading-[0.95] tracking-tighter mb-5 sm:mb-6 md:mb-8 animate-fade-in-up">
               Leadership <br className="hidden sm:block" />
               Development <br className="sm:hidden" /> through{" "}
               <br className="hidden sm:block" />
-              <span className="text-emerald-pop italic text-3xl sm:text-5xl md:text-6xl lg:text-7xl block sm:inline mt-2 sm:mt-0">
+              <span className="text-emerald-pop italic text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl block sm:inline mt-2 sm:mt-0">
                 Structured Adventure.
               </span>
             </h1>
             {/* Subheadline */}
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/60 max-w-xl mb-10 sm:mb-12 leading-tight animate-fade-in-up animate-delay-200 mx-auto lg:mx-0 px-4 sm:px-0">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/60 max-w-xl mb-8 sm:mb-10 md:mb-12 leading-relaxed sm:leading-tight animate-fade-in-up animate-delay-200 mx-auto lg:mx-0 px-2 sm:px-0">
               Professional outbound learning programs designed to build
               resilience, emotional intelligence, and team synergy in the heart
               of nature.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 animate-fade-in-up animate-delay-300 w-full sm:w-auto px-6 sm:px-0">
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4 animate-fade-in-up animate-delay-300 w-full sm:w-auto px-4 sm:px-0">
               <PrimaryButton
                 to="/contact"
                 variant="emerald"
@@ -49,7 +49,7 @@ export default function Hero() {
                 className="group w-full sm:w-auto"
               >
                 Start Journey{" "}
-                <ArrowRight className="w-5 h-5 ml-4 group-hover:translate-x-2 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-3 sm:ml-4 group-hover:translate-x-2 transition-transform" />
               </PrimaryButton>
               <PrimaryButton
                 to="/programs"

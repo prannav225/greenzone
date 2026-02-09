@@ -39,7 +39,7 @@ const founders = [
 export default function Team() {
   return (
     <div className="bg-white">
-      <section className="relative min-h-[85vh] flex flex-col items-center justify-center pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden bg-sky-mist">
+      <section className="relative min-h-[75vh] sm:min-h-[80vh] lg:min-h-[85vh] flex flex-col items-center justify-center pt-20 sm:pt-24 lg:pt-28 pb-10 sm:pb-12 lg:pb-20 overflow-hidden bg-sky-mist">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=1920"
@@ -50,7 +50,7 @@ export default function Team() {
 
           {/* Subtle Technical Grid Overlay */}
           <div className="absolute inset-0 pointer-events-none opacity-[0.08]">
-            <div className="max-w-7xl mx-auto h-full grid grid-cols-12 px-8">
+            <div className="max-w-7xl mx-auto h-full grid grid-cols-12 px-4 sm:px-8">
               {[...Array(12)].map((_, i) => (
                 <div
                   key={i}
@@ -61,18 +61,18 @@ export default function Team() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-emerald-pop text-[10px] font-black uppercase tracking-[0.3em] mb-10 shadow-3xl">
-            <Users className="w-4 h-4" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-emerald-pop text-[9px] sm:text-[10px] font-black uppercase tracking-[0.25em] sm:tracking-[0.3em] mb-8 sm:mb-10 shadow-3xl">
+            <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             Human Presence
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white leading-[0.8] tracking-tighter mb-8 drop-shadow-sm">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-black text-white leading-[0.85] sm:leading-[0.8] tracking-tighter mb-6 sm:mb-8 drop-shadow-sm px-4 sm:px-0">
             The Minds Behind <br />
             <span className="text-emerald-pop italic">The Descent.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto font-medium leading-tight">
+          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto font-medium leading-relaxed sm:leading-tight px-4 sm:px-0">
             Greenzone Adventures is shaped by explorers, psychologists, and
             designers who believe growth is earned through experience—not
             instruction.
@@ -105,10 +105,10 @@ export default function Team() {
             </p>
           </div>
 
-          <div className="lg:col-span-12 grid md:grid-cols-3 gap-8">
+          <div className="lg:col-span-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {founders.map((founder, idx) => (
               <div key={idx} className="group flex flex-col">
-                <div className="aspect-4/5 rounded-[2rem] overflow-hidden shadow-premium transition-all duration-1000 group-hover:shadow-4xl relative mb-6">
+                <div className="aspect-4/5 rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-premium transition-all duration-1000 group-hover:shadow-4xl relative mb-4 sm:mb-6">
                   <img
                     src={founder.image}
                     alt={founder.name}
@@ -116,16 +116,16 @@ export default function Team() {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-forest/70 via-transparent to-transparent opacity-60" />
                 </div>
-                <div className="flex flex-col grow">
-                  <div className="mb-4">
-                    <h3 className="text-2xl font-heading font-black text-forest mb-1 tracking-tighter leading-none">
+                <div className="flex flex-col grow px-2 sm:px-0">
+                  <div className="mb-3 sm:mb-4">
+                    <h3 className="text-xl sm:text-2xl font-heading font-black text-forest mb-1 tracking-tighter leading-none">
                       {founder.name}
                     </h3>
-                    <p className="text-emerald-pop font-bold uppercase tracking-widest text-[9px]">
+                    <p className="text-emerald-pop font-bold uppercase tracking-widest text-[8px] sm:text-[9px]">
                       {founder.role}
                     </p>
                   </div>
-                  <p className="text-forest/60 text-base leading-relaxed font-medium">
+                  <p className="text-forest/60 text-sm sm:text-base leading-relaxed font-medium">
                     {founder.bio}
                   </p>
                 </div>
