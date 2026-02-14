@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
-import Footer from "./components/layout/Footer";
+import FooterMinimal from "./components/layout/FooterMinimal";
 
 // Pages
 import Home from "./pages/Home";
@@ -25,7 +25,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
-        <Footer />
+        <FooterMinimal />
       </div>
     </Router>
   );

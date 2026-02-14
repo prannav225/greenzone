@@ -1,24 +1,29 @@
+/**
+ * SECTION COMPONENT
+ * Standardized for the locked design system.
+ */
+
 const variants = {
   default: "bg-transparent",
-  mist: "bg-sky-mist",
-  sand: "bg-earth-sand",
-  forest: "bg-forest text-white",
-  charcoal: "bg-charcoal text-white",
+  mist: "bg-earth-light/50",
+  earth: "bg-earth",
+  forest: "bg-forest-deep text-earth",
+  dark: "bg-forest-deep text-white",
 };
 
 const paddings = {
-  xs: "py-8 sm:py-12 md:py-16 lg:py-20",
-  sm: "py-10 sm:py-16 md:py-24 lg:py-32",
-  md: "py-12 sm:py-20 md:py-32 lg:py-40",
-  lg: "py-16 sm:py-28 md:py-40 lg:py-48",
+  xs: "py-12 sm:py-16 md:py-24",
+  sm: "py-16 sm:py-24 md:py-32",
+  md: "py-24 sm:py-32 md:py-48",
+  lg: "py-32 sm:py-48 md:py-64",
   none: "py-0",
 };
 
 const widths = {
-  narrow: "max-w-5xl",
+  narrow: "max-w-4xl",
   standard: "max-w-7xl",
   wide: "max-w-8xl",
-  full: "max-width-none",
+  full: "w-full",
 };
 
 export default function Section({
@@ -36,32 +41,37 @@ export default function Section({
   return (
     <section
       id={id}
-      className={`${paddings[padding]} ${variants[variant]} ${className} relative overflow-hidden`}
+      className={`scroll-snap-section relative overflow-hidden transition-colors duration-1000 ${paddings[padding]} ${variants[variant]} ${className}`}
     >
-      <div
-        className={`${widths[width]} mx-auto px-4 sm:px-6 lg:px-8 relative z-10`}
-      >
+      <div className={`${widths[width]} mx-auto px-6 sm:px-12 relative z-10`}>
         {(title || subtitle) && (
           <div
-            className={`${center ? "text-center mx-auto" : ""} max-w-4xl mb-12 sm:mb-16 lg:mb-24`}
+            className={`flex flex-col ${center ? "items-center text-center mx-auto" : "items-start"} max-w-4xl mb-16 md:mb-24`}
           >
             {subtitle && (
               <div
-                className={`inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] sm:tracking-widest mb-6 sm:mb-8 shadow-sm ${
-                  variant === "forest" || variant === "charcoal"
-                    ? "bg-white/10 text-emerald-pop"
-                    : "bg-forest text-emerald-pop"
+                className={`flex items-center gap-3 px-4 py-1.5 rounded-full shadow-2xl transition-all duration-500 mb-8 border border-white/10 ${
+                  variant === "forest" || variant === "dark"
+                    ? "bg-white/5 text-accent-gold"
+                    : "bg-forest text-accent-gold"
                 }`}
               >
-                {subtitleIcon && subtitleIcon}
-                {subtitle}
+                {subtitleIcon && (
+                  <span className="w-4 h-4">{subtitleIcon}</span>
+                )}
+                <span className="text-eyebrow">{subtitle}</span>
               </div>
             )}
             {title && (
-              <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-black tracking-tighter leading-[0.95] sm:leading-[0.9] md:leading-[0.85] mb-5 sm:mb-6 md:mb-8 px-2 sm:px-0">
+              <h2 className="text-section-title leading-[1.05] tracking-tighter drop-shadow-premium">
                 {title}
               </h2>
             )}
+
+            {/* Standardized Title Divider */}
+            <div
+              className={`mt-10 h-1 w-24 rounded-full bg-accent-gold/20 ${center ? "mx-auto" : ""}`}
+            />
           </div>
         )}
         {children}

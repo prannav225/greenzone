@@ -1,27 +1,20 @@
-import Hero from "../components/home/Hero";
-import WhatWeDo from "../components/home/WhatWeDo";
-import WhoWeWorkWith from "../components/home/WhoWeWorkWith";
-import WhyGreenzone from "../components/home/WhyGreenzone";
-import CallToAction from "../components/home/CallToAction";
+import HeroNew from "../components/home/HeroNew";
+import ExperientialPillars from "../components/home/ExperientialPillars";
+import Philosophy from "../components/home/Philosophy";
+import WhyGreenzoneNew from "../components/home/WhyGreenzoneNew";
 
 export default function Home() {
   return (
-    <main className="scroll-snap-container">
+    <main className="scroll-snap-container bg-forest">
       <div className="scroll-snap-section">
-        <Hero />
+        <HeroNew />
       </div>
-      <div className="scroll-snap-section">
-        <WhatWeDo />
-      </div>
-      <div className="scroll-snap-section">
-        <WhoWeWorkWith />
-      </div>
-      <div className="scroll-snap-section">
-        <WhyGreenzone />
-      </div>
-      <div className="scroll-snap-section">
-        <CallToAction />
-      </div>
+
+      <ExperientialPillars />
+
+      <Philosophy />
+
+      <WhyGreenzoneNew />
     </main>
   );
 }
