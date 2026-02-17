@@ -1,55 +1,58 @@
 import Section from "../layout/Section";
-import { Users, Building2, GraduationCap, Heart } from "lucide-react";
+import { Users, Building2, GraduationCap, Zap } from "lucide-react";
 
 export default function WhoWeWorkWith() {
   const segments = [
     {
       icon: <Building2 className="w-5 h-5" />,
-      title: "HR & L&D Teams",
-      desc: "Partners in scaling culture, employee engagement, and long-term organizational development.",
+      title: "Corporate Leadership Teams",
+      desc: "High-impact transformational journeys for senior executives and management clusters.",
     },
     {
-      icon: <Users className="w-5 h-5" />,
-      title: "Corporate Managers",
-      desc: "Supporting leaders in building high-performance teams and resilient work environments.",
+      icon: <Zap className="w-5 h-5" />,
+      title: "HR & Learning & Development",
+      desc: "Custom outbound programs designed to align with organizational competency frameworks.",
     },
     {
       icon: <GraduationCap className="w-5 h-5" />,
-      title: "Educational Institutions",
-      desc: "Collaborating with colleges and universities to enhance student leadership and life skills.",
+      title: "Colleges & Universities",
+      desc: "Experiential leadership and resilience modules for the next generation of professionals.",
     },
     {
-      icon: <Heart className="w-5 h-5" />,
-      title: "Private Groups",
-      desc: "Curated retreats and expeditions for those seeking personal renewal and cognitive clarity.",
+      icon: <Users className="w-5 h-5" />,
+      title: "Growth-Oriented Individuals",
+      desc: "Curated small-group expeditions for those seeking clarity and personal expansion.",
     },
   ];
 
   return (
     <Section
-      variant="sand"
+      variant="dark"
       subtitle="Who We Serve"
       subtitleIcon={<Users className="w-3.5 h-3.5" />}
       title={
         <>
           Strategic Partnerships <br />
-          <span className="italic text-emerald-pop">Across Domains.</span>
+          <span className="italic text-accent-gold">Across Domains.</span>
         </>
       }
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 px-4 sm:px-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0">
         {segments.map((segment, idx) => (
           <div
             key={idx}
-            className="group p-6 sm:p-7 lg:p-8 rounded-card bg-white/50 backdrop-blur-sm border border-emerald-pop/60 focus-within:bg-white shadow-premium hover:shadow-2xl hover:bg-forest transition-all duration-700 hover:-translate-y-2 flex flex-col items-start"
+            className="group relative p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 transition-all duration-700 hover:bg-white/10 hover:border-accent-gold/40 hover:-translate-y-2 flex flex-col items-start shadow-premium"
           >
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-card bg-forest text-emerald-pop flex items-center justify-center mb-6 sm:mb-8 shadow-xl transition-all duration-500 group-hover:bg-emerald-pop group-hover:text-forest group-hover:scale-110">
+            {/* Visual Accent */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-accent-gold/5 blur-[50px] rounded-full -mr-16 -mt-16 group-hover:bg-accent-gold/10 transition-colors duration-700" />
+
+            <div className="w-14 h-14 rounded-2xl bg-forest-deep border border-white/10 text-accent-gold flex items-center justify-center mb-8 shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:border-accent-gold/50 group-hover:shadow-gold/20">
               {segment.icon}
             </div>
-            <h3 className="text-xl sm:text-2xl font-heading font-black text-forest mb-3 sm:mb-4 tracking-tighter leading-tight group-hover:text-white transition-colors duration-500">
+            <h3 className="text-xl sm:text-2xl font-heading font-black text-white mb-4 tracking-tighter leading-tight transition-colors duration-500 group-hover:text-accent-gold">
               {segment.title}
             </h3>
-            <p className="text-forest/60 font-medium text-xs sm:text-sm leading-relaxed group-hover:text-white/60 transition-colors duration-500">
+            <p className="text-white/60 font-medium text-sm leading-relaxed transition-colors duration-500 group-hover:text-white/80">
               {segment.desc}
             </p>
           </div>

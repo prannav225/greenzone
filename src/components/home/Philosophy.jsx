@@ -3,30 +3,30 @@ import { useRef, useEffect } from "react";
 const PHILOSOPHY_STORY = [
   {
     id: "01",
-    eyebrow: "The Catalyst",
-    title: "Engineering Transformation.",
-    desc: "We don't just lead journeys; we engineer the conditions for fundamental human change through nature's raw intelligence.",
+    eyebrow: "The Setting",
+    title: "Nature removes distraction.",
+    desc: "The wild provides a high-fidelity environment where noise defaults to zero and focus becomes absolute.",
     img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000",
   },
   {
     id: "02",
-    eyebrow: "The Boundary",
-    title: "Growth happens where comfort ends.",
-    desc: "True resilience is forged in the wild. We curate high-grit environments that challenge the ego and reveal the authentic self.",
+    eyebrow: "The Catalyst",
+    title: "Challenge reveals leadership.",
+    desc: "True capability isn't found in theory. It is forged through high-grit experiences that demand authentic action.",
     img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000",
   },
   {
     id: "03",
-    eyebrow: "The Bond",
-    title: "Where teams become tribes.",
-    desc: "Collective struggle breeds unbreakable connections. In the wilderness, professional groups transform into legendary, high-trust teams.",
+    eyebrow: "The Insight",
+    title: "Reflection builds clarity.",
+    desc: "Experience without reflection is lost. We facilitate structured decompression that turns action into understanding.",
     img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=2000",
   },
   {
     id: "04",
-    eyebrow: "The Evolution",
-    title: "This is not travel. This is evolution.",
-    desc: "We are architects of mindset expansion. We use the ancient power of the wild to engineer the leaders of tomorrow.",
+    eyebrow: "The Result",
+    title: "Application drives growth.",
+    desc: "We bridge the gap between the mountain and the boardroom, ensuring every insight drives real-world performance.",
     img: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=2000",
   },
 ];
@@ -161,10 +161,10 @@ export default function Philosophy() {
           <div className="space-y-16">
             <div className="space-y-6">
               <span className="text-eyebrow text-accent-gold block drop-shadow-glow">
-                The Philosophy
+                Why It Works
               </span>
-              <h3 className="text-white text-[12vw] font-heading font-black tracking-tighter opacity-15 select-none leading-none">
-                EVOLUTION
+              <h3 className="text-white text-[8vw] font-heading font-black tracking-tighter opacity-15 select-none leading-none">
+                EXPERIENCE
               </h3>
             </div>
 
@@ -177,9 +177,8 @@ export default function Philosophy() {
                 }}
               />
               <p className="font-heading text-xl md:text-3xl font-light tracking-widest italic text-white/90 drop-shadow-premium max-w-2xl leading-relaxed">
-                Engineering the{" "}
-                <span className="font-bold text-accent-gold">future</span> of
-                leadership.
+                Experience Changes{" "}
+                <span className="font-bold text-accent-gold">Perspective</span>.
               </p>
             </div>
           </div>

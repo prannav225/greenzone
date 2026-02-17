@@ -1,6 +1,6 @@
 # Greenzone Adventures Landing Page
 
-![Scientific Precision Meets Wild Nature](./public/home.png)
+![Scientific Precision Meets Wild Nature]
 
 A premium, high-performance landing page for **Greenzone Adventures**, an outdoor behavioral learning and corporate training organization. This site is designed with a modern **Glassmorphism** aesthetic, blending scientific precision with the raw beauty of nature.
 

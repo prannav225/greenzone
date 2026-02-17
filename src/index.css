@@ -20,7 +20,7 @@
   --color-accent-blue: #3b82f6;
   --color-accent-teal: #14b8a6;
 
-  --color-mist: #f6f4ef;
+  --color-mist: #f2f4f2;
 
   /* ===== MODERN TYPOGRAPHY ===== */
   --font-sans:
@@ -127,7 +127,7 @@ body {
   font-size: var(--font-size-xs);
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.8em;
+  letter-spacing: 0.4em;
 }
 .text-description {
   font-size: var(--font-size-lg);

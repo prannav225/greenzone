@@ -10,14 +10,17 @@ export default function CallToAction() {
       icon={Compass}
       title={
         <>
-          Ready to Move <br />
-          <span className="text-emerald-pop italic">Beyond the Classroom?</span>
+          Ready to Build Something <br />
+          <span className="text-accent-gold italic">Meaningful?</span>
         </>
       }
-      description="Let's design a custom outbound learning configuration that triggers your team's next phase of leadership and growth."
+      description="Let’s design an experience aligned with your goals."
       buttons={[
-        { label: "Start Your Journey", to: "/contact", variant: "emerald" },
-        { label: "Our Programs", to: "/programs", variant: "outline" },
+        {
+          label: "Schedule a Consultation",
+          to: "/contact",
+          variant: "primary",
+        },
       ]}
       showPartners={true}
     />

@@ -16,9 +16,9 @@ const variants = {
 
 const sizes = {
   xs: "px-4 py-1.5 text-[9px] font-black uppercase tracking-[0.3em]",
-  sm: "px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.3em]",
-  md: "px-10 py-4 text-[11px] font-black uppercase tracking-widest",
-  lg: "px-14 py-5 text-xs font-black uppercase tracking-[0.3em]",
+  sm: "px-5 sm:px-6 py-2 text-[10px] font-black uppercase tracking-[0.2em] sm:tracking-[0.3em]",
+  md: "px-6 sm:px-10 py-3 sm:py-4 text-[10px] sm:text-[11px] font-black uppercase tracking-widest",
+  lg: "px-8 sm:px-14 py-4 sm:py-5 text-[11px] sm:text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.3em]",
 };
 
 export default function PrimaryButton({
@@ -36,6 +36,7 @@ export default function PrimaryButton({
     hover:scale-105 active:scale-95
     focus:outline-none focus:ring-2 focus:ring-accent-gold/50
     overflow-hidden group/btn
+    whitespace-nowrap
     ${variants[variant]}
     ${sizes[size]}
     ${className}

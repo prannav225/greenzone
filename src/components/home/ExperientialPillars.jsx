@@ -5,9 +5,9 @@ const pillars = [
   {
     id: 1,
     title: "Adventure & Travel",
-    subtitle: "Expeditions That Transform",
+    subtitle: "Three Paths. One Purpose.",
     description:
-      "Curated journeys to remote landscapes where challenge meets wonder. From Himalayan treks to coastal expeditions, every path is designed to push boundaries and expand horizons.",
+      "Curated journeys across powerful landscapes designed to challenge, expand, and reconnect.",
     cta: "Explore Destinations",
     link: "/destinations",
     image: "/adventure-kayak.png",
@@ -18,11 +18,11 @@ const pillars = [
   {
     id: 2,
     title: "Experiential Workshops",
-    subtitle: "Leadership Through Nature",
+    subtitle: "Three Paths. One Purpose.",
     description:
-      "Immersive outdoor experiences that build resilience, collaboration, and strategic thinking. Where teams become tribes and challenges become catalysts for growth.",
+      "Outbound Learning, NLP, and Emotional Intelligence programs that develop leadership through action.",
     cta: "View Workshops",
-    link: "/programs",
+    link: "/workshops",
     image:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2000",
     icon: Users,
@@ -32,11 +32,11 @@ const pillars = [
   {
     id: 3,
     title: "Agri Learning Retreats",
-    subtitle: "Reconnect With Earth",
+    subtitle: "Three Paths. One Purpose.",
     description:
-      "Hands-on farming, permaculture, and regenerative agriculture in serene settings. Learn sustainable practices while finding peace in the rhythm of nature.",
+      "Premium experiential sustainability programs for forward-thinking schools.",
     cta: "Discover Retreats",
-    link: "/programs",
+    link: "/agri-tourism",
     image: "/agri-retreat.png",
     icon: Sprout,
     overlayColor: "from-forest-deep via-transparent to-transparent",
@@ -142,6 +142,23 @@ function PillarPanel({ pillar, index }) {
 export default function ExperientialPillars() {
   return (
     <section className="relative bg-forest-deep overflow-hidden">
+      {/* Section Header */}
+      <div className="relative z-20 pt-32 pb-16 px-6 text-center max-w-4xl mx-auto scroll-snap-section h-screen flex flex-col justify-center">
+        <span className="text-eyebrow text-accent-gold block mb-6 animate-fade-in">
+          What We Do
+        </span>
+        <h2 className="text-white text-5xl md:text-7xl font-heading mb-8 animate-fade-in animate-delay-200">
+          Three Paths. <span className="italic">One Purpose.</span>
+        </h2>
+        <p className="text-description max-w-2xl mx-auto animate-fade-in animate-delay-400">
+          GreenZone operates at the intersection of adventure, psychology, and
+          experiential education.
+        </p>
+        <div className="mt-12 flex justify-center animate-fade-in animate-delay-500">
+          <div className="w-px h-24 bg-linear-to-b from-accent-gold to-transparent" />
+        </div>
+      </div>
+
       {pillars.map((pillar, index) => (
         <PillarPanel key={pillar.id} pillar={pillar} index={index} />
       ))}

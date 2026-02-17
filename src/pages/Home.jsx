@@ -1,7 +1,10 @@
 import HeroNew from "../components/home/HeroNew";
 import ExperientialPillars from "../components/home/ExperientialPillars";
 import Philosophy from "../components/home/Philosophy";
-import WhyGreenzoneNew from "../components/home/WhyGreenzoneNew";
+import WhoWeWorkWith from "../components/home/WhoWeWorkWith";
+import HowItWorks from "../components/home/HowItWorks";
+import CredibilityStrip from "../components/home/CredibilityStrip";
+import CallToAction from "../components/home/CallToAction";
 
 export default function Home() {
   return (
@@ -14,7 +17,13 @@ export default function Home() {
 
       <Philosophy />
 
-      <WhyGreenzoneNew />
+      <WhoWeWorkWith />
+
+      <HowItWorks />
+
+      <CredibilityStrip />
+
+      <CallToAction />
     </main>
   );
 }

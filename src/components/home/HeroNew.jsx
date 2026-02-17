@@ -69,33 +69,32 @@ export default function HeroNew() {
           </div>
 
           {/* Headline */}
-          <div className="select-none flex flex-col items-center leading-tight space-y-2">
-            <h1 className="text-hero text-white drop-shadow-premium animate-fade-in-up">
-              Beyond Travel.
-            </h1>
-            <h2
-              className="font-heading text-[clamp(1.5rem,6vh,4rem)] font-light italic animate-fade-in-up animate-delay-200 tracking-tight drop-shadow-glow"
-              style={{ color: "var(--color-accent-gold)" }}
-            >
-              Beyond Training.
-            </h2>
-          </div>
+          <h1 className="text-hero text-white mb-8 animate-fade-in-up select-none tracking-tighter">
+            Beyond Travel. <br />
+            <span className="text-accent-gold italic">Beyond Training.</span>
+          </h1>
 
           {/* Subtext */}
-          <p className="text-description max-w-2xl mx-auto animate-fade-in-up animate-delay-300 px-4">
-            Impactful experiences that merge high-altitude grit with strategic
-            leadership rigor in nature's most inspiring classrooms.
-          </p>
+          <div className="space-y-4 animate-fade-in-up animate-delay-300 px-4">
+            <p className="text-description max-w-2xl mx-auto">
+              Experiential journeys and leadership programs designed to build
+              resilience, clarity, and real-world capability.
+            </p>
+            <p className="text-white/60 text-sm md:text-base font-medium tracking-wide">
+              For individuals, teams, and institutions ready to grow beyond
+              comfort.
+            </p>
+          </div>
 
           {/* Primary Actions */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up animate-delay-400">
             <PrimaryButton to="/contact" size="md" variant="primary">
-              Plan Your Journey
+              Start Your Journey
               <ArrowRight className="w-4 h-4" />
             </PrimaryButton>
 
-            <PrimaryButton to="/programs" size="md" variant="secondary">
-              Explore Programs
+            <PrimaryButton to="/workshops" size="md" variant="secondary">
+              Explore Workshops
             </PrimaryButton>
           </div>
         </div>

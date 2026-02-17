@@ -4,33 +4,27 @@ import PrimaryButton from "../ui/PrimaryButton";
 const steps = [
   {
     number: "01",
-    title: "Discovery Call",
+    title: "Immersion",
     description:
-      "We begin by understanding your goals, challenges, context, and the kind of transformation you are seeking.",
+      "A complete exit from the noise and distraction of high-velocity work environments.",
   },
   {
     number: "02",
-    title: "Custom Design",
+    title: "Challenge",
     description:
-      "Every experience is intentionally designed—aligned to your people, purpose, and environment. No templates. No off-the-shelf programs.",
+      "High-consequence outdoor scenarios that demand immediate and authentic action.",
   },
   {
     number: "03",
-    title: "Preparation",
+    title: "Reflection",
     description:
-      "Participants receive mindset priming, context setting, and pre-work to ensure deeper engagement and psychological safety.",
+      "Guided decompression to convert raw experience into strategic individual and team insights.",
   },
   {
     number: "04",
-    title: "Immersive Experience",
+    title: "Application",
     description:
-      "The journey unfolds outdoors through guided challenges, reflection, dialogue, and experiential learning—supported every step of the way.",
-  },
-  {
-    number: "05",
-    title: "Integration",
-    description:
-      "Post-experience reflection and integration ensure insights translate into real-world behavior, decisions, and growth.",
+      "A structured bridge connecting mountain-top insights to real-world performance protocols.",
   },
 ];
 
@@ -40,13 +34,15 @@ export default function HowItWorks() {
   return (
     <Section
       id="how-it-works"
-      variant="charcoal"
+      variant="dark"
       subtitle="The Methodology"
       subtitleIcon={<Zap className="w-3.5 h-3.5" />}
       title={
         <>
-          A Journey of{" "}
-          <span className="text-emerald-pop italic">Five Steps.</span>
+          How We Design Every{" "}
+          <span className="text-accent-gold italic drop-shadow-glow">
+            Experience.
+          </span>
         </>
       }
     >
@@ -63,7 +59,7 @@ export default function HowItWorks() {
               <div className="w-full order-1">
                 {index % 2 === 0 ? (
                   <div className="lg:text-right space-y-4">
-                    <span className="text-[10px] font-black text-emerald-pop uppercase tracking-widest">
+                    <span className="text-[10px] font-black text-accent-gold uppercase tracking-widest">
                       Phase {step.number}
                     </span>
                     <h3 className="text-3xl lg:text-5xl font-heading font-black text-white tracking-tighter transition-colors">
@@ -79,15 +75,15 @@ export default function HowItWorks() {
               </div>
 
               <div className="absolute left-0 lg:relative lg:left-auto lg:order-2 z-20 flex justify-center w-12 lg:w-auto">
-                <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-charcoal border-4 border-forest-light flex items-center justify-center shadow-[0_0_30px_rgba(45,147,108,0.4)] transition-transform duration-500 hover:scale-110">
-                  <div className="w-4 h-4 lg:w-6 lg:h-6 rounded-full bg-emerald-pop animate-pulse shadow-[0_0_20px_rgba(60,220,160,0.8)]" />
+                <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-forest border-4 border-forest-light flex items-center justify-center shadow-[0_0_30px_rgba(191,167,106,0.3)] transition-transform duration-500 hover:scale-110">
+                  <div className="w-4 h-4 lg:w-6 lg:h-6 rounded-full bg-accent-gold animate-pulse shadow-[0_0_20px_rgba(191,167,106,0.6)]" />
                 </div>
               </div>
 
               <div className="w-full order-3">
                 {index % 2 === 1 ? (
                   <div className="lg:text-left space-y-4">
-                    <span className="text-[10px] font-black text-emerald-pop uppercase tracking-widest">
+                    <span className="text-[10px] font-black text-accent-gold uppercase tracking-widest">
                       Phase {step.number}
                     </span>
                     <h3 className="text-3xl lg:text-5xl font-heading font-black text-white tracking-tighter transition-colors">
@@ -107,7 +103,7 @@ export default function HowItWorks() {
       </div>
 
       <div className="mt-24 lg:mt-32 text-center relative z-10">
-        <PrimaryButton to="/contact" variant="emerald" size="lg">
+        <PrimaryButton to="/contact" variant="primary" size="lg">
           Start Your Configuration
           <ArrowRight className="w-5 h-5 ml-4" />
         </PrimaryButton>

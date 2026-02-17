@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import Section from "../components/layout/Section";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import {
@@ -5,370 +6,424 @@ import {
   Phone,
   MapPin,
   Send,
-  MessageSquare,
-  ArrowRight,
-  ShieldCheck,
-  Zap,
-  Users,
-  CheckCircle2,
-  Clock,
   Compass,
+  Users,
+  Zap,
+  ShieldCheck,
+  ChevronRight,
+  Clock,
 } from "lucide-react";
-import FinalCTA from "../components/layout/FinalCTA";
-import { useEffect } from "react";
+
+const CATEGORIES = [
+  {
+    id: "Adventure & Travel",
+    title: "Adventure & Personalised Travel",
+    desc: "For individuals, families, or groups looking for curated journeys.",
+    icon: <Compass className="w-5 h-5" />,
+  },
+  {
+    id: "Corporate OBL",
+    title: "Corporate Outbound Learning (OBL)",
+    desc: "For organizations seeking leadership and team development programs.",
+    icon: <Users className="w-5 h-5" />,
+  },
+  {
+    id: "NLP & EQ",
+    title: "NLP & Emotional Intelligence",
+    desc: "For corporate training, leadership workshops, or professional development.",
+    icon: <Zap className="w-5 h-5" />,
+  },
+  {
+    id: "Agri Learning",
+    title: "Agri Learning Retreats (Schools Only)",
+    desc: "For premium institutions seeking experiential sustainability education.",
+    icon: <ShieldCheck className="w-5 h-5" />,
+  },
+];
+
+const PROGRAM_TYPES = [
+  "Adventure & Travel",
+  "Corporate OBL",
+  "NLP Program",
+  "Emotional Intelligence Program",
+  "Agri Learning Retreat",
+];
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    org: "",
+    email: "",
+    phone: "",
+    programType: "",
+    dates: "",
+    groupSize: "",
+    location: "",
+    message: "",
+  });
+
+  const formRef = useRef(null);
+
+  const handleCategorySelect = (id) => {
+    // Map internal ID to dropdown value
+    const mapping = {
+      "Adventure & Travel": "Adventure & Travel",
+      "Corporate OBL": "Corporate OBL",
+      "NLP & EQ": "NLP Program",
+      "Agri Learning": "Agri Learning Retreat",
+    };
+    setFormData((prev) => ({ ...prev, programType: mapping[id] }));
+    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   useEffect(() => {
-    document.title =
-      "Contact | Outbound Training Bangalore & Corporate Team Building India";
+    document.title = "Contact | GreenZone Adventures";
   }, []);
 
   return (
-    <main className="scroll-snap-container">
-      <div className="scroll-snap-section bg-white">
-        {/* 1. HERO - SEO INTRODUCTION */}
-        <section className="relative min-h-[65vh] sm:min-h-[70vh] lg:min-h-[80vh] flex flex-col items-center justify-center pt-20 sm:pt-24 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden bg-forest">
-          <div className="absolute inset-0 z-0 text-center">
-            <img
-              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1440&auto=format&fit=crop"
-              alt="Outbound Training Bangalore"
-              className="w-full h-full object-cover opacity-30 scale-105 animate-slow-zoom"
-              fetchpriority="high"
-            />
-            <div className="absolute inset-0 bg-linear-to-b from-forest/60 via-forest/80 to-forest" />
+    <main className="scroll-snap-container bg-forest-deep">
+      {/* 1. HERO SECTION */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-24">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"
+            alt="Mountains"
+            className="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
+          />
+          <div className="absolute inset-0 bg-forest/20 group-hover:bg-transparent transition-colors duration-700" />
+        </div>
+
+        <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-accent-gold/10 border border-accent-gold/20 text-accent-gold mb-10 animate-fade-in-up">
+            <Zap className="w-3.5 h-3.5" />
+            <span className="text-eyebrow translate-y-[0.5px]">
+              Get in Touch
+            </span>
           </div>
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 mb-6 sm:mb-8 lg:mb-10 animate-fade-in text-emerald-pop shadow-2xl">
-              <MessageSquare className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-              <span className="text-[9px] sm:text-[10px] lg:text-[11px] font-black uppercase tracking-[0.25em] sm:tracking-[0.3em] lg:tracking-[0.4em]">
-                Start Your Journey
-              </span>
-            </div>
+          <h1 className="text-hero text-white mb-8 animate-fade-in-up [animation-delay:200ms]">
+            Let’s Design Your{" "}
+            <span className="text-accent-gold italic">Experience.</span>
+          </h1>
 
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-heading font-black text-white leading-[0.95] sm:leading-[0.9] md:leading-[0.85] tracking-tighter mb-6 sm:mb-8 lg:mb-10 px-4 sm:px-0">
-              Let's Architect <br className="hidden sm:block" />
-              <span className="text-emerald-pop italic">Your Evolution.</span>
-            </h1>
+          <p className="text-description text-earth/60 max-w-2xl mx-auto animate-fade-in-up [animation-delay:400ms]">
+            Tell us what you’re looking for — we’ll build something aligned to
+            your goals.
+          </p>
+        </div>
+      </section>
 
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/60 max-w-2xl mx-auto font-medium leading-relaxed sm:leading-tight px-4 sm:px-0">
-              Specializing in high-impact outbound training in Bangalore and
-              multi-scale corporate team building across India.
-            </p>
-          </div>
-        </section>
+      {/* 2. SELECT YOUR INTEREST */}
+      <Section
+        variant="forest"
+        padding="sm"
+        title={
+          <>
+            Selection <span className="text-accent-gold italic">Framework</span>
+          </>
+        }
+        subtitle="Step One"
+        subtitleIcon={<ChevronRight />}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {CATEGORIES.map((cat, idx) => (
+            <div
+              key={cat.id}
+              onClick={() => handleCategorySelect(cat.id)}
+              className="group relative cursor-pointer p-10 rounded-3xl bg-white/5 border border-white/5 hover:bg-white/8 hover:border-accent-gold/40 transition-all duration-700 flex flex-col items-start text-left animate-fade-in-up overflow-hidden"
+              style={{ animationDelay: `${idx * 150}ms` }}
+            >
+              {/* Ambient Glow Background */}
+              <div className="absolute -bottom-16 -right-16 w-48 h-48 bg-accent-gold/5 rounded-full blur-[80px] group-hover:bg-accent-gold/15 transition-all duration-700" />
 
-        {/* 2. WHO SHOULD CONTACT US / WHAT HAPPENS NEXT */}
-        <Section
-          variant="mist"
-          subtitle="The Collaboration Protocol"
-          subtitleIcon={<Users className="w-3.5 h-3.5" />}
-          title={
-            <>
-              Who We <br />
-              <span className="text-forest italic">Collaborate With.</span>
-            </>
-          }
-        >
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-32">
-            {/* Audience Grid */}
-            <div className="space-y-6 sm:space-y-8 lg:space-y-12">
-              <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 sm:gap-6">
-                {[
-                  {
-                    title: "HR & L&D Leaders",
-                    desc: "Organizations looking to solve culture, engagement, or leadership gaps.",
-                    icon: <Zap className="w-4 h-4 sm:w-5 sm:h-5" />,
-                  },
-                  {
-                    title: "Corporate Managers",
-                    desc: "Teams navigating merger complexity or seeking peak performance alignment.",
-                    icon: <Users className="w-4 h-4 sm:w-5 sm:h-5" />,
-                  },
-                  {
-                    title: "Academic Heads",
-                    desc: "Institutions aiming to build student resilience and real-world agency.",
-                    icon: <Compass className="w-4 h-4 sm:w-5 sm:h-5" />,
-                  },
-                  {
-                    title: "Discovery Seekers",
-                    desc: "Individuals or small teams ready for a perspective-shifting retreat.",
-                    icon: <Zap className="w-4 h-4 sm:w-5 sm:h-5" />,
-                  },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="p-5 sm:p-6 lg:p-8 rounded-card bg-white/40 backdrop-blur-xl border border-emerald-pop/60 shadow-premium hover:shadow-2xl transition-all duration-700 hover:-translate-y-1 hover:bg-white/60"
-                  >
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl bg-forest flex items-center justify-center text-emerald-pop mb-4 sm:mb-5 lg:mb-6">
-                      {item.icon}
-                    </div>
-                    <h4 className="text-base sm:text-lg lg:text-xl font-heading font-black text-forest mb-2 sm:mb-3 tracking-tight">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs sm:text-sm text-forest/50 leading-relaxed font-medium">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))}
+              {/* Dynamic Icon Container */}
+              <div className="w-16 h-16 rounded-2xl bg-forest-deep shadow-2xl border border-white/5 flex items-center justify-center mb-10 group-hover:scale-110 group-hover:-rotate-3 group-hover:border-accent-gold/20 transition-all duration-700">
+                <div className="text-accent-gold w-6 h-6 transform group-hover:scale-110 transition-transform duration-500">
+                  {cat.icon}
+                </div>
               </div>
-            </div>
 
-            {/* Process Timeline */}
-            <div className="bg-forest p-8 sm:p-10 lg:p-16 rounded-card text-white relative overflow-hidden shadow-4xl self-start">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-pop/10 rounded-full blur-[100px] animate-float" />
-              <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-forest-light/10 rounded-full blur-[120px]" />
-              <h3 className="text-2xl sm:text-3xl font-heading font-black mb-8 sm:mb-10 tracking-tighter">
-                What happens next?
+              <h3 className="text-2xl font-heading font-black text-white mb-4 leading-[1.1] tracking-tight group-hover:text-accent-gold transition-colors duration-500">
+                {cat.title}
               </h3>
-              <div className="space-y-6 sm:space-y-10 relative z-10">
-                {[
-                  {
-                    step: "01",
-                    title: "Discovery Call",
-                    desc: "Within 24 hours, an expert architect will reach out to understand your specific organizational or individual needs.",
-                    icon: <Phone className="w-5 h-5" />,
-                  },
-                  {
-                    step: "02",
-                    title: "Program Design",
-                    desc: "We configure a custom experiential roadmap, matching terrain and methodology to your desired outcomes.",
-                    icon: <Clock className="w-5 h-5" />,
-                  },
-                  {
-                    step: "03",
-                    title: "Deployment",
-                    desc: "Full execution of your journey, from clinical safety logs to post-experience reflection frameworks.",
-                    icon: <CheckCircle2 className="w-5 h-5" />,
-                  },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="flex gap-4 sm:gap-8 group bg-white/5 backdrop-blur-md p-5 sm:p-6 rounded-2xl border border-white/5 hover:bg-white/10 transition-all duration-500"
-                  >
-                    <div className="flex flex-col items-center">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-emerald-pop/30 flex items-center justify-center text-emerald-pop text-[9px] sm:text-[10px] font-black group-hover:bg-emerald-pop group-hover:text-forest transition-all shrink-0">
-                        {item.step}
-                      </div>
-                      {idx !== 2 && (
-                        <div className="w-px h-full bg-linear-to-b from-emerald-pop/30 to-transparent my-2" />
-                      )}
-                    </div>
-                    <div>
-                      <h5 className="text-lg sm:text-xl font-heading font-black mb-1 sm:mb-2 tracking-tight group-hover:text-emerald-pop transition-colors">
-                        {item.title}
-                      </h5>
-                      <p className="text-white/50 text-[11px] sm:text-xs leading-relaxed font-medium">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Section>
 
-        {/* 3. INQUIRY FORM */}
-        <Section
-          id="inquiry"
-          variant="sand"
-          padding="md"
-          subtitle="The Configuration Phase"
-          subtitleIcon={<Zap className="w-3.5 h-3.5" />}
-          title={
-            <>
-              Initiate Your <br />
-              <span className="italic text-emerald-pop">Inquiry.</span>
-            </>
-          }
-        >
-          <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
-            {/* Contact Details Column */}
-            <div className="lg:col-span-4 space-y-8 sm:space-y-12">
-              <p className="text-lg sm:text-xl text-forest/60 font-medium leading-relaxed">
-                Prefer a direct channel? Reach out to our Bangalore hub for
-                immediate corporate team building inquiries.
+              <p className="text-[13px] text-earth/40 font-medium leading-relaxed mb-auto group-hover:text-earth/70 transition-colors duration-500">
+                {cat.desc}
               </p>
 
-              <div className="grid sm:grid-cols-1 gap-4 sm:gap-6">
+              <div className="mt-12 flex items-center gap-4 text-[9px] font-black uppercase tracking-[0.4em] text-accent-gold/40 group-hover:text-accent-gold transition-all duration-500">
+                <span className="translate-y-[0.5px]">Configure</span>
+                <div className="h-px w-8 bg-accent-gold/20 group-hover:w-14 group-hover:bg-accent-gold transition-all duration-500" />
+                <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </div>
+
+              {/* Edge Highlight */}
+              <div className="absolute top-0 left-12 right-12 h-px bg-linear-to-r from-transparent via-accent-gold/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* 3. INQUIRY FORM STRUCTURE */}
+      <Section
+        id="inquiry"
+        variant="forest"
+        padding="sm"
+        title={
+          <>
+            Inquiry <span className="text-accent-gold italic">Details</span>
+          </>
+        }
+        subtitle="Step Two"
+        subtitleIcon={<ChevronRight />}
+      >
+        <div
+          ref={formRef}
+          className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start"
+        >
+          {/* Contact Details Column */}
+          <div className="lg:col-span-4 space-y-12">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-heading font-bold text-white tracking-tight">
+                Contact Information
+              </h3>
+              <div className="space-y-4">
                 {[
                   {
-                    icon: <Mail className="w-5 h-5 sm:w-6 sm:h-6" />,
-                    label: "Email Us",
-                    info: "hello@greenzone.in",
-                    href: "mailto:hello@greenzone.in",
+                    icon: <Phone className="w-4 h-4" />,
+                    label: "Phone",
+                    value: "+91 70199 71407",
+                    href: "tel:+917019971407",
                   },
                   {
-                    icon: <Phone className="w-5 h-5 sm:w-6 sm:h-6" />,
-                    label: "Call Us",
-                    info: "+91 98765 43210",
-                    href: "tel:+919876543210",
+                    icon: <Mail className="w-4 h-4" />,
+                    label: "Email",
+                    value: "greenzoneadventures@gmail.com",
+                    href: "mailto:greenzoneadventures@gmail.com",
                   },
                   {
-                    icon: <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />,
-                    label: "Visit Hub",
-                    info: "Bengaluru, KA, India",
+                    icon: <MapPin className="w-4 h-4" />,
+                    label: "Location",
+                    value: "Bengaluru",
                     href: "#",
                   },
                 ].map((item, idx) => (
                   <a
                     key={idx}
                     href={item.href}
-                    className="flex items-center gap-4 sm:gap-6 p-5 sm:p-6 rounded-card bg-white/30 backdrop-blur-md border border-white/60 hover:bg-white hover:shadow-xl transition-all duration-500 group"
+                    className="flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 group"
                   >
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-forest text-emerald-pop flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-accent-gold/20 text-accent-gold flex items-center justify-center group-hover:bg-accent-gold group-hover:text-forest-deep transition-all duration-500">
                       {item.icon}
                     </div>
-                    <div className="min-w-0">
-                      <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-forest/30 block mb-0.5 sm:mb-1">
+                    <div>
+                      <span className="text-[9px] font-black uppercase tracking-widest text-white/40 block mb-0.5">
                         {item.label}
                       </span>
-                      <span className="text-base sm:text-lg font-heading font-black text-forest block truncate">
-                        {item.info}
+                      <span className="text-sm font-bold text-earth block">
+                        {item.value}
                       </span>
                     </div>
                   </a>
                 ))}
               </div>
-
-              <div className="p-6 sm:p-8 rounded-card bg-emerald-pop/5 backdrop-blur-sm border border-emerald-pop/10 shadow-premium">
-                <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                  <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-pop" />
-                  <h5 className="text-[11px] sm:text-sm font-black uppercase tracking-widest text-forest">
-                    Privacy Assured
-                  </h5>
-                </div>
-                <p className="text-[10px] sm:text-xs text-forest/50 font-medium leading-relaxed">
-                  Your data is used strictly for configuring your program. No
-                  spam, just professional discovery.
-                </p>
-              </div>
             </div>
 
-            {/* Form Column */}
-            <div className="lg:col-span-8">
-              <div className="bg-white p-6 sm:p-10 lg:p-16 rounded-card shadow-premium border border-forest/5 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-pop/5 rounded-full blur-3xl" />
-
-                <form
-                  className="space-y-6 sm:space-y-10 relative z-10"
-                  onSubmit={(e) => e.preventDefault()}
-                >
-                  <div className="grid md:grid-cols-2 gap-6 sm:gap-10">
-                    <div className="space-y-2 sm:space-y-3">
-                      <label className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
-                        Full Name
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="NAME"
-                        className="w-full bg-[#fcfdfc] border border-forest/40 px-6 sm:px-8 py-4 sm:py-5 rounded-input focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest placeholder-forest/20 transition-all shadow-sm text-sm sm:text-base"
-                      />
-                    </div>
-                    <div className="space-y-2 sm:space-y-3">
-                      <label className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
-                        Organization / Individual
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="ENTITY NAME"
-                        className="w-full bg-[#fcfdfc] border border-forest/40 px-6 sm:px-8 py-4 sm:py-5 rounded-input focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest placeholder-forest/20 transition-all shadow-sm text-sm sm:text-base"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6 sm:gap-10">
-                    <div className="space-y-2 sm:space-y-3">
-                      <label className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
-                        Program Interest
-                      </label>
-                      <div className="relative">
-                        <select className="w-full bg-[#fcfdfc] border border-forest/40 px-6 sm:px-8 py-4 sm:py-5 rounded-input focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest appearance-none cursor-pointer transition-all shadow-sm text-sm sm:text-base">
-                          <option>Outbound Learning (OBL)</option>
-                          <option>Corporate Team Building</option>
-                          <option>Student Development</option>
-                          <option>Personal Retreat / Trek</option>
-                        </select>
-                        <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-forest/40">
-                          <ArrowRight className="w-4 h-4 rotate-90" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="space-y-2 sm:space-y-3">
-                      <label className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
-                        Group Size
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="E.G. 15-20"
-                        className="w-full bg-[#fcfdfc] border border-forest/40 px-6 sm:px-8 py-4 sm:py-5 rounded-input focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest placeholder-forest/20 transition-all shadow-sm text-sm sm:text-base"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 sm:space-y-3">
-                    <label className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
-                      Preferred Location
-                    </label>
-                    <div className="relative">
-                      <select className="w-full bg-[#fcfdfc] border border-forest/40 px-6 sm:px-8 py-4 sm:py-5 rounded-input focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest appearance-none cursor-pointer transition-all shadow-sm text-sm sm:text-base">
-                        <option>Western Ghats / Chikmagalur</option>
-                        <option>Hampi / Lepakshi (Historical)</option>
-                        <option>Coorg / Wayanad</option>
-                        <option>Gokarna (Coastal)</option>
-                        <option>Himalayas</option>
-                        <option>Bengaluru Local</option>
-                      </select>
-                      <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-forest/40">
-                        <ArrowRight className="w-4 h-4 rotate-90" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 sm:space-y-3">
-                    <label className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] text-forest/40 ml-4">
-                      Objectives & Message
-                    </label>
-                    <textarea
-                      rows={4}
-                      placeholder="DESCRIBE YOUR GOALS..."
-                      className="w-full bg-[#fcfdfc] border border-forest/40 px-6 sm:px-8 py-4 sm:py-5 rounded-input focus:border-emerald-pop focus:bg-white focus:ring-4 focus:ring-emerald-pop/5 outline-none font-bold text-forest placeholder-forest/20 transition-all resize-none shadow-sm text-sm sm:text-base"
-                    />
-                  </div>
-
-                  <PrimaryButton
-                    variant="primary"
-                    size="lg"
-                    className="w-full group py-4 sm:py-5"
-                  >
-                    Transmit Inquiry
-                    <div className="relative ml-4">
-                      <Send className="w-5 h-5 group-hover:translate-x-12 group-hover:-translate-y-12 group-hover:opacity-0 transition-all duration-700" />
-                      <Send className="w-5 h-5 absolute inset-0 -translate-x-12 translate-y-12 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 delay-100" />
-                    </div>
-                  </PrimaryButton>
-                </form>
+            <div className="p-8 rounded-card bg-accent-gold/5 border border-accent-gold/20 space-y-4">
+              <div className="flex items-center gap-3">
+                <Clock className="w-5 h-5 text-accent-gold" />
+                <h4 className="text-sm font-black uppercase tracking-widest text-white">
+                  Response Expectation
+                </h4>
               </div>
+              <p className="text-xs text-white/50 leading-relaxed font-medium">
+                We typically respond within 24–48 hours. Every program is
+                customized — our team may schedule a short call to understand
+                your requirements better.
+              </p>
             </div>
           </div>
-        </Section>
 
-        {/* FINAL CTA */}
-        <FinalCTA
-          variant="forest"
-          icon={Zap}
-          bgImage="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1440"
-          title={
-            <>
-              The Systems are <br />
-              <span className="text-emerald-pop italic">Engaged.</span>
-            </>
-          }
-          description="Our architects are ready to configure your journey. Transmit your inquiry to begin."
-          buttons={[]}
-        />
-      </div>
+          {/* Form Column */}
+          <div className="lg:col-span-8 bg-earth-light/20 p-8 sm:p-12 lg:p-16 rounded-card shadow-4xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-accent-gold/5 rounded-full blur-3xl" />
+
+            <form
+              className="relative z-10 space-y-8"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-earth ml-4">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="ENTER YOUR NAME"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    className="w-full bg-white/50 border-forest-deep/10 px-6 py-4 rounded-2xl focus:border-accent-gold focus:bg-white outline-none font-bold text-forest-deep transition-all"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-earth ml-4">
+                    Organization / Institution
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="OPTIONAL"
+                    value={formData.org}
+                    onChange={(e) =>
+                      setFormData({ ...formData, org: e.target.value })
+                    }
+                    className="w-full bg-white/50 border-forest-deep/10 px-6 py-4 rounded-2xl focus:border-accent-gold focus:bg-white outline-none font-bold text-forest-deep transition-all"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-earth ml-4">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="EMAIL@EXAMPLE.COM"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    className="w-full bg-white/50 border-forest-deep/10 px-6 py-4 rounded-2xl focus:border-accent-gold focus:bg-white outline-none font-bold text-forest-deep transition-all"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-earth ml-4">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="+91 00000 00000"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                    className="w-full bg-white/50 border-forest-deep/10 px-6 py-4 rounded-2xl focus:border-accent-gold focus:bg-white outline-none font-bold text-forest-deep transition-all"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-earth ml-4">
+                    Program Type
+                  </label>
+                  <select
+                    value={formData.programType}
+                    onChange={(e) =>
+                      setFormData({ ...formData, programType: e.target.value })
+                    }
+                    className="w-full bg-white/50 border-forest-deep/10 px-6 py-4 rounded-2xl focus:border-accent-gold focus:bg-white outline-none font-bold text-forest-deep transition-all appearance-none cursor-pointer"
+                  >
+                    <option value="" disabled>
+                      SELECT PROGRAM
+                    </option>
+                    {PROGRAM_TYPES.map((type) => (
+                      <option key={type} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-earth ml-4">
+                    Preferred Dates
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="E.G. LATE OCTOBER 2024"
+                    value={formData.dates}
+                    onChange={(e) =>
+                      setFormData({ ...formData, dates: e.target.value })
+                    }
+                    className="w-full bg-white/50 border-forest-deep/10 px-6 py-4 rounded-2xl focus:border-accent-gold focus:bg-white outline-none font-bold text-forest-deep transition-all"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-earth ml-4">
+                    Group Size
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="E.G. 20-25 PEOPLE"
+                    value={formData.groupSize}
+                    onChange={(e) =>
+                      setFormData({ ...formData, groupSize: e.target.value })
+                    }
+                    className="w-full bg-white/50 border-forest-deep/10 px-6 py-4 rounded-2xl focus:border-accent-gold focus:bg-white outline-none font-bold text-forest-deep transition-all"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-earth ml-4">
+                    Location Preference
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="CITY OR REGION"
+                    value={formData.location}
+                    onChange={(e) =>
+                      setFormData({ ...formData, location: e.target.value })
+                    }
+                    className="w-full bg-white/50 border-forest-deep/10 px-6 py-4 rounded-2xl focus:border-accent-gold focus:bg-white outline-none font-bold text-forest-deep transition-all"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-earth ml-4">
+                  Message / Program Goals
+                </label>
+                <textarea
+                  rows={4}
+                  placeholder="DESCRIBE YOUR OBJECTIVES..."
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
+                  className="w-full bg-white/50 border-forest-deep/10 px-6 py-4 rounded-2xl focus:border-accent-gold focus:bg-white outline-none font-bold text-forest-deep transition-all resize-none"
+                />
+              </div>
+
+              <PrimaryButton
+                variant="primary"
+                size="lg"
+                className="w-full group"
+              >
+                SUBMIT INQUIRY
+                <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </PrimaryButton>
+            </form>
+          </div>
+        </div>
+      </Section>
+
+      {/* 6. FINAL CLOSING LINE */}
+      <section className="py-24 bg-forest-deep text-center px-6">
+        <div className="max-w-4xl mx-auto space-y-6">
+          <div className="w-px h-24 bg-linear-to-b from-transparent via-accent-gold to-transparent mx-auto opacity-30" />
+          <h2 className="text-3xl md:text-4xl font-heading font-black text-white italic tracking-tighter">
+            We don’t offer standard packages. <br />
+            <span className="text-accent-gold">
+              We design meaningful experiences.
+            </span>
+          </h2>
+          <div className="w-px h-24 bg-linear-to-b from-accent-gold via-accent-gold to-transparent mx-auto opacity-30" />
+        </div>
+      </section>
     </main>
   );
 }

@@ -67,14 +67,14 @@ export default function FinalCTA({
             }`}
           >
             <Icon
-              className={`w-10 h-10 ${isDark ? "text-emerald-pop" : "text-emerald-pop"}`}
+              className={`w-10 h-10 ${isDark ? "text-accent-gold" : "text-accent-gold"}`}
             />
           </div>
         )}
 
         {/* Heading */}
         <h2
-          className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black leading-[0.95] sm:leading-[0.85] tracking-tighter mb-6 sm:mb-8 px-4 sm:px-0 ${
+          className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black leading-[1.1] tracking-tighter mb-6 sm:mb-8 px-4 sm:px-0 ${
             isDark ? "text-white" : "text-forest"
           }`}
         >
@@ -98,7 +98,7 @@ export default function FinalCTA({
               <PrimaryButton
                 key={idx}
                 to={btn.to}
-                variant={btn.variant || (isDark ? "emerald" : "primary")}
+                variant={btn.variant || (isDark ? "primary" : "primary")}
                 size="lg"
                 className="group w-full sm:w-auto"
               >

@@ -1,389 +1,377 @@
+import { Link } from "react-router-dom";
 import Section from "../components/layout/Section";
-import PrimaryButton from "../components/ui/PrimaryButton";
 import {
-  Brain,
   Compass,
-  Sparkles,
-  ArrowRight,
-  ShieldCheck,
-  Zap,
   Target,
-  Users,
+  Zap,
+  Brain,
+  ShieldCheck,
+  Sparkles,
+  Quote,
+  ArrowRight,
+  Mountain,
+  Layout,
+  Microscope,
 } from "lucide-react";
-import FinalCTA from "../components/layout/FinalCTA";
+import {
+  VISION_MISSION,
+  WHY_CHOOSE_US,
+  FOUNDERS,
+  COLLABORATION_POINTS,
+} from "../data/aboutData";
+import SectionHeading from "../components/ui/SectionHeading";
 
-const team = [
-  {
-    name: "Kumar Srivatsa MS",
-    role: "Founder",
-    shortRole: "Leadership & Vision",
-    bio: "An entrepreneur by profession and an adventurer by conviction, Kumar founded Greenzone to bridge the gap between adventure and development. He specializes in designing journeys that foster leadership, resilience, and self-discovery.",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
-    stats: "15+ Years Experience",
-  },
-  {
-    name: "Ashrith Paul",
-    role: "Co-Founder",
-    shortRole: "Operations & Safety",
-    bio: "Ashrith ensures that every Greenzone journey runs with surgical precision. With deep expertise in process design and risk management, he makes complex transformation repeatable, responsible, and real.",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800",
-    stats: "Certified Field Lead",
-  },
-  {
-    name: "Praneet Varma",
-    role: "Co-Founder",
-    shortRole: "Experience Design",
-    bio: "Praneet leads experience design, crafting journeys that are emotionally coherent and immersive. For him, adventure is a medium for meaning, where every detail supports reflection and growth.",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800",
-    stats: "MBA, Experience Architect",
-  },
-  {
-    name: "Dr. Padmashri S. Rao",
-    role: "Lead Psychologist",
-    shortRole: "Cognitive Science",
-    bio: "A distinguished psychologist and NLP practitioner, Dr. Padmashri brings scientific rigor to our programs. She integrates cognitive science with outdoor experience to create lasting behavioral change.",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
-    stats: "PhD in Psychology",
-  },
-];
+import Hero from "../components/layout/Hero";
+
+// ...
 
 export default function About() {
   return (
     <main className="scroll-snap-container">
-      <div className="scroll-snap-section bg-white">
-        {/* 1. HERO - Introduction */}
-        <section className="relative min-h-[75vh] sm:min-h-[80vh] lg:min-h-[90vh] flex flex-col items-center justify-center pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20 overflow-hidden bg-forest">
-          <div className="absolute inset-0">
-            <img
-              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1440"
-              alt="Human Growth in Nature"
-              className="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
-              fetchpriority="high"
-            />
-            <div className="absolute inset-0 bg-linear-to-b from-forest/80 via-forest/40 to-forest" />
+      {/* 1. HERO SECTION */}
+      <Hero
+        bgImage="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000"
+        eyebrow={
+          <>
+            <Compass className="w-4 h-4" />
+            <span className="text-eyebrow text-accent-gold">
+              Established Foundations
+            </span>
+          </>
+        }
+        title={
+          <>
+            About <br />
+            <span className="text-accent-gold italic">Greenzone</span>
+          </>
+        }
+        description="Where experiential design meets structured human development."
+        // ... hero props ...
+        overlayGradient="bg-linear-to-b from-forest-deep/80 via-transparent to-forest-deep"
+      />
 
-            {/* Subtle Grid Overlay */}
-            <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-          </div>
-
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 mb-8 sm:mb-10 animate-fade-in text-emerald-pop shadow-2xl">
-              <Compass className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.3em] sm:tracking-[0.4em]">
-                Established Foundations
-              </span>
-            </div>
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-heading font-black text-white leading-[0.95] sm:leading-[0.9] md:leading-[0.85] tracking-tighter mb-6 sm:mb-8 md:mb-10 animate-fade-in-up px-4 sm:px-0">
-              Human <br className="hidden sm:block" />
-              Development <br className="hidden sm:block" />
-              <span className="text-emerald-pop italic">Redefined.</span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/50 max-w-3xl mx-auto font-medium leading-relaxed sm:leading-tight animate-fade-in-up animate-delay-200 px-4 sm:px-0">
-              Greenzone Adventures is a specialized experiential learning
-              organization based in Bangalore, bridging theory and behavior
-              through structured nature-led journeys.
-            </p>
-          </div>
-
-          {/* Animated Scroll Indicator */}
-          <div className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-20 hidden sm:block">
-            <div className="w-0.5 h-10 sm:h-12 bg-white rounded-full mx-auto" />
-          </div>
-        </section>
-
-        {/* 2. CORE EXPERTISE - Fixed "Lazy" Boxes */}
-        <Section
-          variant="mist"
-          subtitle="Operational Excellence"
-          subtitleIcon={<Zap className="w-3.5 h-3.5" />}
-          title={
-            <>
-              Specialized <br />
-              <span className="text-forest italic">Training Segments.</span>
-            </>
-          }
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 relative z-10 px-4 sm:px-0">
-            {[
-              {
-                title: "OBL Programs",
-                tag: "Transformation",
-                desc: "Intensive field-based learning designed to trigger deep organizational shifts.",
-                icon: <Zap className="w-4 h-4 sm:w-5 sm:h-5" />,
-              },
-              {
-                title: "Corporate Teams",
-                tag: "Leadership Labs",
-                desc: "Strategic workshops focusing on synergy, alignment, and high-performance synergy.",
-                icon: <Target className="w-4 h-4 sm:w-5 sm:h-5" />,
-              },
-              {
-                title: "EQ & NLP",
-                tag: "Cognitive Skillset",
-                desc: "Integrating psychological frameworks to enhance personal and professional effectiveness.",
-                icon: <Brain className="w-4 h-4 sm:w-5 sm:h-5" />,
-              },
-              {
-                title: "Student Readiness",
-                tag: "Agency & Grit",
-                desc: "Equipping young professionals with the resilience and soft skills needed for the future.",
-                icon: <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />,
-              },
-            ].map((service, idx) => (
-              <div
-                key={idx}
-                className="relative group p-6 sm:p-8 lg:p-10 rounded-card bg-white/40 backdrop-blur-md border border-emerald-pop/60 shadow-premium overflow-hidden transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl hover:bg-white/60"
-              >
-                {/* Subtle background icon */}
-                <div className="absolute -top-6 -right-6 text-forest/5 group-hover:text-forest/10 transition-colors duration-500 scale-[2.5] opacity-20">
-                  {service.icon}
-                </div>
-
-                <div className="relative z-10">
-                  <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] text-emerald-pop mb-3 sm:mb-4 block transition-colors">
-                    {service.tag}
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-heading font-black text-forest mb-3 sm:mb-4 tracking-tighter leading-none transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-forest/60 text-xs sm:text-sm leading-relaxed font-medium transition-colors">
-                    {service.desc}
-                  </p>
-
-                  <div className="mt-8 sm:mt-10 flex items-center gap-2 text-forest/40 font-black text-[8px] sm:text-[9px] uppercase tracking-widest group-hover:text-emerald-pop transition-colors">
-                    Learn More{" "}
-                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
+      {/* 2. VISION & MISSION - REDESIGNED */}
+      <Section
+        id="mission"
+        variant="forest"
+        padding="md"
+        center={true}
+        className="relative overflow-visible"
+      >
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 relative z-10 w-full">
+          {/* VISION - Primary focus */}
+          <div className="relative group">
+            <div className="relative bg-white/5 backdrop-blur-3xl p-10 lg:p-16 rounded-card border border-white/10 shadow-premium flex flex-col items-center text-center transition-all duration-700 hover:bg-white/10 group-hover:-translate-y-2">
+              <div className="w-20 h-20 rounded-2xl bg-accent-gold/10 border border-accent-gold/20 flex items-center justify-center shadow-2xl mb-10 group-hover:scale-110 transition-transform duration-500">
+                <Sparkles className="w-10 h-10 text-accent-gold" />
               </div>
-            ))}
-          </div>
-        </Section>
-
-        {/* 3. THE TEAM - Fixed Mobile Visibility */}
-        <Section
-          variant="sand"
-          subtitle="The Core Team"
-          subtitleIcon={<Users className="w-3.5 h-3.5" />}
-          title={
-            <>
-              Leadership & <br />
-              <span className="text-emerald-pop italic">
-                Strategic Intelligence.
+              <span className="text-eyebrow text-accent-gold mb-4 opacity-60">
+                The Vision
               </span>
-            </>
-          }
-        >
-          <div className="space-y-16 lg:space-y-24">
-            {/* Founders Group */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
-              {team.slice(0, 3).map((member, idx) => (
-                <div
-                  key={idx}
-                  className="group flex flex-col items-center sm:items-start"
-                >
-                  <div className="relative w-full aspect-4/5 rounded-image overflow-hidden shadow-2xl mb-8 ring-1 ring-forest/10 group-hover:shadow-forest/20 transition-all duration-700">
-                    <img
-                      src={`${member.image.split("?")[0]}?auto=format&fit=crop&q=80&w=600`}
-                      alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                      loading="lazy"
-                    />
-
-                    <div className="absolute inset-x-2 bottom-2 sm:inset-x-4 sm:bottom-4 lg:inset-x-6 lg:bottom-6">
-                      <div className="bg-forest/70 backdrop-blur-2xl p-4 sm:p-6 rounded-card border border-white/10 shadow-4xl relative z-10 overflow-hidden transform transition-all duration-500 group-hover:bg-forest/80">
-                        <div className="relative z-20">
-                          <p className="text-emerald-pop font-black text-[8px] sm:text-[10px] uppercase tracking-[0.25em] mb-1 sm:mb-2 text-center sm:text-left">
-                            {member.shortRole}
-                          </p>
-                          <p className="text-white font-heading font-black text-lg sm:text-2xl tracking-tighter leading-none mb-2 sm:mb-4 text-center sm:text-left">
-                            {member.name}
-                          </p>
-                          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-4 uppercase tracking-[0.2em] font-black text-[8px] sm:text-[9px]">
-                            <span className="text-emerald-pop/80">
-                              {member.role}
-                            </span>
-                            <span className="w-1 h-1 rounded-full bg-white/20 hidden sm:block" />
-                            <span className="text-white/40">
-                              {member.stats}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="px-2 mt-4">
-                    <p className="text-forest/60 text-sm leading-relaxed font-medium italic border-l-2 border-emerald-pop/30 pl-4 max-w-sm">
-                      "{member.bio}"
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Expert/Psychology Group */}
-            <div className="flex justify-center">
-              <div className="w-full md:w-1/3">
-                {team.slice(3).map((member, idx) => (
-                  <div
-                    key={idx}
-                    className="group flex flex-col items-center sm:items-start"
-                  >
-                    <div className="relative w-full aspect-4/5 rounded-image overflow-hidden shadow-2xl mb-8 ring-1 ring-forest/10 group-hover:shadow-forest/20 transition-all duration-700">
-                      <img
-                        src={`${member.image.split("?")[0]}?auto=format&fit=crop&q=80&w=600`}
-                        alt={member.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                        loading="lazy"
-                      />
-
-                      <div className="absolute inset-x-2 bottom-2 sm:inset-x-4 sm:bottom-4 lg:inset-x-6 lg:bottom-6">
-                        <div className="bg-forest/70 backdrop-blur-2xl p-4 sm:p-6 rounded-card border border-white/10 shadow-4xl relative z-10 overflow-hidden transform transition-all duration-500 group-hover:bg-forest/80">
-                          <div className="relative z-20">
-                            <p className="text-emerald-pop font-black text-[8px] sm:text-[10px] uppercase tracking-[0.25em] mb-1 sm:mb-2 text-center sm:text-left">
-                              {member.shortRole}
-                            </p>
-                            <p className="text-white font-heading font-black text-lg sm:text-2xl tracking-tighter leading-none mb-2 sm:mb-4 text-center sm:text-left">
-                              {member.name}
-                            </p>
-                            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-4 uppercase tracking-[0.2em] font-black text-[8px] sm:text-[9px]">
-                              <span className="text-emerald-pop/80">
-                                {member.role}
-                              </span>
-                              <span className="w-1 h-1 rounded-full bg-white/20 hidden sm:block" />
-                              <span className="text-white/40">
-                                {member.stats}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="px-2 mt-4">
-                      <p className="text-forest/60 text-sm leading-relaxed font-medium italic border-l-2 border-emerald-pop/30 pl-4 max-w-sm">
-                        "{member.bio}"
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        {/* 4. PHILOSOPHY - Integrated Growth Framework */}
-        <Section
-          variant="mist"
-          subtitle="The Science of Growth"
-          subtitleIcon={<Target className="w-3.5 h-3.5 text-emerald-pop" />}
-          title={
-            <>
-              Where Methodology <br />
-              <span className="text-forest italic">Meets the Wild.</span>
-            </>
-          }
-        >
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <p className="text-xl sm:text-2xl md:text-3xl text-forest/80 leading-tight mb-12 sm:mb-20 font-medium italic border-l-[6px] border-emerald-pop pl-6 sm:pl-10 pr-4">
-                We bridge the gap between academic theory and real-world
-                behavior through high-impact, nature-led training.
+              <h2 className="text-4xl lg:text-5xl font-heading font-black text-white mb-8">
+                The <span className="text-accent-gold italic">Aspiration.</span>
+              </h2>
+              <p className="text-2xl lg:text-3xl text-white font-medium leading-[1.3] tracking-tight">
+                {VISION_MISSION.vision.desc}
               </p>
+            </div>
+          </div>
 
-              <div className="grid gap-6">
-                {[
-                  {
-                    icon: <Zap className="w-5 h-5 text-emerald-pop" />,
-                    title: "Experience First",
-                    desc: "Theoretical knowledge is fragile. Lived experience is permanent. We trigger the latter through immersion.",
-                  },
-                  {
-                    icon: <Brain className="w-5 h-5 text-emerald-pop" />,
-                    title: "Clinical Rigorousness",
-                    desc: "Our workshops are built on Clinical Psychology, NLP, and EQ frameworks to ensure scientific validity.",
-                  },
-                  {
-                    icon: <ShieldCheck className="w-5 h-5 text-emerald-pop" />,
-                    title: "Surpassing Standards",
-                    desc: "Safety is our baseline. Our risk management protocols set the industry standard for outbound training.",
-                  },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="group flex flex-col sm:flex-row gap-6 sm:gap-8 p-6 sm:p-10 rounded-card bg-white/40 backdrop-blur-md border border-emerald-pop/60 shadow-premium hover:shadow-2xl transition-all duration-700 hover:-translate-x-2 hover:bg-white/60"
-                  >
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-forest flex items-center justify-center shrink-0 shadow-2xl group-hover:scale-110 transition-transform">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-2xl font-heading font-black text-forest mb-3 tracking-tighter">
-                        {item.title}
-                      </h4>
-                      <p className="text-forest/60 text-base leading-relaxed font-medium">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+          {/* MISSION - Operational focus */}
+          <div className="relative group">
+            <div className="relative bg-white/5 backdrop-blur-3xl p-10 lg:p-16 rounded-card border border-white/10 shadow-premium flex flex-col items-center text-center transition-all duration-700 hover:bg-white/10 group-hover:-translate-y-2">
+              <div className="w-20 h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shadow-2xl mb-10 group-hover:scale-110 transition-transform duration-500">
+                <Target className="w-10 h-10 text-white/40" />
+              </div>
+              <span className="text-eyebrow text-white/30 mb-4">
+                The Mission
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-heading font-black text-white mb-8">
+                The <span className="text-accent-gold italic">Method.</span>
+              </h2>
+              <p className="text-lg lg:text-xl text-white/60 font-medium leading-relaxed">
+                {VISION_MISSION.mission.desc}
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* 3. WHY GREENZONE EXISTS */}
+      <Section id="purpose" variant="default" padding="md">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="relative group">
+            <div className="aspect-4/5 rounded-image overflow-hidden shadow-premium relative">
+              <img
+                src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=1000"
+                alt="Outdoor Immersion"
+                className="w-full h-full object-cover filter brightness-75 group-hover:brightness-100 transition-all duration-700"
+              />
+            </div>
+          </div>
+          <div className="space-y-10">
+            <SectionHeading
+              title={
+                <>
+                  Why GreenZone <br />
+                  <span className="text-accent-gold italic">Exists</span>
+                </>
+              }
+              variant="light"
+              className="mb-0 md:mb-0"
+            />
+            <div className="space-y-6 text-description text-forest/70">
+              <p>
+                The gap between theoretical learning and real-world application
+                is a significant hurdle in development. We bridge this
+                disconnect by stepping outside the traditional classroom and
+                into environments that demand adaptability and decisive action.
+              </p>
+              <p>
+                Whether for individuals seeking new perspective or organizations
+                building leadership capacity, we provide a structured laboratory
+                for intentional growth. We believe that clarity and resilience
+                are not merely taught—they are built through action and
+                intentional immersion.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* 4. WHAT MAKES GREENZONE DIFFERENT - REDESIGNED */}
+      <Section id="methodology" variant="forest" padding="md">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
+          <div className="max-w-2xl">
+            <span className="text-eyebrow text-accent-gold opacity-60 block mb-4">
+              The Methodology
+            </span>
+            <h2 className="text-5xl lg:text-7xl font-heading font-black text-white tracking-tighter leading-none">
+              The{" "}
+              <span className="italic text-accent-gold underline decoration-accent-gold/20 underline-offset-8">
+                Difference.
+              </span>
+            </h2>
+          </div>
+          <div className="h-px flex-1 bg-white/10 hidden md:block mx-12 mb-4" />
+          <p className="text-white/50 font-medium max-w-xs text-sm uppercase tracking-widest leading-relaxed">
+            Five pillars of <br /> specialized human <br /> development.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {WHY_CHOOSE_US.map((item, i) => (
+            <div key={i} className="relative group w-full">
+              <div className="relative h-full bg-white/5 backdrop-blur-xl rounded-card p-10 lg:p-12 border border-white/10 hover:border-accent-gold/30 hover:bg-white/10 transition-all duration-700 flex flex-col items-start overflow-hidden">
+                {/* Decorative background blob */}
+                <div
+                  className={`absolute -top-12 -right-12 w-32 h-32 rounded-full ${item.accent} opacity-0 group-hover:opacity-10 blur-3xl transition-opacity duration-1000 scale-150`}
+                />
+
+                <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-accent-gold mb-10 group-hover:bg-accent-gold group-hover:text-forest-deep group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-sm border border-white/10">
+                  <item.icon className="w-6 h-6" />
+                </div>
+
+                <h3 className="text-2xl lg:text-3xl font-heading font-black text-white mb-6 tracking-tight leading-[1.1] group-hover:text-accent-gold transition-colors">
+                  {item.title}
+                </h3>
+
+                <p className="text-white/50 font-medium leading-relaxed group-hover:text-white/80 transition-colors duration-500 text-sm">
+                  {item.desc}
+                </p>
               </div>
             </div>
+          ))}
+        </div>
 
-            <div>
-              <div className="relative group">
-                {/* Decorative Frame */}
-                <div className="absolute -inset-10 border border-forest/5 rounded-card -z-10 animate-float" />
-                <div className="absolute inset-0 bg-forest rounded-card translate-x-12 translate-y-12 -z-20 opacity-[0.03]" />
+        {/* 5. SEPARATE CUSTOMIZATION SECTION */}
+        <div className="mt-24 pt-24 border-t border-white/10">
+          <div className="max-w-4xl">
+            <h3 className="text-4xl md:text-5xl font-heading font-black text-white tracking-tighter mb-8 leading-tight">
+              Built Around Your{" "}
+              <span className="text-accent-gold">Objectives.</span>
+            </h3>
+            <p className="text-xl text-white/60 leading-relaxed mb-12 max-w-2xl font-medium">
+              Every journey and program is thoughtfully designed around
+              participant context, goals, and desired outcomes. We do not offer
+              standardized packages — we architect experiences with intention.
+            </p>
+            <Link
+              to="/contact#inquiry"
+              className="inline-flex items-center gap-3 text-accent-gold font-black uppercase tracking-widest text-sm group"
+            >
+              <span>Design Your Experience</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </Section>
 
-                <div className="relative aspect-3/4 rounded-image overflow-hidden shadow-premium group-hover:shadow-[0_50px_100px_rgba(10,30,20,0.15)] transition-all duration-1000">
-                  <img
-                    src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000"
-                    alt="Growth through Reflection"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                    loading="lazy"
-                  />
+      {/* 5. THE FOUNDERS - REDESIGNED */}
+      <Section
+        id="founders"
+        variant="default"
+        padding="sm"
+        className="bg-forest-deep"
+      >
+        <div className="flex flex-col items-center text-center mb-20">
+          <span className="text-eyebrow text-accent-gold/40 mb-4">
+            The Custodians
+          </span>
+          <h2 className="text-5xl lg:text-7xl font-heading font-black text-white tracking-tighter leading-none mb-10">
+            The <span className="italic text-accent-gold">Founders.</span>
+          </h2>
+        </div>
 
-                  {/* Floating Insight Panel */}
-                  <div className="absolute inset-x-6 bottom-6 lg:bottom-10 p-8 lg:p-10 bg-forest/95 backdrop-blur-3xl rounded-card border border-white/10 shadow-4xl group-hover:bg-forest transition-all duration-500 flex flex-col items-center justify-center text-center">
-                    <p className="text-emerald-pop font-black text-[10px] uppercase tracking-[0.4em] mb-4">
-                      The Formula
-                    </p>
-                    <p className="text-white font-heading font-black text-xs sm:text-xl lg:text-3xl leading-none tracking-tighter">
-                      Action + Reflection ={" "}
-                      <span className="text-emerald-pop italic">
-                        Evolution.
-                      </span>
-                    </p>
-                  </div>
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto">
+          {FOUNDERS.map((founder, idx) => (
+            <div key={idx} className="group flex flex-col h-full">
+              {/* Founder Image Card */}
+              <div className="relative aspect-4/5 rounded-3xl overflow-hidden mb-10 shadow-2xl transition-all duration-700 bg-forest shrink-0 border border-white/5">
+                <img
+                  src={founder.image}
+                  alt={founder.name}
+                  className="w-full h-full object-cover filter transition-all duration-1000 scale-105 group-hover:scale-110 opacity-70 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-forest-deep via-forest-deep/20 to-transparent opacity-80" />
+
+                <div className="absolute inset-x-0 bottom-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+                  <span className="text-eyebrow text-accent-gold block mb-2 text-[10px]">
+                    {founder.role}
+                  </span>
+                  <h3 className="text-2xl lg:text-3xl font-heading font-black text-white tracking-tighter leading-none">
+                    {founder.name}
+                  </h3>
                 </div>
+              </div>
+
+              {/* Founder Details */}
+              <div className="flex-1 space-y-6 px-2">
+                <p className="text-white font-black uppercase text-[10px] tracking-widest opacity-40">
+                  {founder.tagline}
+                </p>
+                <div className="h-px w-8 bg-accent-gold/30" />
+                <ul className="space-y-4">
+                  {founder.points.map((pt, j) => (
+                    <li key={j} className="flex gap-4 group/item">
+                      <div className="mt-1.5 w-1 h-1 rounded-full bg-accent-gold group-hover/item:scale-150 transition-transform duration-300" />
+                      <span className="text-white/50 text-sm leading-relaxed font-medium group-hover/item:text-white/80 transition-colors">
+                        {pt}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* 6. PROFESSIONAL COLLABORATION */}
+      <Section
+        id="collaboration"
+        variant="forest"
+        padding="sm"
+        className="border-t border-white/5"
+      >
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="order-2 lg:order-1 space-y-10">
+            <SectionHeading
+              title={
+                <>
+                  Professional <br />
+                  <span className="text-accent-gold italic">Collaboration</span>
+                </>
+              }
+              variant="forest"
+              className="mb-0 md:mb-0"
+            />
+            <div className="space-y-8 bg-white/5 backdrop-blur-xl p-10 rounded-card border border-white/10 shadow-premium">
+              <div className="space-y-2">
+                <h3 className="text-2xl font-black text-white">
+                  Dr. Padmashri S. Rao
+                </h3>
+                <p className="text-accent-gold font-bold uppercase tracking-widest text-[10px]">
+                  Clinical Psychologist & Advisor
+                </p>
+              </div>
+              <ul className="space-y-4">
+                {COLLABORATION_POINTS.map((item, i) => (
+                  <li key={i} className="flex items-center gap-4 group/item">
+                    <ShieldCheck className="w-4 h-4 text-accent-gold opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all" />
+                    <span className="text-white/60 font-medium text-sm group-hover:text-white transition-colors">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="order-1 lg:order-2 flex justify-center">
+            <div className="relative w-full max-w-sm">
+              <div className="aspect-square rounded-card overflow-hidden shadow-premium border-4 border-white/5 transition-all duration-700">
+                <img
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1000"
+                  alt="Dr. Padmashri S. Rao"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
-        </Section>
+        </div>
+      </Section>
 
-        {/* 5. FINAL CTA */}
-        <FinalCTA
-          variant="charcoal"
-          bgImage="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=1440"
-          icon={Compass}
-          title={
-            <>
-              Ready to Forge <br />
-              <span className="text-emerald-pop italic">New Ground?</span>
-            </>
-          }
-          description="Connect with our experts to design a specialized outbound configuration for your organization."
-          buttons={[
-            { label: "Our Programs", to: "/programs", variant: "emerald" },
-            { label: "Start Journey", to: "/contact", variant: "outline" },
-          ]}
-        />
-      </div>
+      <section className="relative min-h-[70vh] flex items-center justify-center scroll-snap-section bg-forest-deep overflow-hidden py-24 border-t border-white/5">
+        {/* Background Atmosphere */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000"
+            className="w-full h-full object-cover opacity-10 filter grayscale scale-110"
+            alt="Forest Atmosphere"
+          />
+          <div className="absolute inset-0 bg-radial-gradient from-forest-deep/90 via-forest-deep to-forest-deep" />
+        </div>
+
+        <div className="max-w-5xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
+          <div className="space-y-12">
+            <span className="text-eyebrow text-white uppercase tracking-[0.4em] opacity-30 block mb-8">
+              The Path Forward
+            </span>
+
+            <p className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-white leading-[1.1] tracking-tighter max-w-4xl mx-auto">
+              GreenZone is not defined by <br />
+              <span className="text-accent-gold">destinations</span> or
+              programs.
+            </p>
+
+            <div className="max-w-3xl mx-auto border-t border-white/10 pt-16 px-4 relative">
+              <p className="text-xl md:text-2xl text-white/80 font-medium leading-relaxed italic">
+                “It is defined by the environments we create — spaces where
+                perspective shifts, leadership clarifies, and growth becomes
+                intentional.”
+              </p>
+            </div>
+
+            <div className="pt-12">
+              <div className="inline-flex items-center gap-6 px-8 py-4 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-full">
+                <div className="flex -space-x-3">
+                  {[1, 2, 3].map((i) => (
+                    <div
+                      key={i}
+                      className="w-8 h-8 rounded-full border-2 border-forest-deep bg-forest flex items-center justify-center"
+                    >
+                      <Compass className="w-3 h-3 text-accent-gold/40" />
+                    </div>
+                  ))}
+                </div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-accent-gold">
+                  Redefining Growth
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
