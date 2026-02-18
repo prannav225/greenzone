@@ -26,7 +26,7 @@ export default function DestinationSection({
   onPreview,
 }) {
   return (
-    <section className="scroll-snap-section relative min-h-[100svh] flex flex-col justify-end overflow-hidden group">
+    <section className="scroll-snap-section relative min-h-svh flex flex-col justify-end overflow-hidden group">
       <div className="absolute inset-0 bg-forest-deep">
         <Swiper
           modules={[Autoplay, EffectFade]}

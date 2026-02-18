@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import FooterMinimal from "./components/layout/FooterMinimal";
 
+import Home from "./pages/Home";
 // Pages - Lazy Loaded
-const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const Workshops = lazy(() => import("./pages/Workshops"));
 const NLP = lazy(() => import("./pages/NLP"));
