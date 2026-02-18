@@ -7,7 +7,7 @@ import CallToAction from "../components/home/CallToAction";
 
 export default function Home() {
   return (
-    <main className="scroll-snap-container bg-forest">
+    <div className="scroll-snap-container bg-forest">
       <div className="scroll-snap-section">
         <HeroNew />
       </div>
@@ -17,6 +17,6 @@ export default function Home() {
       <WhoWeWorkWith />
       <CredibilityStrip />
       <CallToAction />
-    </main>
+    </div>
   );
 }
