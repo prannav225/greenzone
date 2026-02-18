@@ -72,7 +72,10 @@ export default function HeroNew() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-hero text-white mb-8 animate-fade-in-up select-none tracking-tighter">
+          <h1
+            className="text-hero text-white mb-8 animate-fade-in-up select-none tracking-tighter"
+            style={{ willChange: "transform, opacity" }}
+          >
             Beyond Travel. <br />
             <span className="text-accent-gold italic">Beyond Training.</span>
           </h1>
