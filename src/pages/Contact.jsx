@@ -81,34 +81,28 @@ export default function Contact() {
   }, []);
 
   return (
-    <main className="scroll-snap-container bg-forest-deep">
+    <main className="scroll-snap-container md:scroll-snap-type-y-mandatory bg-forest-deep">
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-24">
-        <div className="absolute inset-0 z-0">
+      <section className="relative min-h-[40svh] md:min-h-[50svh] flex flex-col items-center justify-center overflow-hidden pt-32 pb-16">
+        <div className="absolute inset-0 z-0 text-center">
           <img
             src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"
             alt="Mountains"
-            className="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
+            className="w-full h-full object-cover opacity-20 scale-105"
           />
-          <div className="absolute inset-0 bg-forest/20 group-hover:bg-transparent transition-colors duration-700" />
+          <div className="absolute inset-0 bg-forest-deep/60" />
         </div>
 
         <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-accent-gold/10 border border-accent-gold/20 text-accent-gold mb-10 animate-fade-in-up">
-            <Zap className="w-3.5 h-3.5" />
-            <span className="text-eyebrow translate-y-[0.5px]">
-              Get in Touch
-            </span>
-          </div>
-
-          <h1 className="text-hero text-white mb-8 animate-fade-in-up [animation-delay:200ms]">
-            Let’s Design Your{" "}
-            <span className="text-accent-gold italic">Experience.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-heading font-black text-white mb-6 animate-fade-in-up leading-[1.1]">
+            Start Your <br />
+            <span className="text-accent-gold italic">Inquiry.</span>
           </h1>
 
-          <p className="text-description text-earth/60 max-w-2xl mx-auto animate-fade-in-up [animation-delay:400ms]">
-            Tell us what you’re looking for — we’ll build something aligned to
-            your goals.
+          <p className="text-sm sm:text-base md:text-lg text-white/60 max-w-xl mx-auto animate-fade-in-up [animation-delay:200ms]">
+            Select your interest and fill out the details.{" "}
+            <br className="hidden sm:block" />
+            Our team responds within 24–48 hours.
           </p>
         </div>
       </section>
@@ -119,18 +113,18 @@ export default function Contact() {
         padding="sm"
         title={
           <>
-            Selection <span className="text-accent-gold italic">Framework</span>
+            Inquiry <span className="text-accent-gold italic">Type</span>
           </>
         }
-        subtitle="Step One"
+        subtitle="Phase 01"
         subtitleIcon={<ChevronRight />}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {CATEGORIES.map((cat, idx) => (
             <div
               key={cat.id}
               onClick={() => handleCategorySelect(cat.id)}
-              className="group relative cursor-pointer p-10 rounded-3xl bg-white/5 border border-white/5 hover:bg-white/8 hover:border-accent-gold/40 transition-all duration-700 flex flex-col items-start text-left animate-fade-in-up overflow-hidden"
+              className="group relative cursor-pointer p-6 sm:p-10 rounded-3xl bg-white/5 border border-white/5 hover:bg-white/8 hover:border-accent-gold/40 transition-all duration-700 flex flex-col items-start text-left animate-fade-in-up overflow-hidden"
               style={{ animationDelay: `${idx * 150}ms` }}
             >
               {/* Ambient Glow Background */}
@@ -171,15 +165,15 @@ export default function Contact() {
         padding="sm"
         title={
           <>
-            Inquiry <span className="text-accent-gold italic">Details</span>
+            Program <span className="text-accent-gold italic">Details</span>
           </>
         }
-        subtitle="Step Two"
+        subtitle="Phase 02"
         subtitleIcon={<ChevronRight />}
       >
         <div
           ref={formRef}
-          className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start"
+          className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start pb-10"
         >
           {/* Contact Details Column */}
           <div className="lg:col-span-4 space-y-12">
@@ -187,22 +181,23 @@ export default function Contact() {
               <h3 className="text-2xl font-heading font-bold text-white tracking-tight">
                 Contact Information
               </h3>
+              {/* Contact Pill List */}
               <div className="space-y-4">
                 {[
                   {
-                    icon: <Phone className="w-4 h-4" />,
+                    icon: <Phone className="w-3.5 h-3.5" />,
                     label: "Phone",
                     value: "+91 70199 71407",
                     href: "tel:+917019971407",
                   },
                   {
-                    icon: <Mail className="w-4 h-4" />,
+                    icon: <Mail className="w-3.5 h-3.5" />,
                     label: "Email",
                     value: "greenzoneadventures@gmail.com",
                     href: "mailto:greenzoneadventures@gmail.com",
                   },
                   {
-                    icon: <MapPin className="w-4 h-4" />,
+                    icon: <MapPin className="w-3.5 h-3.5" />,
                     label: "Location",
                     value: "Bengaluru",
                     href: "#",
@@ -211,16 +206,16 @@ export default function Contact() {
                   <a
                     key={idx}
                     href={item.href}
-                    className="flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 group"
+                    className="flex items-start sm:items-center gap-4 p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 group overflow-hidden"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-accent-gold/20 text-accent-gold flex items-center justify-center group-hover:bg-accent-gold group-hover:text-forest-deep transition-all duration-500">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-accent-gold/20 text-accent-gold flex items-center justify-center group-hover:bg-accent-gold group-hover:text-forest-deep transition-all duration-500">
                       {item.icon}
                     </div>
-                    <div>
-                      <span className="text-[9px] font-black uppercase tracking-widest text-white/40 block mb-0.5">
+                    <div className="min-w-0 flex-1">
+                      <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-widest text-white/40 block mb-0.5">
                         {item.label}
                       </span>
-                      <span className="text-sm font-bold text-earth block">
+                      <span className="text-xs sm:text-sm font-bold text-white/80 block break-all">
                         {item.value}
                       </span>
                     </div>
@@ -229,27 +224,20 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="p-8 rounded-card bg-accent-gold/5 border border-accent-gold/20 space-y-4">
-              <div className="flex items-center gap-3">
-                <Clock className="w-5 h-5 text-accent-gold" />
-                <h4 className="text-sm font-black uppercase tracking-widest text-white">
-                  Response Expectation
-                </h4>
-              </div>
+            <div className="p-8 rounded-card bg-accent-gold/5 border border-accent-gold/20 flex items-center gap-4">
+              <Clock className="w-5 h-5 text-accent-gold shrink-0" />
               <p className="text-xs text-white/50 leading-relaxed font-medium">
-                We typically respond within 24–48 hours. Every program is
-                customized — our team may schedule a short call to understand
-                your requirements better.
+                We respond within 24–48 hours.
               </p>
             </div>
           </div>
 
           {/* Form Column */}
-          <div className="lg:col-span-8 bg-earth-light/20 p-8 sm:p-12 lg:p-16 rounded-card shadow-4xl relative overflow-hidden">
+          <div className="lg:col-span-8 bg-white/5 md:bg-earth-light/20 p-6 sm:p-12 lg:p-16 rounded-card shadow-4xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-accent-gold/5 rounded-full blur-3xl" />
 
             <form
-              className="relative z-10 space-y-8"
+              className="relative z-10 space-y-6 md:space-y-8"
               onSubmit={(e) => e.preventDefault()}
             >
               <div className="grid md:grid-cols-2 gap-8">
@@ -264,7 +252,7 @@ export default function Contact() {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="w-full bg-white/50 border-forest-deep/10 px-6 py-4 rounded-2xl focus:border-accent-gold focus:bg-white outline-none font-bold text-forest-deep transition-all"
+                    className="w-full bg-white/50 border-forest-deep/10 px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl focus:border-accent-gold focus:bg-white outline-none font-bold text-sm text-forest-deep transition-all placeholder:text-forest-deep/30"
                   />
                 </div>
                 <div className="space-y-2">
@@ -394,7 +382,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="w-full bg-white/50 border-forest-deep/10 px-6 py-4 rounded-2xl focus:border-accent-gold focus:bg-white outline-none font-bold text-forest-deep transition-all resize-none"
+                  className="w-full bg-white/50 border-forest-deep/10 px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl focus:border-accent-gold focus:bg-white outline-none font-bold text-sm text-forest-deep transition-all resize-none placeholder:text-forest-deep/30"
                 />
               </div>
 
@@ -410,20 +398,6 @@ export default function Contact() {
           </div>
         </div>
       </Section>
-
-      {/* 6. FINAL CLOSING LINE */}
-      <section className="py-24 bg-forest-deep text-center px-6">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <div className="w-px h-24 bg-linear-to-b from-transparent via-accent-gold to-transparent mx-auto opacity-30" />
-          <h2 className="text-3xl md:text-4xl font-heading font-black text-white italic tracking-tighter">
-            We don’t offer standard packages. <br />
-            <span className="text-accent-gold">
-              We design meaningful experiences.
-            </span>
-          </h2>
-          <div className="w-px h-24 bg-linear-to-b from-accent-gold via-accent-gold to-transparent mx-auto opacity-30" />
-        </div>
-      </section>
     </main>
   );
 }

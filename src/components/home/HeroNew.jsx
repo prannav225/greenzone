@@ -24,13 +24,16 @@ export default function HeroNew() {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-forest flex flex-col items-center">
       {/* Cinematic Background Layer */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div
-          className="absolute inset-0 bg-cover bg-center scale-110 animate-slow-zoom transition-transform duration-1000"
+      <div className="absolute inset-0 z-0 pointer-events-none bg-forest-deep">
+        <img
+          src="/hero-trek.webp"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover scale-110 animate-slow-zoom transition-transform duration-1000"
           style={{
-            backgroundImage: "url('/hero-trek.png')",
             transform: `translateY(${scrollY * 0.3}px)`,
           }}
+          fetchpriority="high"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-linear-to-b from-forest-deep/70 via-transparent to-forest-deep/95" />
         <div className="absolute inset-0 bg-forest/20 backdrop-blur-[1px]" />
@@ -54,7 +57,7 @@ export default function HeroNew() {
 
       {/* Main Content Area */}
       <div className="relative z-20 flex-1 flex flex-col items-center justify-center px-6 text-center w-full max-w-6xl mx-auto py-8">
-        <div className="flex flex-col items-center w-full gap-[4vh] md:GAP-12">
+        <div className="flex flex-col items-center w-full gap-[4vh] md:gap-12">
           {/* Eyebrow Badge */}
           <div className="animate-fade-in shrink-0 mt-[8vh]">
             <div className="glass-pill">
@@ -77,24 +80,20 @@ export default function HeroNew() {
           {/* Subtext */}
           <div className="space-y-4 animate-fade-in-up animate-delay-300 px-4">
             <p className="text-description max-w-2xl mx-auto">
-              Experiential journeys and leadership programs designed to build
-              resilience, clarity, and real-world capability.
-            </p>
-            <p className="text-white/60 text-sm md:text-base font-medium tracking-wide">
-              For individuals, teams, and institutions ready to grow beyond
-              comfort.
+              GreenZone designs experiential leadership programs and curated
+              journeys that combine adventure, psychology, and applied learning.
             </p>
           </div>
 
           {/* Primary Actions */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up animate-delay-400">
-            <PrimaryButton to="/contact" size="md" variant="primary">
-              Start Your Journey
+            <PrimaryButton to="/workshops" size="md" variant="primary">
+              Explore Workshops
               <ArrowRight className="w-4 h-4" />
             </PrimaryButton>
 
-            <PrimaryButton to="/workshops" size="md" variant="secondary">
-              Explore Workshops
+            <PrimaryButton to="/destinations" size="md" variant="secondary">
+              Explore Destinations
             </PrimaryButton>
           </div>
         </div>

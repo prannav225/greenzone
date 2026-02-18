@@ -12,16 +12,9 @@ import {
   OBL_FEATURES,
   OBL_TRACKS,
   OBL_PROCESS,
-  OBL_AUDIENCE,
   OBL_OUTCOMES,
 } from "../data/oblData";
-import {
-  ShieldCheck,
-  Mountain,
-  Users,
-  Target,
-  CheckCircle2,
-} from "lucide-react";
+import { ShieldCheck, Mountain, Target, CheckCircle2 } from "lucide-react";
 
 export default function OutboundLearning() {
   useEffect(() => {
@@ -33,6 +26,7 @@ export default function OutboundLearning() {
     <main className="scroll-snap-container">
       {/* 1. HERO SECTION */}
       <Hero
+        priority={true}
         bgImage={OBL_HERO.bgImage}
         eyebrow={
           <>
@@ -137,42 +131,17 @@ export default function OutboundLearning() {
         </div>
       </Section>
 
-      {/* 4. HOW THE EXPERIENCE FLOWS */}
+      {/* 4. THE JOURNEY */}
       <Section
         id="experience-flow"
         variant="forest"
-        subtitle="Workflow"
+        subtitle="The Process"
         subtitleIcon={<Mountain className="text-accent-gold" />}
-        title="The Journey"
+        title="Field Methodology"
         center
         padding="sm"
       >
         <ProcessFlow steps={OBL_PROCESS} />
-      </Section>
-
-      {/* 5. DESIGNED FOR */}
-      <Section
-        id="audience"
-        variant="forest"
-        subtitle="Participants"
-        subtitleIcon={<Users className="text-accent-gold" />}
-        title="Designed For"
-        center
-        padding="sm"
-      >
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {OBL_AUDIENCE.map((item, i) => (
-            <FeatureCard
-              key={i}
-              title={item.title}
-              description={item.desc}
-              icon={item.icon}
-              variant="glass"
-              layout="vertical"
-              className="text-center items-center p-10"
-            />
-          ))}
-        </div>
       </Section>
 
       {/* 6. KEY OUTCOMES */}
@@ -184,6 +153,7 @@ export default function OutboundLearning() {
         title="Program Outcomes"
         center
         padding="sm"
+        className="pb-10"
       >
         <ImmersiveContainer
           bgImage="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2000"

@@ -11,9 +11,7 @@ export default function CredibilityStrip() {
         <p className="text-white/60 text-sm md:text-base font-medium max-w-3xl text-center md:text-left leading-relaxed">
           Programs facilitated in collaboration with experienced leadership
           trainers and psychologists, including{" "}
-          <span className="text-white">Dr. Padmashri S. Rao</span>, who has
-          worked with institutions such as{" "}
-          <span className="text-white">HAL, ISRO, and NIMHANS.</span>
+          <span className="text-white">Dr. Padmashri S. Rao.</span>
         </p>
       </div>
     </section>

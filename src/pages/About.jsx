@@ -30,6 +30,7 @@ export default function About() {
     <main className="scroll-snap-container">
       {/* 1. HERO SECTION */}
       <Hero
+        priority={true}
         bgImage="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000"
         eyebrow={
           <>
@@ -113,8 +114,8 @@ export default function About() {
             <SectionHeading
               title={
                 <>
-                  Why GreenZone <br />
-                  <span className="text-accent-gold italic">Exists</span>
+                  Why We <br />
+                  <span className="text-accent-gold italic">Exist</span>
                 </>
               }
               variant="light"
@@ -122,24 +123,24 @@ export default function About() {
             />
             <div className="space-y-6 text-description text-forest/70">
               <p>
-                The gap between theoretical learning and real-world application
-                is a significant hurdle in development. We bridge this
-                disconnect by stepping outside the traditional classroom and
-                into environments that demand adaptability and decisive action.
+                In a world dominated by theoretical learning, there is a missing
+                link between knowing and doing. We exist to bridge that gap,
+                moving beyond the classroom into environments that demand
+                absolute presence and authentic action.
               </p>
               <p>
-                Whether for individuals seeking new perspective or organizations
-                building leadership capacity, we provide a structured laboratory
-                for intentional growth. We believe that clarity and resilience
-                are not merely taught—they are built through action and
-                intentional immersion.
+                Whether for individuals seeking clarity or teams navigating
+                complexity, we provide the space to test capability and build
+                resilience. We believe that true growth isn't taught—it is
+                forged through experience and mindful immersion in the real
+                world.
               </p>
             </div>
           </div>
         </div>
       </Section>
 
-      {/* 4. WHAT MAKES GREENZONE DIFFERENT - REDESIGNED */}
+      {/* 4. THE DIFFERENCE */}
       <Section id="methodology" variant="forest" padding="md">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
           <div className="max-w-2xl">
@@ -163,7 +164,6 @@ export default function About() {
           {WHY_CHOOSE_US.map((item, i) => (
             <div key={i} className="relative group w-full">
               <div className="relative h-full bg-white/5 backdrop-blur-xl rounded-card p-10 lg:p-12 border border-white/10 hover:border-accent-gold/30 hover:bg-white/10 transition-all duration-700 flex flex-col items-start overflow-hidden">
-                {/* Decorative background blob */}
                 <div
                   className={`absolute -top-12 -right-12 w-32 h-32 rounded-full ${item.accent} opacity-0 group-hover:opacity-10 blur-3xl transition-opacity duration-1000 scale-150`}
                 />
@@ -182,28 +182,6 @@ export default function About() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* 5. SEPARATE CUSTOMIZATION SECTION */}
-        <div className="mt-24 pt-24 border-t border-white/10">
-          <div className="max-w-4xl">
-            <h3 className="text-4xl md:text-5xl font-heading font-black text-white tracking-tighter mb-8 leading-tight">
-              Built Around Your{" "}
-              <span className="text-accent-gold">Objectives.</span>
-            </h3>
-            <p className="text-xl text-white/60 leading-relaxed mb-12 max-w-2xl font-medium">
-              Every journey and program is thoughtfully designed around
-              participant context, goals, and desired outcomes. We do not offer
-              standardized packages — we architect experiences with intention.
-            </p>
-            <Link
-              to="/contact#inquiry"
-              className="inline-flex items-center gap-3 text-accent-gold font-black uppercase tracking-widest text-sm group"
-            >
-              <span>Design Your Experience</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </Link>
-          </div>
         </div>
       </Section>
 
@@ -246,7 +224,7 @@ export default function About() {
               </div>
 
               {/* Founder Details */}
-              <div className="flex-1 space-y-6 px-2">
+              <div className="flex-1 space-y-6 p-2 ">
                 <p className="text-white font-black uppercase text-[10px] tracking-widest opacity-40">
                   {founder.tagline}
                 </p>
@@ -274,7 +252,7 @@ export default function About() {
         padding="sm"
         className="border-t border-white/5"
       >
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-center pb-10">
           <div className="order-2 lg:order-1 space-y-10">
             <SectionHeading
               title={
@@ -321,53 +299,24 @@ export default function About() {
         </div>
       </Section>
 
-      <section className="relative min-h-[70vh] flex items-center justify-center scroll-snap-section bg-forest-deep overflow-hidden py-24 border-t border-white/5">
-        {/* Background Atmosphere */}
+      <section className="relative min-h-[50vh] flex items-center justify-center scroll-snap-section bg-forest-deep overflow-hidden py-24 border-t border-white/5">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000"
-            className="w-full h-full object-cover opacity-10 filter grayscale scale-110"
-            alt="Forest Atmosphere"
-          />
           <div className="absolute inset-0 bg-radial-gradient from-forest-deep/90 via-forest-deep to-forest-deep" />
         </div>
 
-        <div className="max-w-5xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
+        <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <div className="space-y-12">
-            <span className="text-eyebrow text-white uppercase tracking-[0.4em] opacity-30 block mb-8">
-              The Path Forward
-            </span>
-
-            <p className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-white leading-[1.1] tracking-tighter max-w-4xl mx-auto">
-              GreenZone is not defined by <br />
-              <span className="text-accent-gold">destinations</span> or
-              programs.
+            <p className="text-3xl md:text-5xl font-heading font-black text-white leading-[1.1] tracking-tighter">
+              GreenZone is defined by the <br />
+              <span className="text-accent-gold">environments</span> we create.
             </p>
 
-            <div className="max-w-3xl mx-auto border-t border-white/10 pt-16 px-4 relative">
-              <p className="text-xl md:text-2xl text-white/80 font-medium leading-relaxed italic">
-                “It is defined by the environments we create — spaces where
-                perspective shifts, leadership clarifies, and growth becomes
-                intentional.”
+            <div className="max-w-2xl mx-auto border-t border-white/10 pt-12">
+              <p className="text-lg md:text-xl text-white/60 font-medium leading-relaxed italic">
+                “Spaces where perspective shifts and action remains intentional.
+                Beyond the destination, we are the catalyst for authentic
+                professional evolution.”
               </p>
-            </div>
-
-            <div className="pt-12">
-              <div className="inline-flex items-center gap-6 px-8 py-4 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-full">
-                <div className="flex -space-x-3">
-                  {[1, 2, 3].map((i) => (
-                    <div
-                      key={i}
-                      className="w-8 h-8 rounded-full border-2 border-forest-deep bg-forest flex items-center justify-center"
-                    >
-                      <Compass className="w-3 h-3 text-accent-gold/40" />
-                    </div>
-                  ))}
-                </div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-accent-gold">
-                  Redefining Growth
-                </span>
-              </div>
             </div>
           </div>
         </div>

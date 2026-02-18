@@ -10,11 +10,11 @@ export default function CallToAction() {
       icon={Compass}
       title={
         <>
-          Ready to Build Something <br />
-          <span className="text-accent-gold italic">Meaningful?</span>
+          Ready to Forge <br />
+          <span className="text-accent-gold italic">Real Capability?</span>
         </>
       }
-      description="Let’s design an experience aligned with your goals."
+      description="Select your path and start designing your leadership experience today."
       buttons={[
         {
           label: "Schedule a Consultation",

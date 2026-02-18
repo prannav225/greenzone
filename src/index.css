@@ -100,7 +100,7 @@ body {
 .scroll-snap-section {
   scroll-snap-align: start;
   scroll-snap-stop: normal;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 .scroll-snap-section:last-child {
@@ -233,6 +233,14 @@ body {
     transform: translateY(100%);
   }
 }
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
@@ -248,4 +256,15 @@ body {
 }
 .animate-scroll-down {
   animation: scroll-down 2.5s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+}
+.animate-slow-spin {
+  animation: slow-spin 20s linear infinite;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

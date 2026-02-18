@@ -14,8 +14,6 @@ import {
   NLP_OUTCOMES,
 } from "../data/nlpData";
 import {
-  Building2,
-  GraduationCap,
   Target,
   Zap,
   ShieldCheck,
@@ -33,6 +31,7 @@ export default function NLP() {
     <main className="scroll-snap-container">
       {/* 1. HERO SECTION */}
       <Hero
+        priority={true}
         bgImage={NLP_HERO.bgImage}
         eyebrow={
           <>
@@ -62,7 +61,7 @@ export default function NLP() {
       {/* 2. WHAT IS NLP? */}
       <IntroSection
         id="what-is-nlp"
-        subtitle="Definition"
+        subtitle="Fundamentals"
         subtitleIcon={<NLP_HERO.eyebrow.icon className="text-accent-gold" />}
         bgImage={NLP_INTRO.bgImage}
         title={NLP_INTRO.title}
@@ -74,7 +73,7 @@ export default function NLP() {
           {NLP_INTRO.concepts.map((concept, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-3xl bg-white/5 border border-white/5 hover:border-white/20 transition-all duration-500 group"
+              className="lg:p-8 p-5 lg:rounded-3xl rounded-2xl bg-white/5 border border-white/5 hover:border-white/20 transition-all duration-500 group"
             >
               <div className="w-12 h-12 rounded-xl bg-accent-gold/20 flex items-center justify-center text-accent-gold mb-6 group-hover:scale-110 transition-transform">
                 <concept.icon size={24} />
@@ -104,7 +103,7 @@ export default function NLP() {
           {NLP_FORMATS.map((tier, idx) => (
             <div
               key={idx}
-              className={`relative group p-10 rounded-3xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-700 overflow-hidden shadow-premium h-full flex flex-col`}
+              className={`relative group lg:p-10 p-7 lg:rounded-3xl rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-700 overflow-hidden shadow-premium h-full flex flex-col`}
             >
               <div
                 className={`absolute top-0 right-0 w-32 h-32 bg-${tier.accent}/5 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-${tier.accent}/10 transition-colors`}
@@ -148,7 +147,7 @@ export default function NLP() {
         variant="forest"
         subtitle="Practicality"
         subtitleIcon={<Target className="text-accent-gold" />}
-        title="Professional Applications"
+        title="Impact Domains"
         center
         padding="sm"
       >
@@ -161,7 +160,7 @@ export default function NLP() {
               icon={item.icon}
               variant="glass"
               layout="vertical"
-              className="p-10"
+              className="p-5"
             />
           ))}
         </div>
@@ -173,7 +172,7 @@ export default function NLP() {
         variant="forest"
         subtitle="Targeted For"
         subtitleIcon={<CheckCircle2 className="text-accent-gold" />}
-        title="Designed For"
+        title="Target Audience"
         center
         padding="sm"
       >
@@ -186,7 +185,7 @@ export default function NLP() {
               icon={item.icon}
               variant="glass"
               layout="vertical"
-              className="text-center items-center p-10"
+              className="text-left items-center p-5"
             />
           ))}
         </div>
@@ -201,6 +200,7 @@ export default function NLP() {
         title="Program Outcomes"
         center
         padding="sm"
+        className="pb-10"
       >
         <ImmersiveContainer
           bgImage="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2000"

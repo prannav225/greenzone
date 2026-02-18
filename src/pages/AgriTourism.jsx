@@ -24,9 +24,10 @@ export default function AgriTourism() {
   }, []);
 
   return (
-    <main className="scroll-snap-container">
+    <main className="scroll-snap-container md:scroll-snap-type-y-mandatory bg-forest-deep">
       {/* 1. HERO SECTION */}
       <Hero
+        priority={true}
         bgImage={AGRI_HERO.bgImage}
         eyebrow={
           <>
@@ -70,7 +71,7 @@ export default function AgriTourism() {
         variant="forest"
         subtitle="The Curriculum"
         subtitleIcon={<CheckCircle2 className="text-accent-gold" />}
-        title="Students Experience"
+        title="The Student Experience"
         center
         padding="sm"
       >
@@ -118,8 +119,9 @@ export default function AgriTourism() {
           bgImage="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=2000"
           alt="Environmental Transformation"
           overlayOpacity="opacity-50"
+          className="border-0 sm:border md:rounded-[3rem] p-0 sm:p-14 md:p-20 bg-transparent sm:bg-forest-deep/40"
         >
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
             {AGRI_OUTCOMES.map((outcome, idx) => (
               <FeatureCard
                 key={idx}
@@ -128,7 +130,7 @@ export default function AgriTourism() {
                 icon={ShieldCheck}
                 variant="glass"
                 layout="vertical"
-                className={`number-card num-${(idx + 1).toString()} p-10`}
+                className={`number-card num-${(idx + 1).toString()} p-6 sm:p-10 border-white/5 sm:border-white/10`}
               />
             ))}
           </div>
@@ -154,7 +156,7 @@ export default function AgriTourism() {
               icon={item.icon}
               variant="glass"
               layout="vertical"
-              className="text-center items-center p-10"
+              className="text-left items-left p-5"
             />
           ))}
         </div>
@@ -169,7 +171,7 @@ export default function AgriTourism() {
         title="Experience Format"
         padding="sm"
       >
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center pb-20">
           <div className="space-y-8">
             <p className="text-xl text-white/70 font-medium leading-relaxed">
               {AGRI_FORMAT.desc}
@@ -210,7 +212,7 @@ export default function AgriTourism() {
         center
         padding="sm"
       >
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto pb-20">
           <ImmersiveContainer className="text-center">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-accent-gold/20 rounded-full blur-[100px]" />
             <h3 className="text-2xl md:text-3xl font-heading font-black text-white mb-8 tracking-tighter">

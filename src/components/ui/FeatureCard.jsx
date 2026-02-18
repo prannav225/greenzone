@@ -18,7 +18,7 @@ export default function FeatureCard({
 
   const variants = {
     glass:
-      "bg-white/5 backdrop-blur-lg border border-white/10 hover:bg-white/10 hover:border-white/20 hover:-translate-y-1 shadow-premium",
+      "bg-white/5 backdrop-blur-lg border border-white/10 hover:bg-white/10 hover:border-white/20 hover:-translate-y-1 shadow-premium md:shadow-premium",
     paper:
       "bg-white border border-forest/5 shadow-premium hover:shadow-2xl hover:-translate-y-0.5",
     outline:
@@ -26,8 +26,8 @@ export default function FeatureCard({
   };
 
   const layoutStyles = {
-    vertical: "flex flex-col items-start p-8 md:p-10",
-    horizontal: "flex items-center gap-5 p-6",
+    vertical: "flex flex-col items-start p-7 sm:p-8 md:p-10",
+    horizontal: "flex items-center gap-4 sm:gap-5 p-5 sm:p-6",
   };
 
   const content = (

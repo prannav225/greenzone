@@ -1,10 +1,13 @@
 import Section from "../layout/Section";
 import PrimaryButton from "../ui/PrimaryButton";
+import { useJourney } from "../../hooks/useJourney";
 
 export default function PersonalisedJourneys() {
+  const { openJourneyBuilder } = useJourney();
+
   return (
     <Section variant="dark" padding="lg">
-      <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <div className="grid lg:grid-cols-2 gap-20 items-center pb-10">
         <div className="relative">
           <div className="absolute -left-12 -top-12 text-white/5 text-[15rem] font-black select-none pointer-events-none">
             Art
@@ -26,7 +29,11 @@ export default function PersonalisedJourneys() {
             From special access to heritage sites to private wilderness camps,
             we ensure every mile has an intent, and every moment has a purpose.
           </p>
-          <PrimaryButton to="/contact#inquiry" variant="primary" size="md">
+          <PrimaryButton
+            onClick={openJourneyBuilder}
+            variant="primary"
+            size="md"
+          >
             Design My Journey
           </PrimaryButton>
         </div>

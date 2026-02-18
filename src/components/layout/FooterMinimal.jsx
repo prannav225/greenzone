@@ -62,7 +62,7 @@ export default function FooterMinimal() {
             >
               <div className="w-9 h-9 sm:w-12 sm:h-12 bg-white flex items-center justify-center transition-all duration-700 p-1.5 sm:p-2 rounded-full shadow-lg group-hover:scale-110">
                 <img
-                  src="./logo.png"
+                  src="./logo.webp"
                   alt="greenzone logo"
                   className="w-full h-full object-contain"
                 />

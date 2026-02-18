@@ -5,26 +5,23 @@ const steps = [
   {
     number: "01",
     title: "Immersion",
-    description:
-      "A complete exit from the noise and distraction of high-velocity work environments.",
+    description: "Step back from distraction to find absolute focus.",
   },
   {
     number: "02",
     title: "Challenge",
-    description:
-      "High-consequence outdoor scenarios that demand immediate and authentic action.",
+    description: "Face high-grit scenarios that demand authentic action.",
   },
   {
     number: "03",
     title: "Reflection",
     description:
-      "Guided decompression to convert raw experience into strategic individual and team insights.",
+      "Convert experience into strategic individual and team insights.",
   },
   {
     number: "04",
     title: "Application",
-    description:
-      "A structured bridge connecting mountain-top insights to real-world performance protocols.",
+    description: "Bridge the journey to real-world performance and capability.",
   },
 ];
 
@@ -39,74 +36,51 @@ export default function HowItWorks() {
       subtitleIcon={<Zap className="w-3.5 h-3.5" />}
       title={
         <>
-          How We Design Every{" "}
+          How{" "}
           <span className="text-accent-gold italic drop-shadow-glow">
-            Experience.
+            Growth Happens.
           </span>
         </>
       }
     >
-      <div className="relative z-10">
-        <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-forest-light/0 via-forest-light/40 to-forest-light/0 -translate-x-1/2" />
-        <div className="lg:hidden absolute left-[23.5px] top-0 bottom-0 w-px bg-linear-to-b from-forest-light/0 via-forest-light/40 to-forest-light/0" />
+      <div className="relative z-10 px-4">
+        {/* Connection Line - Desktop */}
+        <div className="hidden lg:block absolute left-0 right-0 top-12 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
 
-        <div className="space-y-16 lg:space-y-32">
-          {steps.map((step, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          {steps.map((step) => (
             <div
               key={step.number}
-              className="relative flex flex-col lg:grid lg:grid-cols-[1fr_auto_1fr] items-start lg:items-center gap-8 lg:gap-16 pl-16 lg:pl-0"
+              className="relative group text-center lg:text-left"
             >
-              <div className="w-full order-1">
-                {index % 2 === 0 ? (
-                  <div className="lg:text-right space-y-4">
-                    <span className="text-[10px] font-black text-accent-gold uppercase tracking-widest">
-                      Phase {step.number}
-                    </span>
-                    <h3 className="text-3xl lg:text-5xl font-heading font-black text-white tracking-tighter transition-colors">
-                      {step.title}
-                    </h3>
-                    <p className="text-white/60 text-lg md:text-xl font-medium leading-tight max-w-md lg:ml-auto">
-                      {step.description}
-                    </p>
-                  </div>
-                ) : (
-                  <div className="hidden lg:block" aria-hidden="true" />
-                )}
-              </div>
-
-              <div className="absolute left-0 lg:relative lg:left-auto lg:order-2 z-20 flex justify-center w-12 lg:w-auto">
-                <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-forest border-4 border-forest-light flex items-center justify-center shadow-[0_0_30px_rgba(191,167,106,0.3)] transition-transform duration-500 hover:scale-110">
-                  <div className="w-4 h-4 lg:w-6 lg:h-6 rounded-full bg-accent-gold animate-pulse shadow-[0_0_20px_rgba(191,167,106,0.6)]" />
+              {/* Step Number Dot */}
+              <div className="relative z-20 flex justify-center lg:justify-start mb-8">
+                <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-forest-deep border border-white/10 flex items-center justify-center shadow-premium transition-all duration-500 group-hover:border-accent-gold/50 group-hover:shadow-gold/20">
+                  <span className="text-xs font-black text-accent-gold tracking-widest">
+                    {step.number}
+                  </span>
                 </div>
               </div>
 
-              <div className="w-full order-3">
-                {index % 2 === 1 ? (
-                  <div className="lg:text-left space-y-4">
-                    <span className="text-[10px] font-black text-accent-gold uppercase tracking-widest">
-                      Phase {step.number}
-                    </span>
-                    <h3 className="text-3xl lg:text-5xl font-heading font-black text-white tracking-tighter transition-colors">
-                      {step.title}
-                    </h3>
-                    <p className="text-white/60 text-lg md:text-xl font-medium leading-tight max-w-md lg:mr-auto">
-                      {step.description}
-                    </p>
-                  </div>
-                ) : (
-                  <div className="hidden lg:block" aria-hidden="true" />
-                )}
+              {/* Content */}
+              <div className="space-y-4">
+                <h3 className="text-2xl lg:text-3xl font-heading font-black text-white tracking-tighter transition-colors group-hover:text-accent-gold">
+                  {step.title}
+                </h3>
+                <p className="text-white/60 text-base md:text-lg font-medium leading-relaxed max-w-xs mx-auto lg:mx-0">
+                  {step.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
-      </div>
 
-      <div className="mt-24 lg:mt-32 text-center relative z-10">
-        <PrimaryButton to="/contact" variant="primary" size="lg">
-          Start Your Configuration
-          <ArrowRight className="w-5 h-5 ml-4" />
-        </PrimaryButton>
+        <div className="mt-20 lg:mt-24 text-center">
+          <PrimaryButton to="/contact" variant="primary" size="md">
+            Start Your Configuration
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </PrimaryButton>
+        </div>
       </div>
     </Section>
   );

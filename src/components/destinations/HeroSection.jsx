@@ -4,11 +4,13 @@ import { Compass } from "lucide-react";
 export default function HeroSection() {
   return (
     <section className="scroll-snap-section relative h-screen flex flex-col items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-forest-deep">
         <img
-          src="https://images.unsplash.com/photo-1608973557237-4ab537f2cd5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://images.unsplash.com/photo-1608973557237-4ab537f2cd5a?q=80&w=1600&auto=format&fit=crop"
           alt="Hampi Sunrise"
           className="w-full h-full object-cover scale-110 animate-slow-zoom opacity-60"
+          fetchpriority="high"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-linear-to-b from-forest-deep/60 via-transparent to-forest-deep" />
       </div>

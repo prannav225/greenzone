@@ -2,7 +2,7 @@ import { Plus } from "lucide-react";
 
 export default function FloatingBuildJourneyCTA({ onClick, selectedCount }) {
   return (
-    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-55 group">
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 group">
       <button
         onClick={onClick}
         className="flex items-center gap-4 px-10 py-5 bg-forest-deep/50 backdrop-blur-3xl text-white rounded-full font-black uppercase tracking-widest text-[11px] border border-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.6)] transition-all duration-700 hover:scale-105 hover:bg-white hover:text-forest-deep hover:border-white active:scale-95 whitespace-nowrap"

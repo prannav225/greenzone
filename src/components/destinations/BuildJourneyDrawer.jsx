@@ -9,36 +9,40 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-export default function BuildJourneyDrawer({
-  isOpen,
-  onClose,
-  currentStep,
-  onNext,
-  onBack,
-  onSubmit,
-  isSubmitting,
-  isSubmitted,
-  selectedForJourney,
-  toggleSelection,
-  DESTINATION_COLLECTIONS,
-  journeyDuration,
-  setJourneyDuration,
-  focusTags,
-  setFocusTags,
-  formData,
-  setFormData,
-}) {
+import { useJourney } from "../../hooks/useJourney";
+import { DESTINATION_COLLECTIONS } from "../../data/destinationsData";
+
+export default function BuildJourneyDrawer() {
+  const {
+    isPanelOpen,
+    resetJourney,
+    currentStep,
+    handleNextStep,
+    handleBackStep,
+    handleSubmitJourney,
+    isSubmitting,
+    isSubmitted,
+    selectedForJourney,
+    toggleSelection,
+    journeyDuration,
+    setJourneyDuration,
+    focusTags,
+    setFocusTags,
+    formData,
+    setFormData,
+  } = useJourney();
+
   return (
     <div
-      className={`fixed inset-0 z-150 transition-opacity duration-700 ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+      className={`fixed inset-0 z-150 transition-opacity duration-700 ${isPanelOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
     >
       <div
         className="absolute inset-0 bg-forest-deep/80 backdrop-blur-sm"
-        onClick={onClose}
+        onClick={resetJourney}
       />
 
       <div
-        className={`absolute inset-y-0 right-0 w-full max-w-[480px] bg-forest-deep border-l border-white/10 shadow-premium transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] transform ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`absolute inset-y-0 right-0 w-full max-w-[480px] bg-forest-deep border-l border-white/10 shadow-premium transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] transform ${isPanelOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         {isSubmitted ? (
           /* SUCCESS STATE */
@@ -57,7 +61,7 @@ export default function BuildJourneyDrawer({
               bespoke experience.
             </p>
             <button
-              onClick={onClose}
+              onClick={resetJourney}
               className="w-full px-8 py-4 bg-accent-gold text-forest-deep rounded-full font-black uppercase tracking-widest text-[11px] shadow-glow transition-all hover:scale-105"
             >
               Close
@@ -66,7 +70,7 @@ export default function BuildJourneyDrawer({
         ) : (
           <div className="flex flex-col h-full relative">
             {/* HEADER & PROGRESS */}
-            <div className="p-8 border-b border-white/5 space-y-6">
+            <div className="p-6 sm:p-8 border-b border-white/5 space-y-4 sm:space-y-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Compass className="w-4 h-4 text-accent-gold" />
@@ -75,8 +79,8 @@ export default function BuildJourneyDrawer({
                   </span>
                 </div>
                 <button
-                  onClick={onClose}
-                  className="p-3 rounded-xl bg-white/5 text-white/40 hover:text-white hover:bg-white/10 transition-all"
+                  onClick={resetJourney}
+                  className="p-2.5 sm:p-3 rounded-xl bg-white/5 text-white/40 hover:text-white hover:bg-white/10 transition-all"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -96,10 +100,10 @@ export default function BuildJourneyDrawer({
               {currentStep === 1 && (
                 <div className="space-y-8 animate-fade-in">
                   <div>
-                    <h3 className="text-2xl font-black text-white uppercase tracking-tighter mb-2">
+                    <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tighter mb-2">
                       Select Your Destinations
                     </h3>
-                    <p className="text-[10px] font-black uppercase tracking-widest text-accent-gold/60">
+                    <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-accent-gold/60">
                       {selectedForJourney.length} destinations selected
                     </p>
                   </div>
@@ -117,14 +121,14 @@ export default function BuildJourneyDrawer({
                           }`}
                         >
                           <div className="flex items-center gap-4 text-left">
-                            <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0 grayscale group-hover:grayscale-0 transition-all">
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden shrink-0 grayscale group-hover:grayscale-0 transition-all">
                               <img
                                 src={dest.images[0]}
                                 alt={dest.name}
                                 className="w-full h-full object-cover"
                               />
                             </div>
-                            <span className="text-sm font-bold text-white uppercase tracking-tight">
+                            <span className="text-xs sm:text-sm font-bold text-white uppercase tracking-tight">
                               {dest.name}
                             </span>
                           </div>
@@ -345,7 +349,17 @@ export default function BuildJourneyDrawer({
                       </span>
                       <p className="text-xs font-bold text-accent-gold">
                         {selectedForJourney.length > 0
-                          ? selectedForJourney.join(", ")
+                          ? selectedForJourney
+                              .map((id) => {
+                                const allDests =
+                                  DESTINATION_COLLECTIONS.flatMap(
+                                    (c) => c.destinations,
+                                  );
+                                return (
+                                  allDests.find((d) => d.id === id)?.name || id
+                                );
+                              })
+                              .join(", ")
                           : "None selected"}
                       </p>
                     </div>
@@ -373,10 +387,10 @@ export default function BuildJourneyDrawer({
             </div>
 
             {/* STICKY FOOTER NAVIGATION */}
-            <div className="p-8 border-t border-white/5 flex gap-4 bg-forest-deep">
+            <div className="p-6 sm:p-8 border-t border-white/5 flex gap-3 sm:gap-4 bg-forest-deep">
               {currentStep > 1 && (
                 <button
-                  onClick={onBack}
+                  onClick={handleBackStep}
                   disabled={isSubmitting}
                   className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-white/10 text-white font-black uppercase tracking-widest text-[10px] hover:bg-white/5 transition-all"
                 >
@@ -387,7 +401,7 @@ export default function BuildJourneyDrawer({
 
               {currentStep < 4 ? (
                 <button
-                  onClick={onNext}
+                  onClick={handleNextStep}
                   disabled={
                     currentStep === 1
                       ? selectedForJourney.length === 0
@@ -402,7 +416,7 @@ export default function BuildJourneyDrawer({
                 </button>
               ) : (
                 <button
-                  onClick={onSubmit}
+                  onClick={handleSubmitJourney}
                   disabled={isSubmitting || !formData.name || !formData.email}
                   className="flex-2 flex items-center justify-center gap-2 px-8 py-4 bg-accent-gold text-forest-deep rounded-full font-black uppercase tracking-widest text-[10px] shadow-glow transition-all hover:scale-105 disabled:opacity-30 disabled:scale-100 disabled:shadow-none"
                 >

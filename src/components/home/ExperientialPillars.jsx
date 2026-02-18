@@ -5,26 +5,26 @@ const pillars = [
   {
     id: 1,
     title: "Adventure & Travel",
-    subtitle: "Three Paths. One Purpose.",
+    subtitle: "The Journey",
     description:
-      "Curated journeys across powerful landscapes designed to challenge, expand, and reconnect.",
+      "Curated journeys across powerful landscapes designed for personal expansion, mental resilience, and environmental connection.",
     cta: "Explore Destinations",
     link: "/destinations",
-    image: "/adventure-kayak.png",
+    image: "/adventure-kayak.webp",
     icon: Mountain,
     overlayColor: "from-forest-deep via-transparent to-transparent",
     accentColor: "var(--color-accent-gold)",
   },
   {
     id: 2,
-    title: "Experiential Workshops",
-    subtitle: "Three Paths. One Purpose.",
+    title: "Workshops & Leadership Programs",
+    subtitle: "The Training",
     description:
-      "Outbound Learning, NLP, and Emotional Intelligence programs that develop leadership through action.",
+      "Outbound Learning (OBL), NLP, and Emotional Intelligence programs that translate psychological principles into tangible leadership capability.",
     cta: "View Workshops",
     link: "/workshops",
     image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2000",
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200",
     icon: Users,
     overlayColor: "from-forest-deep via-transparent to-transparent",
     accentColor: "var(--color-accent-gold)",
@@ -32,12 +32,12 @@ const pillars = [
   {
     id: 3,
     title: "Agri Learning Retreats",
-    subtitle: "Three Paths. One Purpose.",
+    subtitle: "The Connection",
     description:
-      "Premium experiential sustainability programs for forward-thinking schools.",
+      "Immersive sustainability programs for students and professionals, focusing on agricultural systems and mindful resource management.",
     cta: "Discover Retreats",
     link: "/agri-tourism",
-    image: "/agri-retreat.png",
+    image: "/agri-retreat.webp",
     icon: Sprout,
     overlayColor: "from-forest-deep via-transparent to-transparent",
     accentColor: "var(--color-accent-gold)",
@@ -51,12 +51,15 @@ function PillarPanel({ pillar, index }) {
   return (
     <div className="relative h-screen min-h-[700px] w-full flex items-center overflow-hidden group scroll-snap-section">
       {/* Background with Cinematic Treatment */}
-      <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-4000 ease-out group-hover:scale-110"
+      <div className="absolute inset-0 z-0 bg-forest-deep">
+        <img
+          src={pillar.image}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-4000 ease-out group-hover:scale-110"
           style={{
-            backgroundImage: `url('${pillar.image}')`,
+            transform: `translateY(${pillar.id === 2 ? "0" : "0"})`, // Placeholder for parallax if needed
           }}
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-forest-deep/40 backdrop-blur-[1px]" />
 
@@ -79,32 +82,37 @@ function PillarPanel({ pillar, index }) {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 py-20">
         <div
-          className={`max-w-2xl ${isEven ? "ml-0" : "ml-auto text-right flex flex-col items-end"}`}
+          className={`max-w-2xl ${isEven ? "md:ml-0" : "md:ml-auto md:text-right md:items-end"} flex flex-col items-center text-center md:items-start md:text-left`}
         >
           {/* Eyebrow Logic */}
-          <div className="flex items-center gap-4 mb-8 animate-fade-in group-hover:gap-6 transition-all duration-500">
+          <div className="flex items-center gap-4 mb-6 sm:mb-8 animate-fade-in group-hover:gap-6 transition-all duration-500">
             <span className="text-eyebrow">{pillar.subtitle}</span>
           </div>
 
           {/* Title - Fluid & Impactful */}
-          <h2 className="text-section-title leading-[1.1] mb-8 drop-shadow-premium">
+          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-heading font-black text-white leading-[1.1] mb-6 sm:mb-8 drop-shadow-premium">
             {pillar.title}
           </h2>
 
           {/* Description - Balanced density */}
-          <div className="relative mb-12">
+          <div className="relative mb-10 sm:mb-12">
             <div
-              className={`absolute top-0 bottom-0 w-1 scale-y-0 group-hover:scale-y-100 transition-transform duration-700 ${isEven ? "-left-6" : "-right-6"}`}
+              className={`hidden md:block absolute top-0 bottom-0 w-1 scale-y-0 group-hover:scale-y-100 transition-transform duration-700 ${isEven ? "-left-6" : "-right-6"}`}
               style={{ backgroundColor: pillar.accentColor, opacity: 0.3 }}
             />
-            <p className="text-description max-w-xl">{pillar.description}</p>
+            <p className="text-description max-w-xl mx-auto md:mx-0">
+              {pillar.description}
+            </p>
           </div>
 
           {/* Luxury CTA Button */}
-          <div className="flex items-center gap-10">
-            <Link to={pillar.link} className="btn-primary px-12 py-5">
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+            <Link
+              to={pillar.link}
+              className="btn-primary w-full sm:w-auto px-12 py-5"
+            >
               <span>{pillar.cta}</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -143,7 +151,7 @@ export default function ExperientialPillars() {
   return (
     <section className="relative bg-forest-deep overflow-hidden">
       {/* Section Header */}
-      <div className="relative z-20 pt-32 pb-16 px-6 text-center max-w-4xl mx-auto scroll-snap-section h-screen flex flex-col justify-center">
+      <div className="relative z-20 pt-48 pb-24 px-6 text-center max-w-4xl mx-auto flex flex-col justify-center">
         <span className="text-eyebrow text-accent-gold block mb-6 animate-fade-in">
           What We Do
         </span>

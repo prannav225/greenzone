@@ -5,23 +5,23 @@ export default function WhoWeWorkWith() {
   const segments = [
     {
       icon: <Building2 className="w-5 h-5" />,
-      title: "Corporate Leadership Teams",
-      desc: "High-impact transformational journeys for senior executives and management clusters.",
+      title: "Corporate Teams",
+      desc: "High-impact leadership journeys for senior executives and management clusters.",
     },
     {
       icon: <Zap className="w-5 h-5" />,
-      title: "HR & Learning & Development",
-      desc: "Custom outbound programs designed to align with organizational competency frameworks.",
+      title: "HR & L&D Leaders",
+      desc: "Custom programs aligned with organizational competency frameworks and culture building.",
     },
     {
       icon: <GraduationCap className="w-5 h-5" />,
-      title: "Colleges & Universities",
-      desc: "Experiential leadership and resilience modules for the next generation of professionals.",
+      title: "Educational Institutions",
+      desc: "Experiential learning and resilience modules for schools, colleges, and university students.",
     },
     {
       icon: <Users className="w-5 h-5" />,
       title: "Growth-Oriented Individuals",
-      desc: "Curated small-group expeditions for those seeking clarity and personal expansion.",
+      desc: "Curated small-group expeditions for those seeking clarity and expansion beyond comfort.",
     },
   ];
 
@@ -32,12 +32,11 @@ export default function WhoWeWorkWith() {
       subtitleIcon={<Users className="w-3.5 h-3.5" />}
       title={
         <>
-          Strategic Partnerships <br />
-          <span className="italic text-accent-gold">Across Domains.</span>
+          Who We <span className="italic text-accent-gold">Work With.</span>
         </>
       }
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0 pb-10">
         {segments.map((segment, idx) => (
           <div
             key={idx}

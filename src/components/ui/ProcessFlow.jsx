@@ -1,5 +1,3 @@
-import { ArrowRight } from "lucide-react";
-
 export default function ProcessFlow({
   steps,
   variant = "grid", // "grid" | "timeline" (future)

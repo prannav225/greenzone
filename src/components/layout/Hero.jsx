@@ -1,6 +1,21 @@
 import { ArrowRight } from "lucide-react";
 import PrimaryButton from "../ui/PrimaryButton";
 
+const optimizeImage = (url) => {
+  if (!url) return url;
+  if (typeof url !== "string") return url;
+  if (url.includes("images.unsplash.com")) {
+    if (url.includes("?")) {
+      return url
+        .replace(/w=\d+/, "w=1600")
+        .replace(/q=\d+/, "q=75")
+        .replace(/auto=[^&]+/, "auto=format");
+    }
+    return `${url}?auto=format&fit=crop&q=75&w=1600`;
+  }
+  return url;
+};
+
 export default function Hero({
   bgImage,
   overlayGradient = "bg-linear-to-b from-forest-deep via-forest-deep/60 to-forest-deep",
@@ -10,6 +25,7 @@ export default function Hero({
   primaryButton, // { to, label, variant, size }
   showScrollIndicator = false,
   className = "",
+  priority = false, // Set to true for the first section of a page
   children,
 }) {
   return (
@@ -19,10 +35,11 @@ export default function Hero({
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src={bgImage}
+          src={optimizeImage(bgImage)}
           className="w-full h-full object-cover opacity-30 scale-105 animate-slow-zoom"
           alt="Hero Background"
-          fetchPriority="high"
+          fetchPriority={priority ? "high" : "low"}
+          loading={priority ? "eager" : "lazy"}
         />
         <div className={`absolute inset-0 ${overlayGradient}`} />
         <div className="absolute inset-0 opacity-20 atmospheric-noise"></div>
@@ -36,13 +53,13 @@ export default function Hero({
         )}
 
         {title && (
-          <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-black text-white leading-[1.1] tracking-tighter mb-8 sm:mb-10 animate-fade-in-up">
+          <h1 className="text-hero text-white mb-8 sm:mb-10 animate-fade-in-up">
             {title}
-          </div>
+          </h1>
         )}
 
         {description && (
-          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-4xl mx-auto font-medium leading-relaxed animate-fade-in-up animate-delay-200 px-4 sm:px-0 mb-10">
+          <p className="text-description text-white/70 max-w-4xl mx-auto animate-fade-in-up animate-delay-200 px-4 sm:px-0 mb-10">
             {description}
           </p>
         )}

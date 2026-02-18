@@ -1,6 +1,5 @@
 import HeroNew from "../components/home/HeroNew";
 import ExperientialPillars from "../components/home/ExperientialPillars";
-import Philosophy from "../components/home/Philosophy";
 import WhoWeWorkWith from "../components/home/WhoWeWorkWith";
 import HowItWorks from "../components/home/HowItWorks";
 import CredibilityStrip from "../components/home/CredibilityStrip";
@@ -14,15 +13,9 @@ export default function Home() {
       </div>
 
       <ExperientialPillars />
-
-      <Philosophy />
-
-      <WhoWeWorkWith />
-
       <HowItWorks />
-
+      <WhoWeWorkWith />
       <CredibilityStrip />
-
       <CallToAction />
     </main>
   );

@@ -31,6 +31,7 @@ export default function FinalCTA({
             src={bgImage}
             className={`w-full h-full object-cover ${imageOpacity} animate-slow-zoom`}
             alt="CTA Background"
+            loading="lazy"
           />
           <div
             className={`absolute inset-0 bg-linear-to-b ${
@@ -74,7 +75,7 @@ export default function FinalCTA({
 
         {/* Heading */}
         <h2
-          className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black leading-[1.1] tracking-tighter mb-6 sm:mb-8 px-4 sm:px-0 ${
+          className={`text-hero font-heading font-black mb-6 sm:mb-8 px-4 sm:px-0 ${
             isDark ? "text-white" : "text-forest"
           }`}
         >

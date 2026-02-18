@@ -1,29 +1,33 @@
+import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import FooterMinimal from "./components/layout/FooterMinimal";
 
-// Pages
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Workshops from "./pages/Workshops";
-import NLP from "./pages/NLP";
-import EQ from "./pages/EQ";
-import AgriTourism from "./pages/AgriTourism";
-import OutboundLearning from "./pages/OutboundLearning";
-import Destinations from "./pages/Destinations";
-import Contact from "./pages/Contact";
-import Privacy from "./pages/Privacy";
-import Terms from "./pages/Terms";
+// Pages - Lazy Loaded
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Workshops = lazy(() => import("./pages/Workshops"));
+const NLP = lazy(() => import("./pages/NLP"));
+const EQ = lazy(() => import("./pages/EQ"));
+const AgriTourism = lazy(() => import("./pages/AgriTourism"));
+const OutboundLearning = lazy(() => import("./pages/OutboundLearning"));
+const Destinations = lazy(() => import("./pages/Destinations"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Terms = lazy(() => import("./pages/Terms"));
+
 import ScrollToTop from "./components/utils/ScrollToTop";
 import FloatingActions from "./components/ui/FloatingActions";
+import { JourneyProvider } from "./context/JourneyProvider";
+import BuildJourneyDrawer from "./components/destinations/BuildJourneyDrawer";
+import Loading from "./components/ui/Loading";
 
-function App() {
+function AppContent() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <div className="flex-1">
+    <div className="min-h-screen flex flex-col font-sans selection:bg-accent-gold selection:text-forest-deep">
+      <Navbar />
+      <main className="flex-1">
+        <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -37,11 +41,23 @@ function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
           </Routes>
-        </div>
-        <FooterMinimal />
-        <FloatingActions />
-      </div>
-    </Router>
+        </Suspense>
+      </main>
+      <FooterMinimal />
+      <FloatingActions />
+      <BuildJourneyDrawer />
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <JourneyProvider>
+      <Router>
+        <ScrollToTop />
+        <AppContent />
+      </Router>
+    </JourneyProvider>
   );
 }
 

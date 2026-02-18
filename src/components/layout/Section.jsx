@@ -12,10 +12,10 @@ const variants = {
 };
 
 const paddings = {
-  xs: "py-10 sm:py-14 md:py-20",
-  sm: "py-14 sm:py-20 md:py-28",
-  md: "py-20 sm:py-28 md:py-40",
-  lg: "py-28 sm:py-40 md:py-56",
+  xs: "pt-10 sm:pt-14 md:pt-20",
+  sm: "pt-14 sm:pt-20 md:pt-28",
+  md: "pt-20 sm:pt-28 md:pt-40",
+  lg: "pt-28 sm:pt-40 md:pt-56",
   none: "py-0",
 };
 

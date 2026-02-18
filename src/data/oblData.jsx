@@ -6,11 +6,8 @@ import {
   Users,
   Mountain,
   Flag,
-  Users2,
   Briefcase,
   Target,
-  ShieldCheck,
-  Search,
 } from "lucide-react";
 
 export const OBL_HERO = {
@@ -27,26 +24,26 @@ export const OBL_HERO = {
 };
 
 export const OBL_INTRO = {
-  title: ["Action-Based", "Development."],
+  title: ["High-Grit", "Action."],
   bgImage:
     "https://images.unsplash.com/photo-1501503069356-3c6b82a17d89?auto=format&fit=crop&q=80&w=2000",
   mainText:
-    "Outbound Learning is a method of experiential training that replaces static classrooms with dynamic outdoor environments.",
+    "OBL is our signature field-based methodology designed to test individual capability and team cohesion against real-world environmental stakes.",
   subText:
-    "Unlike traditional training, OBL places participants in high-grit scenarios where they must decide, delegate, and execute immediately. Reflection on these actions reveals deep-seated leadership traits and team dynamics that a boardroom can never expose.",
+    "By removing the safety net of the boardroom, we trigger authentic behavioral responses that are impossible to simulate indoors. This is tactical assessment and leadership refinement under pressure.",
   quote:
-    "The wilderness doesn't wait for permission. It demands clarity, resilience, and absolute collaboration. We use these demands to forge stronger, more adaptive professional teams.",
+    "Nature provides the most honest feedback loop. Our role is to ensure that feedback is translated into sustainable organizational capability.",
 };
 
 export const OBL_FEATURES = [
   {
-    title: "Real-World Stakes",
-    desc: "Challenges that mirror workplace pressure through tangible environmental variables.",
+    title: "Field Stakes",
+    desc: "Tangible environmental variables that mirror high-velocity workplace pressure.",
     icon: Activity,
   },
   {
-    title: "Structured Reflection",
-    desc: "Every experience is dissected to bridge the gap between outdoor action and office application.",
+    title: "Tactical Debrief",
+    desc: "Converting outdoor outcomes into concrete professional strategies.",
     icon: Brain,
   },
 ];
@@ -55,14 +52,13 @@ export const OBL_TRACKS = [
   {
     title: "Corporate Leadership Track",
     focus: "For Managers & High-Value Teams",
-    desc: "Deep-dive experiential training focused on strategic resilience and command.",
+    desc: "Refining command, delegation, and decision-making through field-based leadership rotations.",
     points: [
-      "Leadership rotations during complex treks",
-      "High-stakes crisis simulation challenges",
-      "Trust-based high-ropes and obstacles",
-      "Strategic mirroring and communication tasks",
-      "Campfire debrief and psychological reflection",
-      "Personalized executive action planning",
+      "Dynamic leadership rotations during treks",
+      "High-stakes crisis management simulations",
+      "Trust-based strategic obstacles",
+      "Field-to-Boardroom insight bridging",
+      "Executive resilience & grit assessment",
     ],
     icon: Building2,
     accent: "accent-gold",
@@ -70,14 +66,13 @@ export const OBL_TRACKS = [
   {
     title: "College Career Track",
     focus: "For Students & Emerging Talents",
-    desc: "Transforming academic potential into professional grit and career readiness.",
+    desc: "Bridging the gap between academic theory and the practical demands of professional careers.",
     points: [
-      "Foundational EQ and self-awareness labs",
-      "Teamwork and peer-influence challenges",
-      "Career-mapped strategic simulations",
-      "Resume, LinkedIn, and pitch mentorship",
-      "High-resilience role-play exercises",
-      "Post-grad transitional roadmap building",
+      "Workplace readiness and peer dynamics",
+      "Strategic role-play & situational awareness",
+      "High-grit capability building",
+      "Transition mapping for career success",
+      "Resilience-based problem solving",
     ],
     icon: GraduationCap,
     accent: "accent-emerald",
@@ -87,29 +82,29 @@ export const OBL_TRACKS = [
 export const OBL_PROCESS = [
   {
     step: "01",
-    title: "Immersion",
-    desc: "Trust-building tasks designed to break down corporate silos and establish safety.",
+    title: "Baseline",
+    desc: "Establishing team safety and identifying current behavioral defaults.",
     icon: Users,
-    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
+    img: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800",
   },
   {
     step: "02",
-    title: "Challenge",
-    desc: "High-grit outdoor tasks that mirror workplace pressure and demand decision-making.",
+    title: "Climax",
+    desc: "High-stakes field challenges that demand immediate and authentic action.",
     icon: Mountain,
     img: "https://images.unsplash.com/photo-1544256718-3bcf237f3974?auto=format&fit=crop&q=80&w=800",
   },
   {
     step: "03",
-    title: "Reflection",
-    desc: "Debrief sessions where triggers are identified and learning is crystallized into insights.",
+    title: "Analysis",
+    desc: "Structured debriefs to dissect actions and map them to professional behavior.",
     icon: Brain,
     img: "https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?auto=format&fit=crop&q=80&w=800",
   },
   {
     step: "04",
-    title: "Application",
-    desc: "Forging concrete action plans for immediate implementation back at the office.",
+    title: "Protocols",
+    desc: "Defining concrete implementation steps for the workplace.",
     icon: Flag,
     img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
   },
@@ -117,50 +112,46 @@ export const OBL_PROCESS = [
 
 export const OBL_AUDIENCE = [
   {
-    title: "Corporate Teams",
-    desc: "Building resilience and seamless collaboration within organizational units.",
+    title: "Corporate Units",
+    desc: "Refining collaboration and resilience within senior and mid-level management.",
     icon: Building2,
   },
   {
-    title: "Academic Institutions",
-    desc: "Preparing the next generation of leaders through grit and practical experience.",
+    title: "Student Bodies",
+    desc: "Equipping emerging professionals with the grit required for global industries.",
     icon: GraduationCap,
   },
   {
-    title: "HR & Talent Managers",
-    desc: "Implementing high-impact, behavioral development tracks for talent retention.",
+    title: "HR Strategists",
+    desc: "Implementing objective-driven developmental tracks for talent growth.",
     icon: Briefcase,
   },
   {
-    title: "High-Performers",
-    desc: "Individual professionals seeking to break through psychological barriers outdoors.",
+    title: "Professional Individuals",
+    desc: "Personal breakthrough challenges for those ready to lead beyond comfort.",
     icon: Target,
   },
 ];
 
 export const OBL_OUTCOMES = [
   {
-    title: "Leadership Presence",
-    desc: "Cultivate a commanding style that inspires trust during crisis.",
+    title: "Leadership Command",
+    desc: "Develop a measured style that inspires trust during organizational flux.",
   },
   {
-    title: "Team Synergy",
-    desc: "Build intuitive collaboration that functions at high speeds without ego.",
+    title: "Tactical Synergy",
+    desc: "Build intuitive team collaboration that functions at pace without friction.",
   },
   {
-    title: "Strategic Precision",
-    desc: "Master rapid data processing and clear decision-making under high stakes.",
+    title: "Strategic Decision-Making",
+    desc: "Master rapid data processing and clear execution under high stakes.",
   },
   {
-    title: "Mental Resilience",
-    desc: "Forge psychological grit that turns setbacks into strategic opportunities.",
+    title: "Operational Resilience",
+    desc: "Build psychological endurance to maintain performance during setbacks.",
   },
   {
-    title: "Command Clarity",
-    desc: "Learn to communicate with surgical precision and tactical intent.",
-  },
-  {
-    title: "Adaptive Agility",
-    desc: "Identify the internal cognitive patterns that drive team successes and setbacks.",
+    title: "Communication Precision",
+    desc: "Learn to communicate with surgical intent and absolute clarity.",
   },
 ];

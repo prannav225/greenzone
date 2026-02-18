@@ -10,16 +10,9 @@ import {
   EQ_INTRO,
   EQ_COMPONENTS,
   EQ_STRUCTURE,
-  EQ_AUDIENCE,
   EQ_OUTCOMES,
 } from "../data/eqData";
-import {
-  ShieldCheck,
-  Heart,
-  Brain,
-  Users,
-  CheckCircle2Icon,
-} from "lucide-react";
+import { ShieldCheck, Heart, Brain, CheckCircle2Icon } from "lucide-react";
 
 export default function EQ() {
   useEffect(() => {
@@ -31,6 +24,7 @@ export default function EQ() {
     <main className="scroll-snap-container">
       {/* 1. HERO SECTION */}
       <Hero
+        priority={true}
         bgImage={EQ_HERO.bgImage}
         eyebrow={
           <>
@@ -101,7 +95,7 @@ export default function EQ() {
         className="scroll-mt-20"
         padding="sm"
       >
-        <div className="relative group rounded-[3.5rem] overflow-hidden border border-white/10 bg-white/5">
+        <div className="relative group lg:rounded-[3.5rem] rounded-2xl overflow-hidden border border-white/10 bg-white/5">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-linear-to-br from-forest-deep/40 via-transparent to-forest-deep/40 opacity-30" />
             <div className="absolute inset-0 opacity-10 atmospheric-noise"></div>
@@ -144,7 +138,7 @@ export default function EQ() {
                     <img
                       src={EQ_STRUCTURE.image}
                       alt="Workshop Interaction"
-                      className="w-full h-full object-cover rounded-full opacity-60 grayscale hover:grayscale-0 transition-all duration-1000"
+                      className="w-full h-full object-cover rounded-full opacity-60 transition-all duration-1000"
                     />
                   </div>
                 </div>
@@ -154,40 +148,16 @@ export default function EQ() {
         </div>
       </Section>
 
-      {/* 5. WHO THIS PROGRAM IS FOR */}
-      <Section
-        id="audience"
-        variant="forest"
-        subtitle="Targeted For"
-        subtitleIcon={<Users className="text-accent-gold" />}
-        title="Designed For"
-        center
-        padding="sm"
-      >
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {EQ_AUDIENCE.map((item, i) => (
-            <FeatureCard
-              key={i}
-              title={item.title}
-              description={item.desc}
-              icon={item.icon}
-              variant="glass"
-              layout="vertical"
-              className="text-center items-center p-10"
-            />
-          ))}
-        </div>
-      </Section>
-
-      {/* 6. KEY WORKPLACE OUTCOMES */}
+      {/* 5. WORKPLACE OUTCOMES */}
       <Section
         id="outcomes"
         variant="forest"
         subtitle="The Result"
         subtitleIcon={<CheckCircle2Icon className="text-accent-gold" />}
-        title="Workplace Outcomes"
+        title="Impact Domains"
         center
         padding="sm"
+        className="pb-10"
       >
         <ImmersiveContainer
           bgImage="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000"

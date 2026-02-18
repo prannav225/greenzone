@@ -27,29 +27,29 @@ export const NLP_HERO = {
 };
 
 export const NLP_INTRO = {
-  title: ["Understanding the", "Internal Map."],
+  title: ["The Language of", "Performance."],
   bgImage:
     "https://images.unsplash.com/photo-1454165833267-0352c8034dbd?auto=format&fit=crop&q=80&w=2000",
   mainText:
-    "NLP is a practical approach to understanding how thoughts, language, and behavior interact.",
+    "NLP provides a practical toolkit for understanding how we communicate, think, and react in professional environments.",
   subText:
-    "It focuses on the mechanics of communication, emotional regulation, belief systems, and behavioral change, allowing individuals to identify limiting patterns and build more effective responses.",
+    "Rather than abstract theory, our NLP training focuses on the actual habits that drive performance. We help you identify the mental patterns that limit your growth and replace them with communication styles and behaviors that produce measurable results.",
   quote:
-    "Applied professionally in leadership, coaching, and conflict resolution, NLP is not about abstract theory but about grounded results. It provides a toolkit for navigating complex human interactions with clarity and intelligence.",
+    "Success in leadership is rarely about what you know—it's about how you process information and influence those around you. NLP is the 'software' for that process.",
   concepts: [
     {
-      title: "Neuro",
-      desc: "Our nervous system and how we process experience through our five senses.",
+      title: "Mindset",
+      desc: "How our nervous system processes information and shapes our daily experience.",
       icon: Brain,
     },
     {
-      title: "Linguistic",
-      desc: "The language and non-verbal communication systems through which we code our internal maps.",
+      title: "Language",
+      desc: "The verbal and non-verbal tools we use to convey ideas and build rapport.",
       icon: MessageSquare,
     },
     {
-      title: "Programming",
-      desc: "The ability to discover, utilize, and change our mental programs to achieve specific outcomes.",
+      title: "Results",
+      desc: "The ability to update our habits and 'mental programs' to reach specific goals.",
       icon: Workflow,
     },
   ],
@@ -57,45 +57,43 @@ export const NLP_INTRO = {
 
 export const NLP_FORMATS = [
   {
-    tier: "A) 1-Day Foundation Program",
-    focus: "Foundational Clarity",
-    desc: "A baseline introduction to the mechanics of thought and communication.",
+    tier: "A) 1-Day Foundation",
+    focus: "Core Communication",
+    desc: "A focused introduction to the fundamentals of professional interaction.",
     points: [
-      "Understanding how the mind processes experience",
-      "Beliefs of excellence",
-      "Meta-models of communication",
-      "Perceptual positions (multi-perspective thinking)",
-      "Anchoring techniques for emotional regulation",
+      "Mastering first impressions and rapport",
+      "Managing your emotional state under pressure",
+      "Identifying how others process information",
+      "Foundational tools for self-regulation",
+      "Communicating with clarity and intent",
     ],
     icon: Zap,
     accent: "accent-gold",
   },
   {
     tier: "B) 2-Day Deep Dive",
-    focus: "Communication & Leadership",
-    desc: "Deepening the application of NLP within professional and team dynamics.",
+    focus: "Leadership & Conflict",
+    desc: "Applying psychological principles to lead teams and navigate friction.",
     points: [
-      "Subconscious belief systems",
-      "Cognitive biases",
-      "Meta-programs and behavioral patterns",
-      "Neurological levels of change",
-      "Role-play and conflict resolution exercises",
-      "Leadership communication practice",
+      "Identifying and breaking limiting beliefs",
+      "Advanced conflict resolution frameworks",
+      "Understanding team behavioral patterns",
+      "Strategic influence and persuasion",
+      "Leadership language for high-stakes meetings",
     ],
     icon: Scale,
     accent: "accent-emerald",
   },
   {
     tier: "C) 3-Day Mastery",
-    focus: "Influence & Mastery",
-    desc: "The highest tier of integration, focusing on advanced leadership and influence.",
+    focus: "Advanced Influence",
+    desc: "Integrated mastery for senior leaders, focusing on cultural and organizational change.",
     points: [
-      "Advanced communication strategies",
-      "Leadership influence",
-      "Emotional intelligence integration",
-      "Reframing negative thought patterns",
-      "Psycho-drama & experiential learning",
-      "Personalized action planning",
+      "Coaching others through behavioral change",
+      "High-level negotiation and influence",
+      "Building resilient organizational cultures",
+      "Reframing challenges into strategic assets",
+      "Personalized executive action coaching",
     ],
     icon: Sparkles,
     accent: "accent-gold",
@@ -104,56 +102,56 @@ export const NLP_FORMATS = [
 
 export const NLP_APPLICATIONS = [
   {
-    title: "Leadership Communication",
-    desc: "Convey vision and expectations with precision, ensuring alignment at every level.",
+    title: "Precision Leadership",
+    desc: "Convey expectations with absolute clarity to ensure team alignment.",
     icon: Target,
   },
   {
-    title: "Managing Conflict",
-    desc: "Navigate workplace friction by understanding the underlying psychological maps of all parties.",
+    title: "Conflict Navigation",
+    desc: "Resolve workplace friction by understanding the diverse perspectives of your team.",
     icon: Users2,
   },
   {
-    title: "Emotional Control",
-    desc: "Practical techniques to manage stress and maintain focus under environmental pressure.",
+    title: "Stress Management",
+    desc: "Maintain focus and composure in high-velocity professional environments.",
     icon: Scale,
   },
   {
-    title: "Building Confidence",
-    desc: "Identify and dismantle limiting internal dialogues to foster high-performance mindsets.",
+    title: "Decisive Confidence",
+    desc: "Dismantle internal hesitation and foster a proactive, high-performance mindset.",
     icon: Zap,
   },
   {
-    title: "Influence & Persuasion",
-    desc: "Ethical frameworks for building rapport and driving meaningful organizational change.",
+    title: "Ethical Influence",
+    desc: "Tools for building genuine rapport and driving organizational progress.",
     icon: TrendingUp,
   },
   {
-    title: "Team Interactions",
-    desc: "Enhance collaboration by recognizing and adapting to different cognitive processing styles.",
+    title: "Interpersonal Agility",
+    desc: "Adapt your communication style to match the needs of different stakeholders.",
     icon: Users,
   },
 ];
 
 export const NLP_AUDIENCE = [
   {
-    title: "Corporate Leaders and Managers",
-    desc: "Executives seeking to refine their communication and influence.",
+    title: "Executives & Managers",
+    desc: "Leaders intent on refining their presence and organizational influence.",
     icon: Building2,
   },
   {
-    title: "HR & L&D Professionals",
-    desc: "Professionals looking for science-backed behavioral development frameworks.",
+    title: "L&D Professionals",
+    desc: "Individuals seeking practical, result-oriented development frameworks.",
     icon: Brain,
   },
   {
-    title: "Entrepreneurs and Business Owners",
-    desc: "Partners navigating the psychological demands of growth and scale.",
+    title: "Entrepreneurs",
+    desc: "Founders managing the psychological complexities of scaling a business.",
     icon: TrendingUp,
   },
   {
-    title: "Individuals Seeking Personal Growth",
-    desc: "High-performers seeking deeper self-awareness and cognitive regulation.",
+    title: "Growth-Oriented Professionals",
+    desc: "High-performers looking for deeper self-awareness and career mastery.",
     icon: GraduationCap,
   },
 ];
@@ -161,26 +159,22 @@ export const NLP_AUDIENCE = [
 export const NLP_OUTCOMES = [
   {
     title: "Clearer Communication",
-    desc: "Eliminate ambiguity in high-stakes professional dialogue.",
+    desc: "Direct, unambiguous dialogue in high-stakes professional settings.",
   },
   {
-    title: "Stronger Leadership Presence",
-    desc: "Cultivate an authentic influence that guides teams through change.",
+    title: "Executive Presence",
+    desc: "A centered, authentic influence that guides teams through change.",
   },
   {
-    title: "Better Emotional Regulation",
-    desc: "Maintain clarity and composure in high-pressure environments.",
+    title: "Emotional Control",
+    desc: "Composure and mental clarity during critical decision-making.",
   },
   {
-    title: "Greater Self-Awareness",
-    desc: "Identify the internal cognitive patterns that drive your successes and setbacks.",
+    title: "Cognitive Flexibility",
+    desc: "The ability to pivot your thinking and approach problems from new angles.",
   },
   {
-    title: "More Adaptive Thinking Patterns",
-    desc: "Develop the cognitive flexibility to approach challenges from multiple perspectives.",
-  },
-  {
-    title: "Long-term Behavioral Change",
-    desc: "Implement sustainable shifts in professional habits and interpersonal reactions.",
+    title: "Habit Transformation",
+    desc: "Replacing restrictive patterns with sustainable, high-performance habits.",
   },
 ];

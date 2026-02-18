@@ -22,13 +22,7 @@ import {
 } from "lucide-react";
 import FinalCTA from "../components/layout/FinalCTA";
 import { useEffect } from "react";
-import {
-  WORKSHOP_METHODOLOGY,
-  NLP_LEVELS,
-  EQ_CURRICULUM,
-  WORKSHOP_AUDIENCE,
-  WORKSHOP_OUTCOMES,
-} from "../data/workshopsData";
+import { WORKSHOP_METHODOLOGY } from "../data/workshopsData";
 import Hero from "../components/layout/Hero";
 import FeatureCard from "../components/ui/FeatureCard";
 
@@ -42,7 +36,8 @@ export default function Workshops() {
     <main className="scroll-snap-container">
       {/* 1. HERO SECTION */}
       <Hero
-        bgImage="/workshop.png"
+        priority={true}
+        bgImage="/Workshop.webp"
         eyebrow={
           <>
             <Award className="w-4 h-4" />
@@ -59,10 +54,10 @@ export default function Workshops() {
             Not Taught.
           </>
         }
-        description="Experiential learning programs that combine psychology, outdoor immersion, and strategic thinking to unlock personal and professional transformation."
+        description="Select from our specialized developmental tracks designed for corporate teams, educational institutions, and growth-oriented professionals. This overview provides a high-level look at our core methodologies."
         primaryButton={{
           to: "#programs",
-          label: "Explore Programs",
+          label: "View Program Tracks",
         }}
         showScrollIndicator={true}
       />
@@ -113,7 +108,7 @@ export default function Workshops() {
         </div>
 
         {/* The Core Model - Cinematic Banner */}
-        <div className="relative group overflow-hidden rounded-card">
+        <div className="relative group overflow-hidden rounded-card mb-20">
           <div className="absolute inset-0">
             <img
               src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=1200"
@@ -161,118 +156,54 @@ export default function Workshops() {
         className="scroll-mt-20 border-b border-white/10"
         padding="sm"
       >
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-12">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="space-y-8">
             <p className="text-xl md:text-2xl text-white/70 font-medium leading-relaxed">
-              Experiential leadership development in outdoor environments
-              designed to build resilience, strategic thinking, and team
-              synergy.
+              High-impact leadership development in remote outdoor environments.
+              OBL uses nature as a pressure-cooker to reveal authentic behavior
+              and forge resilient teams.
             </p>
 
-            <div className="space-y-8">
-              {/* Corporate Track */}
-              <div className="group p-8 rounded-card bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-accent-gold/20 flex items-center justify-center text-accent-gold">
-                    <Building2 className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-2xl font-heading font-black tracking-tight text-white">
-                    Corporate Leadership Track
-                  </h3>
-                </div>
-                <ul className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    "Leadership rotations during treks",
-                    "Crisis simulation challenges",
-                    "High-ropes / trust exercises",
-                    "Strategic mirroring tasks",
-                    "Campfire reflection debrief",
-                    "Vision & career mapping",
-                  ].map((item, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-3 text-sm text-white/50"
-                    >
-                      <div className="w-1 h-1 rounded-full bg-accent-gold mt-2 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <ul className="grid gap-4">
+              {[
+                "Leadership rotations in high-stakes environments",
+                "Crisis simulation & strategic decision-making",
+                "High-grit outdoor challenges",
+                "Structured reflection & behavioral mirroring",
+                "Integration of mountain-top insights to boardroom reality",
+              ].map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-4 text-white/60 group"
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent-gold mt-2 group-hover:scale-125 transition-transform" />
+                  <span className="text-lg font-medium tracking-tight">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-              {/* College Track */}
-              <div className="group p-8 rounded-card bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-accent-emerald/20 flex items-center justify-center text-accent-emerald">
-                    <GraduationCap className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-2xl font-heading font-black tracking-tight text-white">
-                    College Career Track
-                  </h3>
-                </div>
-                <ul className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    "EQ for career success",
-                    "Teamwork challenges",
-                    "Resume & LinkedIn optimization",
-                    "Elevator pitch practice",
-                    "Execution simulations",
-                    "Resilience role-play",
-                  ].map((item, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-3 text-sm text-white/50"
-                    >
-                      <div className="w-1 h-1 rounded-full bg-accent-emerald mt-2 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-6 pt-6">
-              <div className="flex items-center gap-3 text-white/40">
-                <CheckCircle2 className="w-5 h-5 text-accent-gold" />
-                <span className="text-[10px] font-black uppercase tracking-widest">
-                  Real-world decision making
-                </span>
-              </div>
-              <div className="flex items-center gap-3 text-white/40">
-                <CheckCircle2 className="w-5 h-5 text-accent-gold" />
-                <span className="text-[10px] font-black uppercase tracking-widest">
-                  Reflection-based learning
-                </span>
-              </div>
-              <div className="flex items-center gap-3 text-white/40">
-                <CheckCircle2 className="w-5 h-5 text-accent-gold" />
-                <span className="text-[10px] font-black uppercase tracking-widest">
-                  Certificate of Excellence
-                </span>
-              </div>
-            </div>
-
-            <div className="pt-10">
+            <div className="pt-6">
               <PrimaryButton
                 to="/outbound-learning"
                 variant="primary"
-                size="lg"
+                size="md"
               >
-                <span>Explore Full OBL Program</span>
+                <span>View Full OBL Curriculum</span>
                 <ArrowRight className="w-4 h-4" />
               </PrimaryButton>
             </div>
           </div>
 
           <div className="relative">
-            <div className="aspect-square rounded-image overflow-hidden shadow-premium">
+            <div className="aspect-video rounded-image overflow-hidden shadow-premium">
               <img
                 src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=1000"
                 alt="Outbound Learning"
                 className="w-full h-full object-cover transition-all duration-1000"
               />
             </div>
-            <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-accent-gold/10 blur-[100px] rounded-full animate-pulse" />
           </div>
         </div>
       </Section>
@@ -286,75 +217,49 @@ export default function Workshops() {
         padding="sm"
         className="border-b border-white/10"
       >
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div className="lg:order-2 space-y-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="lg:order-2 space-y-8">
             <p className="text-xl text-white/90 font-bold leading-relaxed">
-              Deep-dive psychological training for communication mastery,
-              behavioral transformation, and leadership influence.
+              Psychological training for communication mastery and behavioral
+              transformation. NLP provides the tools to understand and recode
+              the mental patterns that drive performance.
             </p>
 
-            <div className="space-y-6">
-              {NLP_LEVELS.map((tier, idx) => (
-                <div
-                  key={idx}
-                  className="relative p-10 rounded-card bg-white/5 border border-white/10 shadow-premium overflow-hidden group transition-all duration-700 hover:-translate-x-2"
+            <ul className="grid gap-4">
+              {[
+                "Communication mastery & influence",
+                "Behavioral modeling & pattern breaking",
+                "Advanced rapport building techniques",
+                "Emotional state management",
+                "Strategic linguistics for leadership",
+              ].map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-4 text-white/60 group"
                 >
-                  {/* Background Step Number */}
-                  <div className="absolute top-0 right-0 text-white/5 text-9xl font-black -mr-8 -mt-8 group-hover:text-accent-gold/5 transition-colors pointer-events-none">
-                    {tier.level}
-                  </div>
-
-                  <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
-                    <div>
-                      <span className="text-accent-gold font-black uppercase tracking-[0.3em] text-[10px] mb-2 block">
-                        Level {tier.level} • {tier.subtitle}
-                      </span>
-                      <h4 className="text-2xl font-heading font-black text-white mb-6">
-                        {tier.tier}
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {tier.points.map((p, pi) => (
-                          <div
-                            key={pi}
-                            className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/5"
-                          >
-                            <div className="w-1 h-1 rounded-full bg-accent-gold" />
-                            <span className="text-[9px] font-bold text-white/50 uppercase tracking-widest leading-none">
-                              {p}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="shrink-0">
-                      <ArrowRight className="w-10 h-10 text-white/10 group-hover:text-accent-gold transition-colors" />
-                    </div>
-                  </div>
-                </div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent-gold mt-2 group-hover:scale-125 transition-transform" />
+                  <span className="text-lg font-medium tracking-tight">
+                    {item}
+                  </span>
+                </li>
               ))}
+            </ul>
+
+            <div className="pt-6">
+              <PrimaryButton to="/nlp" variant="primary" size="md">
+                <span>View Full NLP Program</span>
+                <ArrowRight className="w-4 h-4" />
+              </PrimaryButton>
             </div>
           </div>
 
-          <div className="lg:order-1 sticky top-32">
-            <div className="relative group p-4 border border-white/10 rounded-[2.5rem]">
-              <div className="aspect-4/5 rounded-[2rem] overflow-hidden shadow-premium">
-                <img
-                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000"
-                  alt="NLP Training"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                />
-              </div>
-            </div>
-            <div className="mt-10 p-8 border-l-4 border-accent-gold italic text-white/80 text-lg leading-relaxed bg-white/5 backdrop-blur-xl shadow-premium rounded-r-card">
-              "Psychological mastery in communication isn't about manipulation;
-              it's about understanding the internal maps humans follow."
-            </div>
-
-            <div className="mt-12">
-              <PrimaryButton to="/nlp" variant="primary" size="lg">
-                <span>Explore Full NLP Program</span>
-                <ArrowRight className="w-4 h-4" />
-              </PrimaryButton>
+          <div className="lg:order-1 relative">
+            <div className="aspect-video rounded-image overflow-hidden shadow-premium">
+              <img
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000"
+                alt="NLP Training"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -367,312 +272,110 @@ export default function Workshops() {
         subtitleIcon={<Compass />}
         title="Emotional Intelligence (EQ)"
         padding="sm"
+        className="border-b border-white/10"
       >
-        <div className="relative group">
-          {/* Ambient Glow Blob */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent-emerald/20 blur-[120px] rounded-full transition-opacity duration-1000 pointer-events-none" />
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="space-y-8">
+            <p className="text-xl text-white/90 font-bold leading-relaxed">
+              Applied emotional science for workplace leadership. Our EQ
+              intensive moves beyond theory to provide actionable frameworks for
+              managing stress, conflict, and interpersonal dynamics.
+            </p>
 
-          <div className="relative bg-white/5 backdrop-blur-3xl rounded-3xl overflow-hidden shadow-premium border border-white/10">
-            <div className="grid lg:grid-cols-5">
-              <div className="lg:col-span-3 p-10 md:p-16">
-                <div className="space-y-2 mb-10">
-                  <span className="text-accent-gold font-black uppercase tracking-[0.3em] text-[10px]">
-                    The Curriculum
+            <ul className="grid gap-4">
+              {[
+                "Emotional awareness & regulation",
+                "Resilience in high-pressure scenarios",
+                "Empathy as a strategic tool",
+                "Conflict resolution & navigation",
+                "Authentic leadership presence",
+              ].map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-4 text-white/60 group"
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent-gold mt-2 group-hover:scale-125 transition-transform" />
+                  <span className="text-lg font-medium tracking-tight">
+                    {item}
                   </span>
-                  <h3 className="text-3xl md:text-4xl font-heading font-black text-white leading-tight tracking-tighter">
-                    1-Day Experiential Intensive
-                  </h3>
-                </div>
+                </li>
+              ))}
+            </ul>
 
-                <p className="text-lg text-white/90 mb-12 leading-relaxed font-bold max-w-2xl">
-                  A high-stakes session focused on enhancing workplace
-                  leadership and professional growth through the lens of
-                  emotional science.
-                </p>
+            <div className="pt-6">
+              <PrimaryButton to="/eq" variant="primary" size="md">
+                <span>View Full EQ Program</span>
+                <ArrowRight className="w-4 h-4" />
+              </PrimaryButton>
+            </div>
+          </div>
 
-                <div className="grid sm:grid-cols-2 gap-10 mb-12">
-                  <div className="space-y-6">
-                    <h4 className="flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.2em] text-white">
-                      <div className="w-4 h-px bg-accent-gold" />
-                      Core Components
-                    </h4>
-                    <div className="space-y-4">
-                      {EQ_CURRICULUM.coreComponents.map((item, i) => (
-                        <div
-                          key={i}
-                          className="flex items-center gap-3 group/item"
-                        >
-                          <div className="w-1.5 h-1.5 rounded-full bg-accent-gold scale-0 group-hover/item:scale-100 transition-transform" />
-                          <span className="font-black text-white/80 uppercase text-[10px] tracking-widest pl-2">
-                            {item}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="space-y-6">
-                    <h4 className="flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.2em] text-white">
-                      <div className="w-4 h-px bg-accent-gold" />
-                      Workshop Elements
-                    </h4>
-                    <div className="space-y-4">
-                      {EQ_CURRICULUM.workshopElements.map((item, i) => (
-                        <div
-                          key={i}
-                          className="flex items-center gap-3 group/item"
-                        >
-                          <div className="w-1.5 h-1.5 rounded-full bg-accent-gold scale-0 group-hover/item:scale-100 transition-transform" />
-                          <span className="font-black text-white/80 uppercase text-[10px] tracking-widest pl-2">
-                            {item}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-6 pt-10 border-t border-white/10">
-                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40">
-                    Target Audience:
-                  </span>
-                  <div className="flex flex-wrap gap-2">
-                    {EQ_CURRICULUM.targetAudience.map((t, i) => (
-                      <span
-                        key={i}
-                        className="px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 text-white font-black rounded-full text-[9px] uppercase tracking-widest hover:bg-white/10 transition-colors cursor-default"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mt-12">
-                  <PrimaryButton to="/eq" variant="primary" size="lg">
-                    <span>Explore Full EQ Program</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </PrimaryButton>
-                </div>
-              </div>
-
-              <div className="lg:col-span-2 bg-white/5 backdrop-blur-xl p-12 md:p-16 flex flex-col justify-center relative overflow-hidden">
-                {/* Decorative background circle */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-accent-gold/5 blur-[100px] rounded-full -mr-32 -mt-32" />
-
-                <div className="relative z-10 space-y-8">
-                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-gold shadow-2xl">
-                    <Target className="w-8 h-8" />
-                  </div>
-
-                  <div className="space-y-4">
-                    <h4 className="text-2xl font-heading font-black text-white tracking-tight">
-                      Practical Impact
-                    </h4>
-                    <p className="text-white/60 text-base leading-relaxed font-medium">
-                      Designed for immediate workplace application. Not
-                      theoretical fluff—real tools for real pressure.
-                    </p>
-                  </div>
-
-                  <div className="pt-8 space-y-2">
-                    <div className="text-6xl font-heading font-black text-accent-gold">
-                      100%
-                    </div>
-                    <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40">
-                      Implementation Focused
-                    </div>
-                  </div>
-
-                  <div className="pt-8">
-                    <div className="h-px w-full bg-white/10" />
-                    <p className="mt-8 text-white/30 text-xs italic leading-relaxed">
-                      *Includes personalized performance metrics and follow-up
-                      consultation.
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div className="relative">
+            <div className="aspect-video rounded-image overflow-hidden shadow-premium">
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
+                alt="Emotional Intelligence"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
       </Section>
-      {/* 4. WHO THESE PROGRAMS ARE FOR */}
-      <Section
-        id="audience"
-        variant="forest"
-        subtitle="Engagement"
-        subtitleIcon={<Users />}
-        title="Who We Partner With"
-        center
-        padding="sm"
-      >
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {WORKSHOP_AUDIENCE.map((item, i) => (
-            <FeatureCard
-              key={i}
-              title={item.title}
-              description={item.desc}
-              icon={item.icon}
-              variant="glass"
-              layout="vertical"
-              className="p-10" // Override padding if needed
-            />
-          ))}
-        </div>
-      </Section>
+
       {/* 5. TRAINER AUTHORITY SECTION */}
       <Section
         id="trainer"
         variant="forest"
         subtitle="Expertise"
         subtitleIcon={<Microscope />}
-        title="The Scientific Foundation"
+        title="Scientific Foundation"
         padding="sm"
+        className="border-b border-white/10"
       >
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div className="relative order-2 lg:order-1">
-            <div className="absolute -inset-4 bg-accent-gold/20 rounded-image blur-2xl opacity-30 animate-pulse"></div>
-            <div className="relative aspect-4/5 rounded-image overflow-hidden shadow-premium">
+        <div className="max-w-4xl mx-auto text-center space-y-8 mb-20">
+          <p className="text-xl md:text-2xl text-white/70 leading-relaxed italic">
+            "We don't just facilitate activities; we facilitate neurological
+            shifts. By combining the unpredictability of nature with the
+            precision of psychology, we create lasting behavioral change."
+          </p>
+          <div className="flex flex-col items-center gap-4">
+            <div className="w-20 h-20 rounded-full border border-accent-gold overflow-hidden shadow-premium">
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1000"
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
                 alt="Dr. Padmashri S. Rao"
-                className="w-full h-full object-cover opacity-90"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-8 bg-linear-to-t from-forest-deep to-transparent">
-                <div className="text-white font-heading font-black text-3xl mb-1 tracking-tight">
-                  Dr. Padmashri S. Rao
-                </div>
-                <div className="text-accent-gold text-xs font-black uppercase tracking-widest">
-                  Chief Facilitator & Psychologist
-                </div>
-              </div>
             </div>
-          </div>
-
-          <div className="order-1 lg:order-2 space-y-10">
             <div>
-              <h3 className="text-4xl font-heading font-black text-white tracking-tighter mb-8 leading-tight">
-                Psychology Meets <br />
-                <span className="italic text-accent-gold">
-                  Adventure Science.
-                </span>
-              </h3>
-              <p className="text-xl text-white/70 leading-relaxed mb-8">
-                Our programs are architected by Dr. Padmashri S. Rao, a Clinical
-                Psychologist and Corporate Trainer with extensive expertise in
-                behavioral science and NLP.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent-gold" />
-                  <span className="text-[10px] font-black text-white/80 uppercase tracking-widest">
-                    PhD in Cognitive Psychology
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent-gold" />
-                  <span className="text-[10px] font-black text-white/80 uppercase tracking-widest">
-                    Certified NLP Practitioner
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent-gold" />
-                  <span className="text-[10px] font-black text-white/80 uppercase tracking-widest">
-                    Clinical Practice Background
-                  </span>
-                </div>
+              <div className="text-white font-heading font-black text-xl tracking-tight">
+                Dr. Padmashri S. Rao
               </div>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent-gold" />
-                  <span className="text-[10px] font-black text-white/80 uppercase tracking-widest">
-                    Programs for HAL & ISRO
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent-gold" />
-                  <span className="text-[10px] font-black text-white/80 uppercase tracking-widest">
-                    Music Therapy Integration
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent-gold" />
-                  <span className="text-[10px] font-black text-white/80 uppercase tracking-widest">
-                    Adventure-based Facilitation
-                  </span>
-                </div>
+              <div className="text-accent-gold text-[10px] font-black uppercase tracking-widest">
+                Chief Facilitator & Psychologist
               </div>
-            </div>
-
-            <div className="p-8 bg-white/5 border border-white/10 text-white rounded-card shadow-premium relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-accent-gold/20 rounded-full blur-3xl -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000"></div>
-              <p className="text-lg leading-relaxed relative z-10 italic">
-                "We don't just facilitate activities; we facilitate neurological
-                shifts. By combining the unpredictability of nature with the
-                precision of psychology, we create lasting behavioral change."
-              </p>
             </div>
           </div>
         </div>
       </Section>
-      {/* 6. OUTCOMES & IMPACT */}
-      <Section
-        id="outcomes"
-        variant="forest"
-        subtitle="The Result"
-        subtitleIcon={<TrendingUp />}
-        title="Predictable Evolution."
-        center
-        padding="sm"
-      >
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {WORKSHOP_OUTCOMES.map((outcome, idx) => (
-            <div
-              key={idx}
-              className="group relative p-10 bg-white/5 backdrop-blur-3xl rounded-3xl border border-white/10 shadow-premium hover:bg-white/10 transition-all duration-1000"
-            >
-              <div className="flex flex-col md:flex-row items-start gap-8">
-                <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-gold group-hover:bg-accent-gold group-hover:text-forest shadow-2xl transition-all duration-500 shrink-0">
-                  <outcome.icon className="w-6 h-6" />
-                </div>
-                <div className="text-left">
-                  <span className="text-accent-gold font-black uppercase tracking-[0.4em] text-[10px] mb-3 block opacity-60 group-hover:opacity-100 transition-opacity">
-                    Outcome {idx + 1}
-                  </span>
-                  <div className="text-white font-heading font-black text-2xl mb-4 leading-tight group-hover:text-accent-gold transition-colors">
-                    {outcome.title}
-                  </div>
-                  <p className="text-white/70 text-base leading-relaxed group-hover:text-white/90 transition-colors font-medium">
-                    {outcome.desc}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
+
       {/* 7. FINAL CTA SECTION */}
       <FinalCTA
         variant="forest"
-        bgImage="/forest-classroom.png"
+        bgImage="/forest-classroom.webp"
         icon={BookOpen}
         title={
           <>
-            Design a Leadership <br />
-            <span className="text-accent-gold italic">Experience.</span>
+            Design Your <br />
+            <span className="text-accent-gold italic">Leadership Journey.</span>
           </>
         }
-        description="Let’s build a program aligned to your goals, challenges, and team dynamics. Move beyond training move into transformation."
+        description="Select a methodology to learn more, or schedule a consultation to build a custom program for your organization."
         buttons={[
           {
             label: "Schedule a Consultation",
             to: "/contact",
             variant: "primary",
           },
-          { label: "View Our Team", to: "/about", variant: "secondary" },
         ]}
       />
     </main>
