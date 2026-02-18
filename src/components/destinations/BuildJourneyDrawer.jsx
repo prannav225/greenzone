@@ -123,9 +123,14 @@ export default function BuildJourneyDrawer() {
                           <div className="flex items-center gap-4 text-left">
                             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden shrink-0 grayscale group-hover:grayscale-0 transition-all">
                               <img
-                                src={dest.images[0]}
+                                src={
+                                  dest.images[0].includes("unsplash.com")
+                                    ? dest.images[0].replace(/w=\d+/, "w=200")
+                                    : dest.images[0]
+                                }
                                 alt={dest.name}
                                 className="w-full h-full object-cover"
+                                loading="lazy"
                               />
                             </div>
                             <span className="text-xs sm:text-sm font-bold text-white uppercase tracking-tight">

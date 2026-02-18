@@ -136,14 +136,10 @@ export const DESTINATION_COLLECTIONS = [
         subtitle: "The cradle of coffee and the height of Karnataka.",
         desc: "Summit Mullayanagiri to stand above the clouds, where thin air clarifies intent and rugged terrain tests your grit. The rolling shola forests and cascading waterfalls provide a rhythmic backdrop for psychological resets.",
         images: [
-          "https://backpackersunited.in/_next/image?url=https%3A%2F%2Fbpu-images-v1.s3.eu-north-1.amazonaws.com%2Fuploads%2F1717659216101_Jari_falls.jpeg&w=1920&q=75",
-          "https://images.unsplash.com/photo-1739038034791-a60471396db0?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "https://images.unsplash.com/photo-1605105777592-c3430a67d033?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "https://images.unsplash.com/photo-1739038034774-3ba7ba964f01?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1605105777592-c3430a67d033?auto=format&fit=crop&q=80&w=1200",
+          "https://images.unsplash.com/photo-1739038034791-a60471396db0?auto=format&fit=crop&q=80&w=1200",
+          "https://images.unsplash.com/photo-1739038034774-3ba7ba964f01?auto=format&fit=crop&q=80&w=1200",
           "https://tastyworld.in/wp-content/uploads/2022/11/3a.jpg",
-          "https://i0.wp.com/aravindgundumane.com/wp-content/uploads/2018/08/DSC_8567.jpg?fit=2048%2C1367&ssl=1",
-          "https://riverwoods.in/wp-content/uploads/2024/11/mullayanagiri-karnataka-scaled.jpg",
-          "https://www.mekanagadde.com/wp-content/uploads/2015/09/Baba-Budangiri.jpg",
         ],
         highlights: [
           "Jhari Falls",
@@ -165,11 +161,10 @@ export const DESTINATION_COLLECTIONS = [
         subtitle: "The mist-laden heart of Coorg's wild interior.",
         desc: "Navigate the dense coffee estates and roaring waterfalls of Madikeri, where the landscape demands presence and the terrain reshapes perspective. This is a space of elemental immersion and cultural depth.",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/7/7a/Abbey_Falls_New.jpg",
-          "https://backpackersunited.in/_next/image?url=https%3A%2F%2Fbpu-images-v1.s3.eu-north-1.amazonaws.com%2Fuploads%2F1721471615474_Raja%27s%20Seat%20Garden%205%20.jpg&w=1920&q=75",
+          "https://images.unsplash.com/photo-1590494165264-1ebe3602eb80?auto=format&fit=crop&q=80&w=1200",
+          "https://images.unsplash.com/photo-1626244458313-097561841e7e?auto=format&fit=crop&q=80&w=1200",
           "https://mandalpattijeepsafari.org/wp-content/uploads/2025/10/M-P-2-1.png",
-          "https://upload.wikimedia.org/wikipedia/commons/c/c8/Madikeri_Palace_now_used_as_district_administration_seat.jpg",
-          "https://images.unsplash.com/photo-1709730705114-74080546e165?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1627342738303-34e892956cf0?auto=format&fit=crop&q=80&w=1200",
         ],
         highlights: [
           "Abbe Falls",
@@ -187,10 +182,9 @@ export const DESTINATION_COLLECTIONS = [
         subtitle: "The confluence of wisdom and the Tunga river.",
         desc: "Retreat to the serene banks of the Tunga, where ancient Vedic traditions meet the raw stillness of the Western Ghats. This is a space of intellectual clarity, deep reflection, and elemental trekking.",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/2/2a/Vidyashankara_Temple_at_Shringeri.jpg",
-          "https://upload.wikimedia.org/wikipedia/commons/4/45/Srimane_Falls%2C_Sringeri.jpg",
+          "https://images.unsplash.com/photo-1540979388789-6eca28fb442b?auto=format&fit=crop&q=80&w=1200",
+          "https://images.unsplash.com/photo-1626244458313-097561841e7e?auto=format&fit=crop&q=80&w=1200",
           "https://live.staticflickr.com/5772/22125991625_d550873412_o.jpg",
-          "https://upload.wikimedia.org/wikipedia/commons/2/26/Valparai_GhatRoad.JPG",
         ],
         highlights: [
           "Sri Sharada Peetham",
@@ -255,9 +249,8 @@ export const DESTINATION_COLLECTIONS = [
         subtitle: "The heart of the ocean's silent interior.",
         desc: "Submerge into crystalline waters to discover a hidden world of coral reefs and marine life. This is a destination of absolute sensory isolation, designed to expand awareness beyond the terrestrial.",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/f/ff/Netrani_Island_Arial_View.jpg",
+          "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=1200",
           "https://kalavadyfarmstay.com/wp-content/uploads/2022/05/scuba-diving-in-netrani-island.jpg",
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/ac/cc/46/img-20191228-wa0049-largejpg.jpg?w=1100&h=1100&s=1",
         ],
         highlights: ["Netrani Island", "Scuba / marine exploration experience"],
       },
