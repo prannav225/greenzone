@@ -5,14 +5,16 @@ import {
 } from "../data/destinationsData";
 
 // Components
-import HeroSection from "../components/destinations/HeroSection";
+import Hero from "../components/layout/Hero";
+import FinalCTA from "../components/layout/FinalCTA";
 import FilterBar from "../components/destinations/FilterBar";
 import DestinationSection from "../components/destinations/DestinationSection";
 import DestinationPreviewModal from "../components/destinations/DestinationPreviewModal";
 import BuildJourneyDrawer from "../components/destinations/BuildJourneyDrawer";
 import PersonalisedJourneys from "../components/destinations/PersonalisedJourneys";
-import ClimaxCTA from "../components/destinations/ClimaxCTA";
 import { useJourney } from "../hooks/useJourney";
+import { Compass, Sparkles, ArrowRight } from "lucide-react";
+import PrimaryButton from "../components/ui/PrimaryButton";
 
 export default function Destinations() {
   const { isPanelOpen, selectedForJourney, toggleSelection } = useJourney();
@@ -69,7 +71,45 @@ export default function Destinations() {
             : "blur-0 opacity-100"
         }`}
       >
-        <HeroSection />
+        <Hero
+          size="compact"
+          bgImage="https://images.unsplash.com/photo-1608973557237-4ab537f2cd5a?q=80&w=1600&auto=format&fit=crop"
+          className="scroll-snap-section"
+          eyebrow={
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Selected Geographies</span>
+            </div>
+          }
+          title={
+            <>
+              Travel That <br />
+              <span
+                className="italic animate-text-shimmer"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, var(--color-accent-gold), white, var(--color-accent-gold))",
+                  backgroundSize: "200% auto",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                Transforms.
+              </span>
+            </>
+          }
+          description="Every destination is a deliberate choice—an architectural masterpiece of geography engineered to shift your perspective and reveal your authentic edge."
+        >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-4 animate-fade-in-up animate-delay-300">
+            <PrimaryButton to="/contact" size="lg">
+              Explore Journeys
+            </PrimaryButton>
+            <PrimaryButton to="/contact" variant="secondary" size="lg">
+              Build My Journey
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </PrimaryButton>
+          </div>
+        </Hero>
 
         <FilterBar
           activeFilter={activeFilter}
@@ -96,7 +136,20 @@ export default function Destinations() {
         </div>
 
         <PersonalisedJourneys />
-        <ClimaxCTA />
+        <FinalCTA
+          bgImage="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000"
+          icon={Compass}
+          title={
+            <>
+              Your Boundary <br />
+              <span className="italic text-accent-gold drop-shadow-glow">
+                Awaits.
+              </span>
+            </>
+          }
+          description="The map is not the territory. The only way to understand the edge is to stand upon it. Connect with our curators to begin your transformation."
+          buttons={[{ to: "/contact#inquiry", label: "Plan Your Expedition" }]}
+        />
       </div>
 
       <DestinationPreviewModal

@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import PrimaryButton from "../ui/PrimaryButton";
+import { optimizeImage } from "../../utils/image-optimization";
 
 export default function FinalCTA({
   variant = "forest", // forest, sky-mist, charcoal
@@ -16,7 +17,7 @@ export default function FinalCTA({
 
   return (
     <section
-      className={`relative min-h-[70vh] lg:min-h-[85vh] flex items-center justify-center text-center py-16 sm:py-24 lg:py-32 overflow-hidden ${
+      className={`relative min-h-[50vh] lg:min-h-[60vh] flex items-center justify-center text-center py-12 sm:py-16 lg:py-20 overflow-hidden ${
         variant === "forest"
           ? "bg-forest"
           : variant === "charcoal"
@@ -28,7 +29,7 @@ export default function FinalCTA({
       {bgImage && (
         <div className="absolute inset-0">
           <img
-            src={bgImage}
+            src={optimizeImage(bgImage)}
             className={`w-full h-full object-cover ${imageOpacity} animate-slow-zoom`}
             alt="CTA Background"
             loading="lazy"
@@ -63,7 +64,7 @@ export default function FinalCTA({
         {/* Animated Icon */}
         {Icon && (
           <div
-            className={`inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-card mb-10 sm:mb-12 shadow-premium animate-float ${
+            className={`inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-card mb-8 sm:mb-10 shadow-premium animate-float ${
               isDark ? "bg-white text-forest" : "bg-forest text-white"
             }`}
           >
@@ -75,7 +76,7 @@ export default function FinalCTA({
 
         {/* Heading */}
         <h2
-          className={`text-hero font-heading font-black mb-6 sm:mb-8 px-4 sm:px-0 ${
+          className={`text-hero font-heading font-black mb-4 sm:mb-6 px-4 sm:px-0 ${
             isDark ? "text-white" : "text-forest"
           }`}
         >
@@ -84,7 +85,7 @@ export default function FinalCTA({
 
         {/* Description */}
         <p
-          className={`text-lg sm:text-xl md:text-2xl font-medium mb-12 sm:mb-16 max-w-2xl mx-auto leading-tight px-6 sm:px-0 ${
+          className={`text-lg sm:text-xl md:text-2xl font-medium mb-8 sm:mb-12 max-w-2xl mx-auto leading-tight px-6 sm:px-0 ${
             isDark ? "text-white/60" : "text-forest/60"
           }`}
         >

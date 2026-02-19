@@ -103,11 +103,6 @@ body {
   min-height: 80vh;
 }
 
-.scroll-snap-section:last-child {
-  scroll-snap-align: none;
-  min-height: auto;
-}
-
 /* ===== DESIGN SYSTEM COMPONENTS ===== */
 
 /* Typography Utils */

@@ -1,46 +1,63 @@
-import { Zap, Mountain, Brain, Layout, Microscope } from "lucide-react";
+import {
+  Users,
+  Mountain,
+  ShieldCheck,
+  Heart,
+  Clock,
+  PencilLine,
+  Leaf,
+  Globe,
+} from "lucide-react";
 
-export const VISION_MISSION = {
-  vision: {
-    title: "Our Vision",
-    desc: "To create immersive environments where individuals and institutions grow through experience, reflection, and action.",
-  },
-  mission: {
-    title: "Our Mission",
-    desc: "To design safe, structured, and transformative journeys that combine nature, leadership development, and psychological insight to create measurable personal and professional growth.",
-  },
+export const PHILOSOPHY = {
+  title: "The Essence of Greenzone",
+  tagline: "Pure Discovery. Intentional Pacing.",
+  desc: "We believe that travel is more than a movement between points. It is a decompression—a chance to step away from the clutter and reconnect with the raw, rhythmic pulse of nature and heritage.",
 };
 
-export const WHY_CHOOSE_US = [
+export const WHAT_SETS_US_APART = [
   {
-    title: "Experiential Over Theoretical",
-    desc: "We prioritize lived experience over lectures, creating behavioral shifts that classroom theory cannot replicate.",
-    icon: Zap,
+    title: "Small Curated Groups",
+    desc: "We limit our group sizes to ensure intimacy, flexibility, and a shared pace that respects the journey.",
+    icon: Users,
     accent: "bg-amber-500",
   },
   {
-    title: "Outdoor Immersion",
-    desc: "Nature serves as a dynamic testing ground, demanding adaptability, clarity, and genuine collaboration.",
-    icon: Mountain,
+    title: "Cultural Immersion",
+    desc: "We go beyond the surface, connecting you deeply with local narratives, traditions, and the people who keep them alive.",
+    icon: Heart,
+    accent: "bg-rose-500",
+  },
+  {
+    title: "Intentional Pacing",
+    desc: "Luxury is found in time. We prioritize slow-travel rhythms that allow for reflection and genuine presence.",
+    icon: Clock,
     accent: "bg-emerald-500",
   },
   {
-    title: "Psychology-Backed",
-    desc: "Each program is architected using clinical psychology and NLP to ensure deep internal alignment.",
-    icon: Brain,
+    title: "Safety-First Execution",
+    desc: "Every expedition is backed by rigorous planning, experienced leads, and a focus on physical and emotional wellbeing.",
+    icon: ShieldCheck,
     accent: "bg-blue-500",
   },
   {
-    title: "Structured Reflection",
-    desc: "Challenges are intentionally debriefed to translate raw experiences into concrete professional insights.",
-    icon: Layout,
+    title: "Personalised Journey Design",
+    desc: "No two travelers are the same. We tailor each itinerary to align with your personal curiosity, comfort, and grit.",
+    icon: PencilLine,
     accent: "bg-purple-500",
   },
+];
+
+export const SAFETY_RESPONSIBILITY = [
   {
-    title: "Curated Experiences",
-    desc: "Low-volume, high-impact programming meticulously designed for specific growth objectives.",
-    icon: Microscope,
-    accent: "bg-rose-500",
+    title: "Environmental Sensitivity",
+    desc: "We operate with a minimum-impact philosophy, ensuring that the landscapes we love remain pristine for generations to come.",
+    icon: Leaf,
+  },
+  {
+    title: "Cultural Respect",
+    desc: "Our journeys support local economies and respect sacred traditions, fostering a genuine, sustainable exchange.",
+    icon: Globe,
   },
 ];
 
@@ -48,11 +65,11 @@ export const FOUNDERS = [
   {
     name: "Kumar Srivatsa MS",
     role: "Founder",
-    tagline: "Visionary & Program Architect",
+    tagline: "Expedition Architect & Visionary",
     points: [
-      "Leads the strategic vision for experiential development.",
-      "Architects journeys that blend high-adventure with structured growth.",
-      "Dedicated to creating environments that redefine traditional learning.",
+      "Driven by a deep passion for the Western Ghats and Karnataka's heritage.",
+      "Architects journeys that blend high-adventure with luxury and stillness.",
+      "Dedicated to redefining travel as a tool for personal expansion.",
     ],
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200",
@@ -60,11 +77,11 @@ export const FOUNDERS = [
   {
     name: "Ashrith Paul",
     role: "Co-founder",
-    tagline: "Operational Strategy & safety",
+    tagline: "Operations & Safety Lead",
     points: [
-      "Directs seamless program execution and participant logistics.",
+      "Directs seamless expedition execution and participant logistics.",
       "Ensures absolute safety through industry-leading field protocols.",
-      "Maintains the highest standards of operational excellence.",
+      "Passionate about the mechanics of remote-area travel and navigation.",
     ],
     image:
       "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=1200",
@@ -72,21 +89,13 @@ export const FOUNDERS = [
   {
     name: "Praneet Varma",
     role: "Co-founder",
-    tagline: "Experience Design & Atmosphere",
+    tagline: "Experience & Narrative Design",
     points: [
-      "Shapes the creative direction and atmospheric depth of programs.",
-      "Aligns aesthetic design with purposeful participant experiences.",
-      "Focuses on the intentionality of every journey touchpoint.",
+      "Shapes the creative direction and atmospheric depth of every journey.",
+      "Aligns the aesthetic of travel with deep, immersive narratives.",
+      "Focuses on the intentionality of every sensory touchpoint.",
     ],
     image:
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=1200",
   },
-];
-
-export const COLLABORATION_POINTS = [
-  "Clinical Psychologist & Corporate Trainer",
-  "Certified NLP Practitioner",
-  "PhD in Cognitive Psychology",
-  "Program Advisor for HAL, ISRO, and NIMHANS",
-  "Expert in behavioral science integration",
 ];

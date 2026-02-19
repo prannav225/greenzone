@@ -3,23 +3,9 @@ import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import PrimaryButton from "../ui/PrimaryButton";
 
-/**
- * NAVBAR COMPONENT
- * Standardized for the locked design language.
- */
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  {
-    name: "Workshops",
-    path: "/workshops",
-    submenu: [
-      { name: "OBL", path: "/outbound-learning" },
-      { name: "NLP", path: "/nlp" },
-      { name: "EQ", path: "/eq" },
-      { name: "Agri Tourism", path: "/agri-tourism" },
-    ],
-  },
   { name: "Destinations", path: "/destinations" },
 ];
 
@@ -58,40 +44,52 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-[100] flex justify-center p-4 sm:p-6 pb-0 pointer-events-none pt-[calc(1rem+env(safe-area-inset-top,0px))] md:pt-6">
+      <div className="fixed top-0 left-0 right-0 z-100 flex justify-center p-4 sm:p-6 pb-0 pointer-events-none pt-[calc(1rem+env(safe-area-inset-top,0px))] md:pt-6">
         {/* Main Navbar Pill */}
         <header
-          className={`w-full max-w-7xl h-14 sm:h-18 transition-all duration-500 rounded-full pointer-events-auto flex items-center justify-between px-5 sm:px-10 shadow-premium border border-white/10 relative z-50 ${
+          className={`w-full transition-all duration-700 rounded-full pointer-events-auto flex items-center border border-white/10 relative z-50 ${
             isScrolled
-              ? "bg-forest-deep/90 backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
-              : "bg-forest-deep/40 backdrop-blur-2xl"
+              ? "max-w-7xl lg:max-w-3xl h-14 sm:h-18 px-5 sm:px-10 bg-forest-deep/90 backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+              : "max-w-7xl h-14 sm:h-18 px-5 sm:px-10 bg-forest-deep/40 backdrop-blur-2xl shadow-premium"
           }`}
         >
           {/* Logo Section */}
-          <Link
-            to="/"
-            className="flex items-center gap-2 sm:gap-3 group shrink-0"
-          >
-            <div className="w-9 h-9 sm:w-12 sm:h-12 bg-white flex items-center justify-center transition-all duration-700 p-1.5 sm:p-2 rounded-full shadow-lg group-hover:scale-110">
-              <img
-                src="./logo.webp"
-                alt="greenzone logo"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <span className="font-heading font-black text-white text-[13px] sm:text-lg tracking-tighter block whitespace-nowrap">
-              Greenzone{" "}
-              <span className="italic text-accent-gold hidden xs:inline">
-                Adventures.
-              </span>
-              <span className="italic text-accent-gold xs:hidden">
-                Adventures.
-              </span>
-            </span>
-          </Link>
+          <div className="flex-1 flex items-center justify-start">
+            <Link
+              to="/"
+              className="flex items-center gap-2 sm:gap-3 group shrink-0"
+            >
+              <div
+                className={`bg-white flex items-center justify-center transition-all duration-700 rounded-full shadow-lg group-hover:scale-110 ${
+                  isScrolled
+                    ? "w-9 h-9 sm:w-12 sm:h-12 lg:w-10 lg:h-10 p-1.5 sm:p-2 lg:p-2"
+                    : "w-9 h-9 sm:w-12 sm:h-12 p-1.5 sm:p-2"
+                }`}
+              >
+                <img
+                  src="./logo.webp"
+                  alt="greenzone logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div
+                className={`transition-all duration-700 overflow-hidden flex items-center ${isScrolled ? "lg:max-w-0 lg:opacity-0 lg:-translate-x-4" : "max-w-[300px] opacity-100 translate-x-0"}`}
+              >
+                <span className="font-heading font-black text-white text-[13px] sm:text-lg tracking-tighter block whitespace-nowrap ml-2 sm:ml-3">
+                  Greenzone{" "}
+                  <span className="italic text-accent-gold hidden xs:inline">
+                    Adventures.
+                  </span>
+                  <span className="italic text-accent-gold xs:hidden">
+                    Adventures.
+                  </span>
+                </span>
+              </div>
+            </Link>
+          </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          {/* Desktop Navigation - Centered and Stabilized */}
+          <nav className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <div key={link.path} className="relative group/nav-item">
                 {link.submenu ? (
@@ -147,16 +145,29 @@ export default function Navbar() {
           </nav>
 
           {/* CTA Section */}
-          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+          <div className="flex-1 flex items-center justify-end gap-2 sm:gap-4 shrink-0">
             {/* CTA strictly hidden on Mobile, only block on Desktop (lg+) */}
             <div className="hidden lg:block">
-              <Link
+              <PrimaryButton
                 to="/contact"
-                className={`btn-primary px-8 py-2.5 h-auto rounded-full text-[9px] tracking-widest ${isActive("/contact") ? "ring-2 ring-accent-gold shadow-[0_0_20px_rgba(233,226,211,0.3)]" : ""}`}
+                variant="primary"
+                size="sm"
+                className={`transition-all duration-700 ${
+                  isScrolled ? "lg:w-10 lg:h-10 lg:p-0! lg:min-w-0!" : ""
+                } ${
+                  isActive("/contact")
+                    ? "ring-2 ring-accent-gold shadow-[0_0_20px_rgba(233,226,211,0.3)]"
+                    : ""
+                }`}
               >
-                <span>Start Journey</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+                {/* On mobile (below lg), always show text. On lg, hide text when scrolled. */}
+                <span className={`${isScrolled ? "lg:hidden" : ""}`}>
+                  Start Journey
+                </span>
+                <ArrowRight
+                  className={`transition-all duration-700 ${isScrolled ? "lg:w-4 lg:h-4 lg:ml-0" : "w-4 h-4 ml-2"}`}
+                />
+              </PrimaryButton>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -171,7 +182,7 @@ export default function Navbar() {
 
         {/* Mobile Dropdown Menu Container */}
         <div
-          className={`absolute top-full left-4 right-4 mt-4 lg:hidden pointer-events-auto transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-[100] ${
+          className={`absolute top-full left-4 right-4 mt-4 lg:hidden pointer-events-auto transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-100 ${
             isMobileMenuOpen
               ? "translate-y-0 opacity-100 scale-100"
               : "-translate-y-12 opacity-0 scale-[0.95] pointer-events-none"
@@ -240,7 +251,7 @@ export default function Navbar() {
       {/* Dimmer Overlay */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-forest-deep/90 backdrop-blur-xl z-[90] lg:hidden pointer-events-auto transition-opacity duration-700"
+          className="fixed inset-0 bg-forest-deep/90 backdrop-blur-xl z-90 lg:hidden pointer-events-auto transition-opacity duration-700"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}

@@ -6,11 +6,6 @@ import FooterMinimal from "./components/layout/FooterMinimal";
 import Home from "./pages/Home";
 // Pages - Lazy Loaded
 const About = lazy(() => import("./pages/About"));
-const Workshops = lazy(() => import("./pages/Workshops"));
-const NLP = lazy(() => import("./pages/NLP"));
-const EQ = lazy(() => import("./pages/EQ"));
-const AgriTourism = lazy(() => import("./pages/AgriTourism"));
-const OutboundLearning = lazy(() => import("./pages/OutboundLearning"));
 const Destinations = lazy(() => import("./pages/Destinations"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Privacy = lazy(() => import("./pages/Privacy"));
@@ -31,11 +26,6 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/workshops" element={<Workshops />} />
-            <Route path="/nlp" element={<NLP />} />
-            <Route path="/eq" element={<EQ />} />
-            <Route path="/agri-tourism" element={<AgriTourism />} />
-            <Route path="/outbound-learning" element={<OutboundLearning />} />
             <Route path="/destinations" element={<Destinations />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />

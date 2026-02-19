@@ -1,20 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import PrimaryButton from "../ui/PrimaryButton";
-
-const optimizeImage = (url) => {
-  if (!url) return url;
-  if (typeof url !== "string") return url;
-  if (url.includes("images.unsplash.com")) {
-    if (url.includes("?")) {
-      return url
-        .replace(/w=\d+/, "w=1600")
-        .replace(/q=\d+/, "q=75")
-        .replace(/auto=[^&]+/, "auto=format");
-    }
-    return `${url}?auto=format&fit=crop&q=75&w=1600`;
-  }
-  return url;
-};
+import { optimizeImage } from "../../utils/image-optimization";
 
 export default function Hero({
   bgImage,
@@ -26,11 +12,15 @@ export default function Hero({
   showScrollIndicator = false,
   className = "",
   priority = false, // Set to true for the first section of a page
+  size = "full", // "full" or "compact"
   children,
 }) {
+  const heightClass =
+    size === "compact" ? "min-h-[50vh] lg:min-h-[60vh]" : "min-h-screen";
+
   return (
     <section
-      className={`relative min-h-screen flex flex-col items-center justify-center pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-forest-deep ${className}`}
+      className={`relative ${heightClass} flex flex-col items-center justify-center pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-forest-deep ${className}`}
     >
       {/* Background */}
       <div className="absolute inset-0">

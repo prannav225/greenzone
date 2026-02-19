@@ -1,22 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import { ArrowRight } from "lucide-react";
+import PrimaryButton from "../ui/PrimaryButton";
+import { optimizeImage } from "../../utils/image-optimization";
 import "swiper/css";
 import "swiper/css/effect-fade";
-
-const optimizeImage = (url) => {
-  if (!url) return url;
-  if (url.includes("images.unsplash.com")) {
-    if (url.includes("?")) {
-      return url
-        .replace(/w=\d+/, "w=1000")
-        .replace(/q=\d+/, "q=75")
-        .replace(/auto=[^&]+/, "auto=format");
-    }
-    return `${url}?auto=format&fit=crop&q=75&w=1000`;
-  }
-  return url;
-};
 
 export default function DestinationSection({
   dest,
@@ -99,13 +87,15 @@ export default function DestinationSection({
           </div>
 
           <div className="pt-6 sm:pt-8 pb-4">
-            <button
+            <PrimaryButton
               onClick={() => onPreview(dest)}
-              className="group flex items-center gap-4 px-6 md:px-8 py-3.5 md:py-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full text-white font-black uppercase tracking-widest text-[9px] md:text-[10px] transition-all duration-500 hover:bg-accent-gold hover:text-forest-deep hover:border-accent-gold hover:scale-105"
+              variant="secondary"
+              size="md"
+              className="group"
             >
               Preview Journey
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            </PrimaryButton>
           </div>
         </div>
       </div>
