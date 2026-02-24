@@ -6,6 +6,7 @@ import PrimaryButton from "../ui/PrimaryButton";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
+  { name: "Tour Packages", path: "/packages" },
   { name: "Destinations", path: "/destinations" },
 ];
 
@@ -44,7 +45,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-100 flex justify-center p-4 sm:p-6 pb-0 pointer-events-none pt-[calc(1rem+env(safe-area-inset-top,0px))] md:pt-6">
+      <div className="fixed top-0 left-0 right-0 z-100 flex justify-center p-4 sm:p-6 pb-0 pointer-events-none pt-[calc(1.25rem+env(safe-area-inset-top,0px))] md:pt-6">
         {/* Main Navbar Pill */}
         <header
           className={`w-full transition-all duration-700 rounded-full pointer-events-auto flex items-center border border-white/10 relative z-50 ${
@@ -67,7 +68,7 @@ export default function Navbar() {
                 }`}
               >
                 <img
-                  src="./logo.webp"
+                  src="/logo.webp"
                   alt="greenzone logo"
                   className="w-full h-full object-contain"
                 />

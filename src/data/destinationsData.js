@@ -104,7 +104,7 @@ export const DESTINATION_COLLECTIONS = [
         id: "mysuru",
         name: "Mysuru",
         subtitle: "The fragrance of sandalwood and the weight of heritage.",
-        desc: "Beyond the palace gates lies a city of slow rhythms and aristocratic grace. The sandalwood air invites deep sensory groundedness, asking you to reconsider the weight of lineage and leadership.",
+        desc: "Beyond the palace gates lies a city of slow rhythms and aristocratic grace. The sandalwood air invites deep sensory groundedness, asking you to reconsider the weight of lineage and legacy.",
         images: [
           "https://plus.unsplash.com/premium_photo-1697729434815-40ab4970ebc1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://www.sandeshtheprince.com/wp-content/uploads/2020/07/chamundihills.jpg",
@@ -161,7 +161,7 @@ export const DESTINATION_COLLECTIONS = [
         subtitle: "The mist-laden heart of Coorg's wild interior.",
         desc: "Navigate the dense coffee estates and roaring waterfalls of Madikeri, where the landscape demands presence and the terrain reshapes perspective. This is a space of elemental immersion and cultural depth.",
         images: [
-          "https://images.unsplash.com/photo-1590494165264-1ebe3602eb80?auto=format&fit=crop&q=80&w=1200",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkOoWCwxgxj-WJ6ziKROC7Ap4FMlfHxHrGdQ&s",
           "https://images.unsplash.com/photo-1626244458313-097561841e7e?auto=format&fit=crop&q=80&w=1200",
           "https://mandalpattijeepsafari.org/wp-content/uploads/2025/10/M-P-2-1.png",
           "https://images.unsplash.com/photo-1627342738303-34e892956cf0?auto=format&fit=crop&q=80&w=1200",
@@ -182,7 +182,7 @@ export const DESTINATION_COLLECTIONS = [
         subtitle: "The confluence of wisdom and the Tunga river.",
         desc: "Retreat to the serene banks of the Tunga, where ancient Vedic traditions meet the raw stillness of the Western Ghats. This is a space of intellectual clarity, deep reflection, and elemental trekking.",
         images: [
-          "https://images.unsplash.com/photo-1540979388789-6eca28fb442b?auto=format&fit=crop&q=80&w=1200",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtp8xALeke30H4hUXOJCKSokRkPuDhBEefag&s",
           "https://images.unsplash.com/photo-1626244458313-097561841e7e?auto=format&fit=crop&q=80&w=1200",
           "https://live.staticflickr.com/5772/22125991625_d550873412_o.jpg",
         ],
@@ -337,7 +337,7 @@ export const JOURNEY_METADATA = {
     duration: "3–4 Days",
     groupSize: "6–15 Pax",
     season: "Nov – Feb",
-    tags: ["Culture", "Leadership-Friendly"],
+    tags: ["Culture", "Group-Friendly"],
     flow: [
       "Boulder Trekging",
       "River Coracle Crossing",

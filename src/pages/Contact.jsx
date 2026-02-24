@@ -32,15 +32,15 @@ export default function Contact() {
 
       {/* 2. INQUIRY FORM */}
       <Section id="inquiry" variant="forest" padding="sm">
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start pb-20">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-24 items-start pb-8 lg:pb-20">
+          {/* Inquiry Form */}
+          <ContactForm className="order-1 lg:order-2" />
+
           {/* Quick Connect & What Happens Next */}
-          <div className="lg:col-span-4 space-y-16">
+          <div className="lg:col-span-4 grid transition-all md:grid-cols-2 lg:grid-cols-1 gap-8 lg:gap-16 order-2 lg:order-1">
             <QuickConnect />
             <WhatHappensNext />
           </div>
-
-          {/* Inquiry Form */}
-          <ContactForm />
         </div>
       </Section>
 

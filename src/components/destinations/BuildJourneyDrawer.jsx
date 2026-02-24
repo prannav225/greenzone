@@ -210,7 +210,6 @@ export default function BuildJourneyDrawer() {
                       "Trekking",
                       "Coastal",
                       "Spiritual",
-                      "Leadership-Oriented",
                       "Cultural Immersion",
                     ].map((tag) => (
                       <button

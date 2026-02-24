@@ -14,7 +14,10 @@ export default function DestinationSection({
   onPreview,
 }) {
   return (
-    <section className="scroll-snap-section relative min-h-svh flex flex-col justify-end overflow-hidden group">
+    <section
+      id={dest.id}
+      className="relative min-h-svh flex flex-col justify-end overflow-hidden group"
+    >
       <div className="absolute inset-0 bg-forest-deep">
         <Swiper
           modules={[Autoplay, EffectFade]}
@@ -40,7 +43,7 @@ export default function DestinationSection({
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-forest-deep via-forest-deep/80 to-transparent pointer-events-none z-10" />
       </div>
 
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-16 md:pb-32 animate-fade-in-up">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-56 md:pb-32 animate-fade-in-up">
         <div className="max-w-4xl space-y-4 sm:space-y-6">
           <div className="flex items-center gap-4">
             <span className="text-[10px] md:text-eyebrow text-accent-gold uppercase font-black tracking-widest">
@@ -53,7 +56,7 @@ export default function DestinationSection({
           </div>
 
           <div className="space-y-2 sm:space-y-4">
-            <h2 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tighter">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tighter">
               {dest.name}
             </h2>
             <div className="flex flex-wrap gap-2">
@@ -68,7 +71,7 @@ export default function DestinationSection({
             </div>
           </div>
 
-          <h3 className="text-lg md:text-2xl font-light italic text-accent-gold/80 max-w-2xl leading-tight">
+          <h3 className="text-base sm:text-lg md:text-2xl font-light italic text-accent-gold/80 max-w-md md:max-w-2xl leading-tight">
             {dest.subtitle}
           </h3>
           <p className="text-sm md:text-description max-w-xl text-white/70 leading-relaxed">
@@ -91,10 +94,10 @@ export default function DestinationSection({
               onClick={() => onPreview(dest)}
               variant="secondary"
               size="md"
-              className="group"
+              className="px-10! py-4!"
             >
-              Preview Journey
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <span className="text-[10px] sm:text-xs">Preview Journey</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
             </PrimaryButton>
           </div>
         </div>

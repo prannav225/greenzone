@@ -100,6 +100,7 @@ export default function FinalCTA({
               <PrimaryButton
                 key={idx}
                 to={btn.to}
+                onClick={btn.onClick}
                 variant={btn.variant || (isDark ? "primary" : "primary")}
                 size="lg"
                 className="group w-full sm:w-auto"

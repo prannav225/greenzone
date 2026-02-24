@@ -6,10 +6,15 @@ export default function PersonalisedJourneys() {
   const { openJourneyBuilder } = useJourney();
 
   return (
-    <Section variant="dark" padding="lg">
+    <Section
+      variant="dark"
+      padding="lg"
+      className="overflow-hidden"
+      snap={false}
+    >
       <div className="grid lg:grid-cols-2 gap-20 items-center pb-10">
         <div className="relative">
-          <div className="absolute -left-12 -top-12 text-white/5 text-[15rem] font-black select-none pointer-events-none">
+          <div className="absolute -left-6 -top-16 md:-left-12 md:-top-12 text-white/5 text-[10rem] md:text-[15rem] font-black select-none pointer-events-none">
             Art
           </div>
           <h2 className="text-section-title text-white font-serif italic leading-tight relative z-10">

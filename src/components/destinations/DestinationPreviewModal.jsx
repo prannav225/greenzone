@@ -1,5 +1,14 @@
-import { X, Clock, Users, Sun, Map as MapIcon } from "lucide-react";
+import {
+  X,
+  Clock,
+  Users,
+  Sun,
+  Map as MapIcon,
+  Tag,
+  Calendar,
+} from "lucide-react";
 import PrimaryButton from "../ui/PrimaryButton";
+import { PACKAGES } from "../../data/packagesData";
 
 export default function DestinationPreviewModal({
   selectedDest,
@@ -9,9 +18,10 @@ export default function DestinationPreviewModal({
   if (!selectedDest) return null;
 
   const meta = JOURNEY_METADATA[selectedDest.id] || {};
+  const pkg = PACKAGES.find((p) => p.destinationId === selectedDest.id);
 
   return (
-    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6 md:p-8">
+    <div className="fixed inset-0 z-200 flex items-center justify-center p-4 sm:p-6 md:p-8">
       <div
         className="absolute inset-0 bg-forest-deep/90 backdrop-blur-xl transition-all duration-500"
         onClick={onClose}
@@ -19,7 +29,7 @@ export default function DestinationPreviewModal({
       <div className="relative w-full max-w-5xl max-h-[90vh] md:max-h-none bg-forest-deep border border-white/10 rounded-[2rem] overflow-hidden shadow-2xl flex flex-col md:flex-row animate-scale-in">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 md:top-6 md:left-6 md:right-auto p-4 rounded-full bg-black/50 text-white backdrop-blur-md border border-white/10 hover:bg-white/10 transition-colors z-[210] md:z-auto"
+          className="absolute top-4 right-4 md:top-6 md:left-6 md:right-auto p-4 rounded-full bg-black/50 text-white backdrop-blur-md border border-white/10 hover:bg-white/10 transition-colors z-210 md:z-auto"
         >
           <X className="w-5 h-5" />
         </button>
@@ -39,12 +49,42 @@ export default function DestinationPreviewModal({
           <div className="space-y-6 md:space-y-8">
             <div>
               <span className="text-[10px] font-black uppercase tracking-widest text-accent-gold mb-2 block">
-                Prototype Journey
+                Destination Profile
               </span>
               <h3 className="text-2xl sm:text-3xl md:text-5xl font-black text-white leading-tight tracking-tighter">
                 {selectedDest.name}
               </h3>
             </div>
+
+            {/* Package Availability Layer */}
+            {pkg && (
+              <div className="p-6 rounded-2xl bg-accent-gold/5 border border-accent-gold/20 space-y-4">
+                <div className="flex items-center gap-2">
+                  <Tag className="w-4 h-4 text-accent-gold" />
+                  <span className="text-[10px] font-black uppercase tracking-widest text-white">
+                    Fixed Package Available
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <span className="text-[9px] uppercase tracking-widest text-white/40 block mb-1">
+                      Starting Price
+                    </span>
+                    <span className="text-lg font-black text-accent-gold">
+                      {pkg.price}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[9px] uppercase tracking-widest text-white/40 block mb-1">
+                      Duration
+                    </span>
+                    <span className="text-lg font-black text-white">
+                      {pkg.duration}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Quick Stats Grid */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
@@ -105,9 +145,16 @@ export default function DestinationPreviewModal({
               </div>
             </div>
 
-            <div className="pt-4 md:pt-8">
-              <PrimaryButton to="/contact#inquiry" size="md" className="w-full">
-                Design This Journey
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 md:pt-8">
+              <PrimaryButton to={`/packages?dest=${selectedDest.id}`} size="md">
+                View Available Packages
+              </PrimaryButton>
+              <PrimaryButton
+                to="/contact#inquiry"
+                variant="secondary"
+                size="md"
+              >
+                Customize This Trip
               </PrimaryButton>
             </div>
           </div>

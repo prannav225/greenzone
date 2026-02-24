@@ -2,62 +2,78 @@ import Hero from "../components/layout/Hero";
 import FinalCTA from "../components/layout/FinalCTA";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import { ArrowRight, Compass } from "lucide-react";
-import OurExperiences from "../components/home/OurExperiences";
-import FeaturedDestinations from "../components/home/FeaturedDestinations";
-import WhyGreenzone from "../components/home/WhyGreenzone";
-import HowItWorks from "../components/home/HowItWorks";
-import HomeTestimonials from "../components/home/HomeTestimonials";
+import FeaturedPackages from "../components/home/FeaturedPackages";
+import WhyTravel from "../components/home/WhyTravel";
+import CustomTrips from "../components/home/CustomTrips";
+import DestinationGrid from "../components/home/DestinationGrid";
+import { useJourney } from "../hooks/useJourney";
 
 export default function Home() {
+  const { openJourneyBuilder } = useJourney();
+
   return (
-    <div className="scroll-snap-container bg-forest">
+    <div className="bg-white">
+      {/* 1️⃣ HERO SECTION */}
       <Hero
         priority
+        size="compact"
         bgImage="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&q=80&w=2000"
-        eyebrow="Curated Expeditions"
+        eyebrow="Adventure Karnataka"
         title={
           <>
-            The Summit Awaits. <br />
-            <span className="text-accent-gold italic">The Story is Yours.</span>
+            Explore Karnataka With <br className="hidden sm:block" />
+            <span className="text-accent-gold italic">
+              GreenZone Adventures
+            </span>
           </>
         }
-        description="Curated trekking expeditions, heritage circuits, and custom private journeys designed for those who seek depth, silence, and immersion."
-        className="scroll-snap-section"
+        description="Affordable group tours and personalized travel experiences across Karnataka’s most iconic destinations."
+        className=""
       >
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up animate-delay-400">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center animate-fade-in-up animate-delay-400 mt-4 sm:mt-8">
           <PrimaryButton to="/destinations" size="md" variant="primary">
-            Explore Destinations
+            View Tour Packages
             <ArrowRight className="w-4 h-4 ml-2" />
           </PrimaryButton>
 
-          <PrimaryButton to="/contact" size="md" variant="secondary">
-            Plan Your Journey
+          <PrimaryButton
+            onClick={openJourneyBuilder}
+            size="md"
+            variant="secondary"
+          >
+            Plan Custom Trip
           </PrimaryButton>
         </div>
       </Hero>
 
-      <OurExperiences />
-      <FeaturedDestinations />
-      <WhyGreenzone />
-      <HowItWorks />
-      <HomeTestimonials />
+      <FeaturedPackages id="packages" />
 
+      {/* 3️⃣ WHY TRAVEL WITH US */}
+      <WhyTravel id="why-travel" />
+
+      {/* 4️⃣ CUSTOM TRIPS SECTION */}
+      <CustomTrips id="custom-trips" onBuildClick={openJourneyBuilder} />
+
+      {/* 5️⃣ DESTINATION GRID */}
+      <DestinationGrid id="destinations" />
+
+      {/* 6️⃣ FINAL CTA */}
       <FinalCTA
         variant="forest"
         bgImage="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=1920"
         icon={Compass}
-        title={
-          <>
-            Ready to Forge <br />
-            <span className="text-accent-gold italic">Your Own Path?</span>
-          </>
-        }
+        title="Ready for Your Next Trip?"
         description="Select your destination and start designing your immersive travel experience today."
         buttons={[
           {
-            label: "Plan Your Journey",
-            to: "/contact",
+            label: "Book a Package",
+            to: "/destinations",
             variant: "primary",
+          },
+          {
+            label: "Plan Custom Trip",
+            onClick: openJourneyBuilder,
+            variant: "secondary",
           },
         ]}
         showPartners={false}

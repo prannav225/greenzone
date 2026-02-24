@@ -7,12 +7,13 @@ import Home from "./pages/Home";
 // Pages - Lazy Loaded
 const About = lazy(() => import("./pages/About"));
 const Destinations = lazy(() => import("./pages/Destinations"));
+const Packages = lazy(() => import("./pages/Packages"));
+const PackageDetail = lazy(() => import("./pages/PackageDetail"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 
 import ScrollToTop from "./components/utils/ScrollToTop";
-import FloatingActions from "./components/ui/FloatingActions";
 import { JourneyProvider } from "./context/JourneyProvider";
 import BuildJourneyDrawer from "./components/destinations/BuildJourneyDrawer";
 import Loading from "./components/ui/Loading";
@@ -27,6 +28,8 @@ function AppContent() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/destinations" element={<Destinations />} />
+            <Route path="/packages" element={<Packages />} />
+            <Route path="/packages/:packageId" element={<PackageDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
@@ -34,7 +37,6 @@ function AppContent() {
         </Suspense>
       </main>
       <FooterMinimal />
-      <FloatingActions />
       <BuildJourneyDrawer />
     </div>
   );

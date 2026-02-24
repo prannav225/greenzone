@@ -70,6 +70,7 @@
     0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --shadow-premium: 0 40px 100px -20px rgba(0, 0, 0, 0.4);
   --shadow-gold: 0 0 30px rgba(191, 167, 106, 0.4);
+  --shadow-glow-large: 0 20px 60px rgba(191, 167, 106, 0.6);
 
   --transition-smooth: 500ms cubic-bezier(0.23, 1, 0.32, 1);
   --transition-fast: 200ms ease-out;
@@ -92,15 +93,22 @@ body {
 
 /* ===== SCROLL SNAP CONTAINER ===== */
 .scroll-snap-container {
-  scroll-snap-type: y proximity;
+  scroll-snap-type: none;
   scroll-behavior: smooth;
   overflow-y: auto;
+}
+
+@media (min-width: 1024px) {
+  .scroll-snap-container {
+    scroll-snap-type: y proximity;
+  }
 }
 
 .scroll-snap-section {
   scroll-snap-align: start;
   scroll-snap-stop: normal;
   min-height: 80vh;
+  scroll-margin-top: 80px;
 }
 
 /* ===== DESIGN SYSTEM COMPONENTS ===== */

@@ -40,16 +40,16 @@ export default function QuickConnect() {
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 group"
+            className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 group"
           >
             <div className="w-10 h-10 shrink-0 rounded-xl bg-accent-gold/20 text-accent-gold flex items-center justify-center group-hover:bg-accent-gold group-hover:text-forest-deep transition-all duration-500">
               {item.icon}
             </div>
-            <div>
+            <div className="min-w-0">
               <span className="text-[10px] font-black uppercase tracking-widest text-white/40 block">
                 {item.label}
               </span>
-              <span className="text-sm font-bold text-white/80 block group-hover:text-white transition-colors">
+              <span className="text-xs sm:text-sm font-bold text-white/80 block group-hover:text-white transition-colors wrap-anywhere truncate sm:overflow-visible">
                 {item.value}
               </span>
             </div>

@@ -16,11 +16,11 @@ export default function Hero({
   children,
 }) {
   const heightClass =
-    size === "compact" ? "min-h-[50vh] lg:min-h-[60vh]" : "min-h-screen";
+    size === "compact" ? "min-h-[45vh] lg:min-h-[70vh]" : "min-h-screen";
 
   return (
     <section
-      className={`relative ${heightClass} flex flex-col items-center justify-center pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-forest-deep ${className}`}
+      className={`relative ${heightClass} flex flex-col items-center justify-start pt-24 pb-8 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-24 overflow-hidden bg-forest-deep ${className}`}
     >
       {/* Background */}
       <div className="absolute inset-0">
@@ -43,13 +43,13 @@ export default function Hero({
         )}
 
         {title && (
-          <h1 className="text-hero text-white mb-8 sm:mb-10 animate-fade-in-up">
+          <h1 className="text-hero text-white mb-4 sm:mb-10 animate-fade-in-up">
             {title}
           </h1>
         )}
 
         {description && (
-          <p className="text-description text-white/70 max-w-4xl mx-auto animate-fade-in-up animate-delay-200 px-4 sm:px-0 mb-10">
+          <p className="text-description text-white/70 max-w-4xl mx-auto animate-fade-in-up animate-delay-200 px-4 sm:px-0 mb-6 sm:mb-10">
             {description}
           </p>
         )}

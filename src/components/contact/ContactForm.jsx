@@ -9,7 +9,7 @@ const ALL_DESTINATIONS = DESTINATION_COLLECTIONS.flatMap(
   (col) => col.destinations,
 );
 
-export default function ContactForm() {
+export default function ContactForm({ className = "" }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -92,12 +92,14 @@ export default function ContactForm() {
   };
 
   const inputClasses = (field) => `
-    w-full bg-white/5 border px-6 py-4 rounded-2xl outline-none font-medium text-white transition-all placeholder:text-white/20
+    w-full bg-white/5 border px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl outline-none font-medium text-white transition-all placeholder:text-white/20
     ${errors[field] ? "border-red-500 bg-red-500/5 focus:border-red-500" : "border-white/10 focus:border-accent-gold focus:bg-white/10"}
   `;
 
   return (
-    <div className="lg:col-span-8 bg-white/5 backdrop-blur-3xl p-6 sm:p-12 lg:p-16 rounded-card border border-white/10 shadow-premium relative overflow-hidden">
+    <div
+      className={`lg:col-span-8 bg-white/5 backdrop-blur-3xl p-4 sm:p-12 lg:p-16 rounded-card border border-white/10 shadow-premium relative ${className}`}
+    >
       <div className="absolute top-0 right-0 w-64 h-64 bg-accent-gold/5 rounded-full blur-3xl opacity-50" />
 
       {isSubmitted ? (
@@ -120,9 +122,9 @@ export default function ContactForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="relative z-10 space-y-8">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-5 md:gap-8">
             <div className="space-y-3">
-              <label className="text-[10px] font-black uppercase tracking-widest text-accent-gold ml-2 flex justify-between items-center">
+              <label className="text-[10px] font-black uppercase tracking-widest text-accent-gold flex justify-between items-center px-1">
                 Full Name
                 {errors.name && (
                   <span className="text-red-400 font-medium flex items-center gap-1">
@@ -139,7 +141,7 @@ export default function ContactForm() {
               />
             </div>
             <div className="space-y-3">
-              <label className="text-[10px] font-black uppercase tracking-widest text-accent-gold ml-2 flex justify-between items-center">
+              <label className="text-[10px] font-black uppercase tracking-widest text-accent-gold flex justify-between items-center px-1">
                 Email Address
                 {errors.email && (
                   <span className="text-red-400 font-medium flex items-center gap-1">
@@ -157,9 +159,9 @@ export default function ContactForm() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-5 md:gap-8">
             <div className="space-y-3">
-              <label className="text-[10px] font-black uppercase tracking-widest text-accent-gold ml-2 flex justify-between items-center">
+              <label className="text-[10px] font-black uppercase tracking-widest text-accent-gold flex justify-between items-center px-1">
                 Phone Number
                 {errors.phone && (
                   <span className="text-red-400 font-medium flex items-center gap-1">
@@ -176,7 +178,7 @@ export default function ContactForm() {
               />
             </div>
             <div className="space-y-3">
-              <label className="text-[10px] font-black uppercase tracking-widest text-accent-gold ml-2 flex justify-between items-center">
+              <label className="text-[10px] font-black uppercase tracking-widest text-accent-gold flex justify-between items-center px-1">
                 Preferred Destination
                 {errors.destination && (
                   <span className="text-red-400 font-medium flex items-center gap-1">
@@ -216,9 +218,9 @@ export default function ContactForm() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-5 md:gap-8">
             <div className="space-y-3">
-              <label className="text-[10px] font-black uppercase tracking-widest text-accent-gold ml-2 flex justify-between items-center">
+              <label className="text-[10px] font-black uppercase tracking-widest text-accent-gold flex justify-between items-center px-1">
                 Type of Experience
                 {errors.experienceType && (
                   <span className="text-red-400 font-medium flex items-center gap-1">
@@ -253,10 +255,10 @@ export default function ContactForm() {
               </div>
             </div>
             <div className="space-y-3">
-              <label className="text-[10px] font-black uppercase tracking-widest text-accent-gold ml-2">
+              <label className="text-[10px] font-black uppercase tracking-widest text-accent-gold px-1">
                 Travel Duration
               </label>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="relative">
                   <input
                     type="date"
@@ -270,24 +272,24 @@ export default function ContactForm() {
                     type="date"
                     value={formData.endDate}
                     onChange={(e) => handleChange("endDate", e.target.value)}
-                    className={`${inputClasses("endDate")} text-[10px] sm:text-xs scheme-dark`}
+                    className={`${inputClasses("endDate")} text-xs scheme-dark`}
                   />
                 </div>
               </div>
               {errors.startDate && (
-                <p className="text-red-400 text-[9px] font-medium ml-2">
+                <p className="text-red-400 text-[9px] font-medium px-1">
                   {errors.startDate}
                 </p>
               )}
               {errors.endDate && (
-                <p className="text-red-400 text-[9px] font-medium ml-2">
+                <p className="text-red-400 text-[9px] font-medium px-1">
                   {errors.endDate}
                 </p>
               )}
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-5 md:gap-8">
             <div className="space-y-3">
               <label className="text-[10px] font-bold uppercase tracking-widest text-accent-gold ml-2">
                 Group Size
