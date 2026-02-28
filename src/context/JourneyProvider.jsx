@@ -1,41 +1,41 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
+import { useNavigate } from "react-router-dom";
 import { JourneyContext } from "./JourneyContext";
 
 export function JourneyProvider({ children }) {
-  const [isPanelOpen, setIsPanelOpen] = useState(false);
-  const [selectedForJourney, setSelectedForJourney] = useState([]);
+  const navigate = useNavigate();
+  const [primaryDestination, setPrimaryDestination] = useState(null);
+  const [selectedHighlights, setSelectedHighlights] = useState([]);
   const [currentStep, setCurrentStep] = useState(1);
   const [journeyDuration, setJourneyDuration] = useState("");
-  const [focusTags, setFocusTags] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    dates: "",
+    fromDate: "",
+    toDate: "",
     groupSize: "",
+    transport: "",
+    food: "",
+    stay: "",
+    estimatedBudget: "",
     message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Lock scroll when drawer is open
-  useEffect(() => {
-    if (isPanelOpen) {
-      document.body.style.overflow = "hidden";
-      document.body.classList.add("drawer-open");
-    } else {
-      document.body.style.overflow = "unset";
-      document.body.classList.remove("drawer-open");
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-      document.body.classList.remove("drawer-open");
-    };
-  }, [isPanelOpen]);
+  const selectPrimaryDestination = (destId) => {
+    setPrimaryDestination(destId);
+    setSelectedHighlights([]);
+  };
 
-  const toggleSelection = (id) => {
-    setSelectedForJourney((prev) =>
-      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id],
+  const toggleHighlight = (highlight) => {
+    setSelectedHighlights((prev) =>
+      prev.includes(highlight)
+        ? prev.filter((h) => h !== highlight)
+        : [...prev, highlight],
     );
   };
 
@@ -51,9 +51,9 @@ export function JourneyProvider({ children }) {
     setIsSubmitting(true);
     setTimeout(() => {
       console.log("Journey Submission:", {
-        destinations: selectedForJourney,
+        primaryDestination,
+        highlights: selectedHighlights,
         duration: journeyDuration,
-        focus: focusTags,
         contact: formData,
       });
       setIsSubmitting(false);
@@ -62,42 +62,43 @@ export function JourneyProvider({ children }) {
   };
 
   const resetJourney = () => {
-    setIsPanelOpen(false);
-    setTimeout(() => {
-      setCurrentStep(1);
-      setIsSubmitted(false);
-      setSelectedForJourney([]);
-      setJourneyDuration("");
-      setFocusTags([]);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        dates: "",
-        groupSize: "",
-        message: "",
-      });
-    }, 500);
+    setCurrentStep(1);
+    setIsSubmitted(false);
+    setPrimaryDestination(null);
+    setSelectedHighlights([]);
+    setJourneyDuration("");
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      fromDate: "",
+      toDate: "",
+      groupSize: "",
+      transport: "",
+      food: "",
+      stay: "",
+      message: "",
+    });
   };
 
-  const openJourneyBuilder = () => setIsPanelOpen(true);
-  const closeJourneyBuilder = () => setIsPanelOpen(false);
+  const openJourneyBuilder = () => navigate("/plan-your-trip");
+  const closeJourneyBuilder = () => navigate("/destinations");
 
   return (
     <JourneyContext.Provider
       value={{
-        isPanelOpen,
         openJourneyBuilder,
         closeJourneyBuilder,
-        selectedForJourney,
-        toggleSelection,
+        primaryDestination,
+        selectPrimaryDestination,
+        selectedHighlights,
+        toggleHighlight,
         currentStep,
+        setCurrentStep,
         handleNextStep,
         handleBackStep,
         journeyDuration,
         setJourneyDuration,
-        focusTags,
-        setFocusTags,
         formData,
         setFormData,
         isSubmitting,

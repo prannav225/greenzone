@@ -150,7 +150,7 @@ export default function FooterMinimal() {
         </div>
 
         {/* Footer Bottom Bar */}
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="py-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-[10px] text-earth/30 font-medium tracking-widest leading-none">
             © {currentYear} GREENZONE ADVENTURES. ALL RIGHTS RESERVED.
           </p>

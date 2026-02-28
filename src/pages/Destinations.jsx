@@ -10,25 +10,15 @@ import FinalCTA from "../components/layout/FinalCTA";
 import FilterBar from "../components/destinations/FilterBar";
 import DestinationSection from "../components/destinations/DestinationSection";
 import DestinationPreviewModal from "../components/destinations/DestinationPreviewModal";
-import BuildJourneyDrawer from "../components/destinations/BuildJourneyDrawer";
 import PersonalisedJourneys from "../components/destinations/PersonalisedJourneys";
+
 import { useJourney } from "../hooks/useJourney";
-import {
-  Compass,
-  Sparkles,
-  ArrowRight,
-  MessageCircle,
-  ChevronUp,
-} from "lucide-react";
+import { Compass, Sparkles, ArrowRight } from "lucide-react";
 import PrimaryButton from "../components/ui/PrimaryButton";
 
 export default function Destinations() {
-  const {
-    isPanelOpen,
-    selectedForJourney,
-    toggleSelection,
-    openJourneyBuilder,
-  } = useJourney();
+  const { primaryDestination, selectPrimaryDestination, openJourneyBuilder } =
+    useJourney();
 
   const [activeFilter, setActiveFilter] = useState("All");
   const [selectedDest, setSelectedDest] = useState(null);
@@ -77,13 +67,7 @@ export default function Destinations() {
 
   return (
     <main className="relative bg-forest-deep text-earth overflow-x-hidden">
-      <div
-        className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isPanelOpen
-            ? "blur-md opacity-40 pointer-events-none origin-center"
-            : "blur-0 opacity-100"
-        }`}
-      >
+      <div className="transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
         <Hero
           size="compact"
           bgImage="https://images.unsplash.com/photo-1608973557237-4ab537f2cd5a?q=80&w=1600&auto=format&fit=crop"
@@ -111,13 +95,7 @@ export default function Destinations() {
         </Hero>
 
         {/* Unified Action Bar (Optimized for Small Screens) */}
-        <div
-          className={`fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] sm:bottom-8 left-1/2 -translate-x-1/2 z-100 transition-all duration-700 w-full max-w-fit px-4 sm:px-6 ${
-            isPanelOpen
-              ? "opacity-0 translate-y-10 pointer-events-none"
-              : "opacity-100 translate-y-0"
-          }`}
-        >
+        <div className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] sm:bottom-8 left-1/2 -translate-x-1/2 z-100 transition-all duration-700 w-full max-w-fit px-4 sm:px-6">
           <PrimaryButton
             onClick={openJourneyBuilder}
             variant="secondary"
@@ -149,8 +127,8 @@ export default function Destinations() {
                 idx={idx}
                 meta={JOURNEY_METADATA[dest.id] || {}}
                 onPreview={setSelectedDest}
-                onSelectJourney={() => toggleSelection(dest.id)}
-                isSelected={selectedForJourney.includes(dest.id)}
+                onSelectJourney={() => selectPrimaryDestination(dest.id)}
+                isSelected={primaryDestination === dest.id}
               />
             )),
           )}
@@ -170,7 +148,7 @@ export default function Destinations() {
             },
             {
               label: "Plan Custom Trip",
-              to: "/contact#inquiry",
+              to: "/plan-your-trip",
               variant: "secondary",
             },
           ]}
