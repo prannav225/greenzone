@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   useLocation,
+  Outlet,
 } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import FooterMinimal from "./components/layout/FooterMinimal";
@@ -18,29 +19,20 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const PersonalizedTour = lazy(() => import("./pages/PersonalizedTour"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 import ScrollToTop from "./components/utils/ScrollToTop";
 import { JourneyProvider } from "./context/JourneyProvider";
 import Loading from "./components/ui/Loading";
 
-function AppContent() {
+function MainLayout() {
   const location = useLocation();
   return (
     <div className="min-h-screen flex flex-col font-sans selection:bg-accent-gold selection:text-forest-deep">
       <Navbar />
       <main className="flex-1">
         <Suspense fallback={<Loading />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/destinations" element={<Destinations />} />
-            <Route path="/packages" element={<Packages />} />
-            <Route path="/packages/:packageId" element={<PackageDetail />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/plan-your-trip" element={<PersonalizedTour />} />
-          </Routes>
+          <Outlet />
         </Suspense>
       </main>
       {location.pathname !== "/plan-your-trip" && <FooterMinimal />}
@@ -49,6 +41,34 @@ function AppContent() {
       <div className="fixed top-0 inset-x-0 h-20 refined-edge-fade-top z-60 pointer-events-none" />
       <div className="fixed bottom-0 inset-x-0 h-20 refined-edge-fade-bottom z-60 pointer-events-none" />
     </div>
+  );
+}
+
+function AppContent() {
+  return (
+    <Routes>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/destinations" element={<Destinations />} />
+        <Route path="/packages" element={<Packages />} />
+        <Route path="/packages/:packageId" element={<PackageDetail />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/plan-your-trip" element={<PersonalizedTour />} />
+      </Route>
+      <Route
+        path="*"
+        element={
+          <div className="min-h-screen bg-forest-deep font-sans selection:bg-accent-gold selection:text-forest-deep">
+            <Suspense fallback={<Loading />}>
+              <NotFound />
+            </Suspense>
+          </div>
+        }
+      />
+    </Routes>
   );
 }
 
