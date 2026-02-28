@@ -6,25 +6,12 @@ import {
   ChevronRight,
   ArrowRight,
   Loader2,
-  CheckCircle2,
-  Check,
   Calendar,
   Users,
-  Utensils,
   MapPin,
-  Clock,
-  Globe,
-  Star,
-  Zap,
-  Bus,
-  Home,
-  Hotel,
-  IndianRupee,
   LayoutList,
-  ChevronDown,
-  Download,
 } from "lucide-react";
-import { useJourney } from "../hooks/useJourney";
+
 import { DESTINATION_COLLECTIONS } from "../data/destinationsData";
 
 import SummaryContent from "../components/tour/SummaryContent";
@@ -46,23 +33,82 @@ const STEPS = [
 ];
 
 export default function PersonalizedTour() {
-  const {
-    currentStep,
-    handleNextStep,
-    handleBackStep,
-    handleSubmitJourney,
-    isSubmitting,
-    isSubmitted,
-    primaryDestination,
-    selectPrimaryDestination,
-    selectedHighlights,
-    toggleHighlight,
-    journeyDuration,
-    setJourneyDuration,
-    formData,
-    setFormData,
-    resetJourney,
-  } = useJourney();
+  const [primaryDestination, setPrimaryDestination] = useState(null);
+  const [selectedHighlights, setSelectedHighlights] = useState([]);
+  const [currentStep, setCurrentStep] = useState(1);
+  const [journeyDuration, setJourneyDuration] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    fromDate: "",
+    toDate: "",
+    groupSize: "",
+    transport: "",
+    food: "",
+    stay: "",
+    estimatedBudget: "",
+    message: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const selectPrimaryDestination = (destId) => {
+    setPrimaryDestination(destId);
+    setSelectedHighlights([]);
+  };
+
+  const toggleHighlight = (highlight) => {
+    setSelectedHighlights((prev) =>
+      prev.includes(highlight)
+        ? prev.filter((h) => h !== highlight)
+        : [...prev, highlight],
+    );
+  };
+
+  const handleNextStep = () => {
+    if (currentStep < 4) setCurrentStep((prev) => prev + 1);
+  };
+
+  const handleBackStep = () => {
+    if (currentStep > 1) setCurrentStep((prev) => prev - 1);
+  };
+
+  const handleSubmitJourney = () => {
+    setIsSubmitting(true);
+    setTimeout(() => {
+      console.log("Journey Submission:", {
+        primaryDestination,
+        highlights: selectedHighlights,
+        duration: journeyDuration,
+        contact: formData,
+      });
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    }, 1500);
+  };
+
+  const resetJourney = () => {
+    setCurrentStep(1);
+    setIsSubmitted(false);
+    setPrimaryDestination(null);
+    setSelectedHighlights([]);
+    setJourneyDuration("");
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      fromDate: "",
+      toDate: "",
+      groupSize: "",
+      transport: "",
+      food: "",
+      stay: "",
+      message: "",
+      estimatedBudget: "",
+    });
+  };
 
   const [isSummaryExpanded, setIsSummaryExpanded] = useState(false);
   const summaryRef = useRef(null);

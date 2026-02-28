@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { MoveLeft } from "lucide-react";
 import PrimaryButton from "../components/ui/PrimaryButton";

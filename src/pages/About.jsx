@@ -9,11 +9,7 @@ import {
 import Hero from "../components/layout/Hero";
 import FounderCard from "../components/about/FounderCard";
 import FinalCTA from "../components/layout/FinalCTA";
-import { useJourney } from "../hooks/useJourney";
-
 export default function About() {
-  const { openJourneyBuilder } = useJourney();
-
   return (
     <main className="scroll-snap-container">
       {/* 1. HERO SECTION */}
@@ -208,7 +204,7 @@ export default function About() {
           </>
         }
         description="Step away from the noise and into the stillness. Your curated expedition awaits."
-        buttons={[{ onClick: openJourneyBuilder, label: "Start Your Journey" }]}
+        buttons={[{ to: "/plan-your-trip", label: "Start Your Journey" }]}
       />
     </main>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import PrimaryButton from "../ui/PrimaryButton";
 import { Sparkles } from "lucide-react";
 
-export default function CustomTrips({ id, onBuildClick }) {
+export default function CustomTrips({ id }) {
   return (
     <section
       id={id}
@@ -27,7 +27,7 @@ export default function CustomTrips({ id, onBuildClick }) {
           interests, your story.
         </p>
 
-        <PrimaryButton onClick={onBuildClick} size="lg" variant="primary">
+        <PrimaryButton to="/plan-your-trip" size="lg" variant="primary">
           Build My Journey
         </PrimaryButton>
       </div>

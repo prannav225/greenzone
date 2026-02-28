@@ -20,9 +20,6 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const PersonalizedTour = lazy(() => import("./pages/PersonalizedTour"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-
-import ScrollToTop from "./components/utils/ScrollToTop";
-import { JourneyProvider } from "./context/JourneyProvider";
 import Loading from "./components/ui/Loading";
 
 function MainLayout() {
@@ -75,10 +72,7 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <JourneyProvider>
-        <ScrollToTop />
-        <AppContent />
-      </JourneyProvider>
+      <AppContent />
     </Router>
   );
 }

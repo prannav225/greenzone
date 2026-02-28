@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import {
   DESTINATION_COLLECTIONS,
   JOURNEY_METADATA,
@@ -10,16 +10,13 @@ import FinalCTA from "../components/layout/FinalCTA";
 import FilterBar from "../components/destinations/FilterBar";
 import DestinationSection from "../components/destinations/DestinationSection";
 import DestinationPreviewModal from "../components/destinations/DestinationPreviewModal";
+import { useDestinationFilter } from "../hooks/useDestinationFilter";
 import PersonalisedJourneys from "../components/destinations/PersonalisedJourneys";
 
-import { useJourney } from "../hooks/useJourney";
 import { Compass, Sparkles, ArrowRight } from "lucide-react";
 import PrimaryButton from "../components/ui/PrimaryButton";
 
 export default function Destinations() {
-  const { primaryDestination, selectPrimaryDestination, openJourneyBuilder } =
-    useJourney();
-
   const [activeFilter, setActiveFilter] = useState("All");
   const [selectedDest, setSelectedDest] = useState(null);
 
@@ -39,31 +36,7 @@ export default function Destinations() {
     "1-Day Circuits",
   ];
 
-  const filteredCollections = useMemo(() => {
-    if (activeFilter === "All") return DESTINATION_COLLECTIONS;
-
-    return DESTINATION_COLLECTIONS.map((collection) => ({
-      ...collection,
-      destinations: collection.destinations.filter((dest) => {
-        const meta = JOURNEY_METADATA[dest.id] || {};
-        const tags = meta.tags || [];
-        const isOneDay =
-          meta.duration?.includes("1 Day") ||
-          meta.duration?.includes("1–2 Days");
-
-        if (activeFilter === "Heritage")
-          return collection.category.includes("Heritage");
-        if (activeFilter === "Trekking")
-          return collection.category.includes("Mountain");
-        if (activeFilter === "Coastal")
-          return collection.category.includes("Coastal");
-        if (activeFilter === "Spiritual")
-          return collection.category.includes("Spiritual");
-        if (activeFilter === "1-Day Circuits") return isOneDay;
-        return tags.includes(activeFilter);
-      }),
-    })).filter((collection) => collection.destinations.length > 0);
-  }, [activeFilter]);
+  const filteredCollections = useDestinationFilter(activeFilter);
 
   return (
     <main className="relative bg-forest-deep text-earth overflow-x-hidden">
@@ -97,7 +70,7 @@ export default function Destinations() {
         {/* Unified Action Bar (Optimized for Small Screens) */}
         <div className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] sm:bottom-8 left-1/2 -translate-x-1/2 z-100 transition-all duration-700 w-full max-w-fit px-4 sm:px-6">
           <PrimaryButton
-            onClick={openJourneyBuilder}
+            to="/plan-your-trip"
             variant="secondary"
             size="lg"
             className="shadow-glow-large border-2 border-accent-gold/20 backdrop-blur-md text-accent-gold sm:px-14 px-8 py-3.5 sm:py-5"
@@ -127,8 +100,6 @@ export default function Destinations() {
                 idx={idx}
                 meta={JOURNEY_METADATA[dest.id] || {}}
                 onPreview={setSelectedDest}
-                onSelectJourney={() => selectPrimaryDestination(dest.id)}
-                isSelected={primaryDestination === dest.id}
               />
             )),
           )}

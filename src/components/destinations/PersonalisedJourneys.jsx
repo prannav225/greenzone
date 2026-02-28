@@ -1,10 +1,6 @@
 import Section from "../layout/Section";
 import PrimaryButton from "../ui/PrimaryButton";
-import { useJourney } from "../../hooks/useJourney";
-
 export default function PersonalisedJourneys() {
-  const { openJourneyBuilder } = useJourney();
-
   return (
     <Section
       variant="dark"
@@ -34,11 +30,7 @@ export default function PersonalisedJourneys() {
             From special access to heritage sites to private wilderness camps,
             we ensure every mile has an intent, and every moment has a purpose.
           </p>
-          <PrimaryButton
-            onClick={openJourneyBuilder}
-            variant="primary"
-            size="md"
-          >
+          <PrimaryButton to="/plan-your-trip" variant="primary" size="md">
             Design My Journey
           </PrimaryButton>
         </div>

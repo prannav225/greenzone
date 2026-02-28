@@ -466,3 +466,14 @@ export const JOURNEY_METADATA = {
     ],
   },
 };
+
+/**
+ * UTILITY FUNCTIONS
+ */
+export const getDestinationById = (id) => {
+  for (const collection of DESTINATION_COLLECTIONS) {
+    const found = collection.destinations.find((d) => d.id === id);
+    if (found) return found;
+  }
+  return null;
+};

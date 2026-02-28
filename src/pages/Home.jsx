@@ -6,11 +6,7 @@ import FeaturedPackages from "../components/home/FeaturedPackages";
 import WhyTravel from "../components/home/WhyTravel";
 import CustomTrips from "../components/home/CustomTrips";
 import DestinationGrid from "../components/home/DestinationGrid";
-import { useJourney } from "../hooks/useJourney";
-
 export default function Home() {
-  const { openJourneyBuilder } = useJourney();
-
   return (
     <div className="bg-white">
       {/* 1️⃣ HERO SECTION */}
@@ -37,11 +33,7 @@ export default function Home() {
             <ArrowRight className="w-4 h-4 ml-2" />
           </PrimaryButton>
 
-          <PrimaryButton
-            onClick={openJourneyBuilder}
-            size="md"
-            variant="secondary"
-          >
+          <PrimaryButton to="/plan-your-trip" size="md" variant="secondary">
             Plan Custom Trip
           </PrimaryButton>
         </div>
@@ -53,7 +45,7 @@ export default function Home() {
       <WhyTravel id="why-travel" />
 
       {/* 4️⃣ CUSTOM TRIPS SECTION */}
-      <CustomTrips id="custom-trips" onBuildClick={openJourneyBuilder} />
+      <CustomTrips id="custom-trips" />
 
       {/* 5️⃣ DESTINATION GRID */}
       <DestinationGrid id="destinations" />
@@ -73,7 +65,7 @@ export default function Home() {
           },
           {
             label: "Plan Custom Trip",
-            onClick: openJourneyBuilder,
+            to: "/plan-your-trip",
             variant: "secondary",
           },
         ]}
