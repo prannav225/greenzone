@@ -19,15 +19,9 @@ export default function About() {
       {/* 1. HERO SECTION */}
       <Hero
         priority={true}
+        size="compact"
         bgImage="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000"
-        eyebrow={
-          <>
-            <Compass className="w-4 h-4 text-accent-gold" />
-            <span className="text-eyebrow text-accent-gold">
-              The Art of Curation
-            </span>
-          </>
-        }
+        eyebrow="The Art of Curation"
         title={
           <>
             About <br />
@@ -93,11 +87,8 @@ export default function About() {
         title={PHILOSOPHY.title}
         subtitle={PHILOSOPHY.tagline}
       >
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <div className="w-20 h-20 rounded-2xl bg-accent-gold/10 border border-accent-gold/20 flex items-center justify-center shadow-2xl mb-10 mx-auto transition-transform duration-500 hover:scale-110">
-            <Sparkles className="w-10 h-10 text-accent-gold" />
-          </div>
-          <p className="text-2xl lg:text-3xl text-white/80 font-medium leading-[1.3] tracking-tight max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-xl lg:text-2xl text-white/80 leading-[1.3] tracking-tight max-w-3xl mx-auto">
             {PHILOSOPHY.desc}
           </p>
         </div>

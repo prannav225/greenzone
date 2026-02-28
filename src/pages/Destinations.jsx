@@ -71,13 +71,13 @@ export default function Destinations() {
         <Hero
           size="compact"
           bgImage="https://images.unsplash.com/photo-1608973557237-4ab537f2cd5a?q=80&w=1600&auto=format&fit=crop"
-          eyebrow={
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Selected Geographies</span>
-            </div>
+          eyebrow="Destinations"
+          title={
+            <>
+              Explore Destinations Across
+              <span className="text-accent-gold italic"> Karnataka</span>
+            </>
           }
-          title="Explore Destinations Across Karnataka"
           description="Every destination is a deliberate choice—an architectural masterpiece of geography engineered to shift your perspective and reveal your authentic edge."
         >
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-4 animate-fade-in-up animate-delay-300">

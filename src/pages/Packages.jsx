@@ -65,7 +65,12 @@ export default function Packages() {
         size="compact"
         bgImage="https://images.unsplash.com/photo-1608973557237-4ab537f2cd5a?q=80&w=1600&auto=format&fit=crop"
         eyebrow="Curated Group Experiences"
-        title="Tour Packages Across Karnataka"
+        title={
+          <>
+            Tour Packages Across <br />
+            <span className="text-accent-gold italic">Karnataka</span>
+          </>
+        }
         description="Fixed departures and curated group experiences with transparent pricing. Explore the heart of the land with expert guidance and seamless logistics."
       />
 

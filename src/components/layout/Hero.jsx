@@ -37,7 +37,7 @@ export default function Hero({
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
         {eyebrow && (
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 mb-10 animate-fade-in text-accent-gold shadow-2xl">
+          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 mb-10 animate-fade-in text-accent-gold shadow-2xl uppercase tracking-[0.3em] font-black text-[10px]">
             {eyebrow}
           </div>
         )}

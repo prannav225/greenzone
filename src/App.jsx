@@ -45,9 +45,9 @@ function AppContent() {
       </main>
       {location.pathname !== "/plan-your-trip" && <FooterMinimal />}
 
-      {/* Global Cinematic Edge Blurs (Refined ChatGPT-style) */}
-      <div className="fixed top-0 inset-x-0 h-32 refined-edge-fade-top z-60 pointer-events-none backdrop-blur-[1px]" />
-      <div className="fixed bottom-0 inset-x-0 h-32 refined-edge-fade-bottom z-60 pointer-events-none backdrop-blur-[1px]" />
+      {/* Global Cinematic Edge Blurs */}
+      <div className="fixed top-0 inset-x-0 h-20 refined-edge-fade-top z-60 pointer-events-none" />
+      <div className="fixed bottom-0 inset-x-0 h-20 refined-edge-fade-bottom z-60 pointer-events-none" />
     </div>
   );
 }

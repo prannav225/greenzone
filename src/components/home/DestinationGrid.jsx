@@ -117,6 +117,8 @@ export default function DestinationGrid({ id }) {
                 <img
                   src={dest.image}
                   alt={dest.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 group-hover:rotate-1"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent group-hover:via-black/40 transition-all duration-700" />

@@ -118,21 +118,21 @@ const SummaryContent = ({
           </p>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           <div className="text-[9px] lg:text-[10px] font-black uppercase tracking-widest text-accent-gold flex items-center gap-2">
             <Compass className="w-3 h-3" /> Spots
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 lg:gap-3">
             {selectedHighlights.map((s) => (
               <span
                 key={s}
-                className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-[9px] lg:text-[10px] font-black uppercase text-white/60"
+                className="inline-flex items-center px-4 py-2.5 bg-white/5 backdrop-blur-md rounded-2xl text-[9px] lg:text-[10px] font-bold uppercase tracking-[0.15em] leading-[1.4] text-white/80 shadow-sm border border-white/5"
               >
                 {s}
               </span>
             ))}
             {selectedHighlights.length === 0 && (
-              <span className="text-[9px] text-white/20 italic">
+              <span className="text-[9px] text-white/20 italic font-medium">
                 No spots chosen...
               </span>
             )}
@@ -181,7 +181,7 @@ const SummaryContent = ({
           <p className="text-[8px] lg:text-[9px] font-black uppercase tracking-widest text-white/30">
             Logistics & Preferences
           </p>
-          <div className="grid grid-cols-1 gap-2">
+          <div className="grid grid-cols-1 gap-2.5">
             {[
               {
                 l: "Transport",
@@ -199,15 +199,15 @@ const SummaryContent = ({
                 p.v && (
                   <div
                     key={i}
-                    className="flex justify-between items-center bg-white/5 px-4 py-3 rounded-xl border border-white/5"
+                    className="flex justify-between items-center bg-white/5 px-5 py-3.5 rounded-2xl border border-white/5 gap-4"
                   >
-                    <div className="flex items-center gap-2 text-accent-gold/40">
+                    <div className="flex items-center gap-2 text-accent-gold/40 shrink-0">
                       {p.i}
-                      <span className="text-[8px] lg:text-[9px] font-black uppercase">
+                      <span className="text-[8px] lg:text-[9px] font-black uppercase tracking-widest">
                         {p.l}
                       </span>
                     </div>
-                    <span className="text-[9px] lg:text-[10px] font-black uppercase text-accent-gold">
+                    <span className="text-[9px] lg:text-[10px] font-black uppercase text-accent-gold text-right tracking-widest whitespace-nowrap">
                       {p.v}
                     </span>
                   </div>

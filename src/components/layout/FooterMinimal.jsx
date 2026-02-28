@@ -59,14 +59,12 @@ export default function FooterMinimal() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="font-heading font-black text-white text-[13px] sm:text-lg tracking-tighter block whitespace-nowrap">
+              <span className="font-sans uppercase font-black text-white text-[14px] sm:text-[16px] tracking-wide block whitespace-nowrap">
                 Greenzone{" "}
-                <span className="italic text-accent-gold hidden xs:inline">
+                <span className="text-accent-gold hidden xs:inline">
                   Adventures.
                 </span>
-                <span className="italic text-accent-gold xs:hidden">
-                  Adventures.
-                </span>
+                <span className="text-accent-gold xs:hidden">Adventures.</span>
               </span>
             </Link>
 

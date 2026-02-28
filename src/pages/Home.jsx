@@ -21,9 +21,10 @@ export default function Home() {
         eyebrow="Adventure Karnataka"
         title={
           <>
-            Explore Karnataka With <br className="hidden sm:block" />
+            Explore Karnataka With
             <span className="text-accent-gold italic">
-              GreenZone Adventures
+              {" "}
+              Greenzone Adventures
             </span>
           </>
         }

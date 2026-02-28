@@ -76,12 +76,12 @@ export default function Navbar() {
               <div
                 className={`transition-all duration-700 overflow-hidden flex items-center ${isScrolled ? "lg:max-w-0 lg:opacity-0 lg:-translate-x-4" : "max-w-[300px] opacity-100 translate-x-0"}`}
               >
-                <span className="font-heading font-black text-white text-[13px] sm:text-lg tracking-tighter block whitespace-nowrap ml-2 sm:ml-3">
+                <span className="font-sans uppercase font-black text-white text-[12px] sm:text-[14px] tracking-wide block whitespace-nowrap ml-2 sm:ml-3">
                   Greenzone{" "}
-                  <span className="italic text-accent-gold hidden xs:inline">
+                  <span className="text-accent-gold hidden xs:inline">
                     Adventures.
                   </span>
-                  <span className="italic text-accent-gold xs:hidden">
+                  <span className="text-accent-gold xs:hidden">
                     Adventures.
                   </span>
                 </span>
@@ -166,7 +166,7 @@ export default function Navbar() {
                   Start Journey
                 </span>
                 <ArrowRight
-                  className={`transition-all duration-700 ${isScrolled ? "lg:w-4 lg:h-4 lg:ml-0" : "w-4 h-4 ml-2"}`}
+                  className={`transition-all duration-700 ${isScrolled ? "lg:w-4 lg:h-4 lg:ml-0!" : "w-4 h-4 ml-2"}`}
                 />
               </PrimaryButton>
             </div>
@@ -203,7 +203,7 @@ export default function Navbar() {
                     <div className="flex items-center justify-between py-4 px-2 group">
                       <Link
                         to={link.path}
-                        className={`font-heading font-black text-md uppercase tracking-widest transition-all duration-300 ${isBranchActive(link) ? "text-white" : "text-white/70 hover:text-white"}`}
+                        className={`font-sans font-black text-md uppercase tracking-widest transition-all duration-300 ${isBranchActive(link) ? "text-white" : "text-white/70 hover:text-white"}`}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -220,7 +220,7 @@ export default function Navbar() {
                           <Link
                             key={sub.path}
                             to={sub.path}
-                            className={`font-heading font-black text-[10px] uppercase tracking-[0.2em] py-2.5 px-4 rounded-xl transition-all ${isActive(sub.path) ? "bg-accent-gold text-forest-deep" : "text-white/40 hover:text-white hover:bg-white/5"}`}
+                            className={`font-sans font-black text-[10px] uppercase tracking-[0.2em] py-2.5 px-4 rounded-xl transition-all ${isActive(sub.path) ? "bg-accent-gold text-forest-deep" : "text-white/40 hover:text-white hover:bg-white/5"}`}
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             {sub.name}

@@ -129,7 +129,7 @@ export default function PersonalizedTour() {
     <div className="min-h-screen pt-24 bg-forest-deep pb-32 lg:pb-24 relative overflow-x-hidden">
       <WizardHeader currentStep={currentStep} STEPS={STEPS} />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-4 lg:px-12">
         <div className="lg:grid lg:grid-cols-12 lg:gap-16">
           {/* LEFT COLUMN: WIZARD */}
           <div className="lg:col-span-8 space-y-12">
@@ -206,24 +206,26 @@ export default function PersonalizedTour() {
         </div>
       )}
 
-      {/* Global Navigation Bar */}
-      <div className="fixed bottom-0 inset-x-0 z-40 p-4 lg:p-8 bg-linear-to-t from-forest-deep via-forest-deep/95 to-transparent">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      {/* Global Navigation Bar*/}
+      <div className="fixed bottom-0 inset-x-0 z-70 p-3 lg:p-8 bg-linear-to-t from-forest-deep via-forest-deep/95 to-transparent pb-[calc(1rem+env(safe-area-inset-bottom,0px))] md:pb-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 lg:gap-4">
           <button
             onClick={() => setIsSummaryExpanded(true)}
-            className="lg:hidden p-4 rounded-[20px] bg-white/5 border border-white/10 text-white shadow-premium"
+            className="lg:hidden p-4 rounded-[20px] bg-white/5 border border-white/10 text-white shadow-premium shrink-0"
           >
-            <LayoutList size={24} />
+            <LayoutList size={22} />
           </button>
 
-          <div className="flex-1 flex items-center justify-end gap-3 lg:gap-6">
+          <div className="flex-1 min-w-0 flex items-center justify-end gap-2 lg:gap-6">
             {currentStep > 1 && (
               <PrimaryButton
                 variant="secondary"
                 size="lg"
                 onClick={handleBackStep}
+                className="px-5! lg:px-14! shrink-0"
               >
-                <ChevronLeft size={18} /> Back
+                <ChevronLeft size={18} />
+                <span className="hidden sm:inline">Back</span>
               </PrimaryButton>
             )}
 
@@ -232,22 +234,24 @@ export default function PersonalizedTour() {
                 onClick={handleNextStep}
                 disabled={currentStep === 1 && !primaryDestination}
                 size="lg"
-                className="flex-1 lg:flex-none min-w-[180px]"
+                className="flex-1 lg:flex-none min-w-0 sm:min-w-[180px]"
               >
-                Continue <ChevronRight size={18} />
+                <span className="truncate">Continue</span>
+                <ChevronRight size={18} className="shrink-0" />
               </PrimaryButton>
             ) : (
               <PrimaryButton
                 onClick={handleFinalSubmission}
                 disabled={isSubmitting}
                 size="lg"
-                className="flex-1 lg:flex-none min-w-[220px]"
+                className="flex-1 lg:flex-none min-w-0 sm:min-w-[220px]"
               >
                 {isSubmitting ? (
-                  <Loader2 className="animate-spin" />
+                  <Loader2 className="animate-spin shrink-0" />
                 ) : (
                   <>
-                    Finalize Voyage <ArrowRight size={18} />
+                    <span className="truncate">Finalize Voyage</span>
+                    <ArrowRight size={18} className="shrink-0" />
                   </>
                 )}
               </PrimaryButton>
