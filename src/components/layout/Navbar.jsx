@@ -74,7 +74,7 @@ export default function Navbar() {
                 />
               </div>
               <div
-                className={`transition-all duration-700 overflow-hidden flex items-center ${isScrolled ? "lg:max-w-0 lg:opacity-0 lg:-translate-x-4" : "max-w-[300px] opacity-100 translate-x-0"}`}
+                className={`transition-all duration-700 overflow-hidden flex items-center ${isScrolled ? "lg:max-w-0 lg:opacity-0 lg:-translate-x-4" : "ß opacity-100 translate-x-0"}`}
               >
                 <span className="font-sans uppercase font-black text-white text-[12px] sm:text-[14px] tracking-wide block whitespace-nowrap ml-2 sm:ml-3">
                   Greenzone{" "}

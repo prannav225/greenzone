@@ -20,6 +20,7 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const PersonalizedTour = lazy(() => import("./pages/PersonalizedTour"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const BusinessCardPage = lazy(() => import("./pages/BusinessCardPage"));
 import Loading from "./components/ui/Loading";
 
 function MainLayout() {
@@ -42,6 +43,20 @@ function MainLayout() {
 }
 
 function AppContent() {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const isCard = searchParams.get("card") === "true";
+
+  if (isCard) {
+    return (
+      <div className="min-h-screen bg-forest-deep font-sans selection:bg-accent-gold selection:text-forest-deep">
+        <Suspense fallback={<Loading />}>
+          <BusinessCardPage />
+        </Suspense>
+      </div>
+    );
+  }
+
   return (
     <Routes>
       <Route element={<MainLayout />}>
